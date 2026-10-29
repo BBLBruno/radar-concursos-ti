@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radar de Concursos TI • Muzambinho e Região (250km)</title>
+
+  <!-- Meta tags de SEO, OpenGraph e Portfólio Profissional -->
+  <meta name="description" content="Radar de Concursos TI — Produto de inteligência geográfica e filtragem estrutural de editais públicos de Tecnologia da Informação num raio de 250km de Muzambinho (MG/SP). Desenvolvido por Bruno Bianchi Leo." />
+  <meta name="author" content="Bruno Bianchi Leo — Bacharel em Ciência da Computação | AI Ops, RevOps & Produto" />
+  <meta property="og:title" content="Radar de Concursos TI • Portfólio Bruno Bianchi Leo" />
+  <meta property="og:description" content="Sistema automatizado de inteligência geográfica e monitoramento de editais de TI (Médio, Técnico e Superior). Desenvolvido por Bruno Bianchi Leo (Ciência da Computação • AI Ops, RevOps & Produto)." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon SVG Vetorial -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234f46e5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20'/%3E%3Cpath d='M2 12h20'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons via CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              900: '#312e81',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+    }
+    .glass-header {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+    }
+    .card-hover {
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 28px -10px rgba(79, 70, 229, 0.12), 0 8px 16px -6px rgba(0, 0, 0, 0.04);
+    }
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+    /* Estilização personalizada do Slider de Salário */
+    input[type=range]::-webkit-slider-thumb {
+      height: 18px;
+      width: 18px;
+      border-radius: 50%;
+      background: #4f46e5;
+      cursor: pointer;
+      -webkit-appearance: none;
+      box-shadow: 0 2px 6px rgba(79, 70, 229, 0.4);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- Floating Global Tooltip Element -->
+  <div id="global-tooltip" class="fixed z-50 pointer-events-none opacity-0 transition-opacity duration-150 text-xs font-semibold bg-slate-900 text-white px-2.5 py-1.5 rounded-lg shadow-xl max-w-xs text-center border border-slate-700/50 leading-snug"></div>
+
+  <!-- Alerta do Protocolo file:// -->
+  <div id="file-protocol-alert" class="hidden bg-amber-500 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium shadow-inner flex items-center justify-center gap-2">
+    <i data-lucide="alert-triangle" class="w-4 h-4 shrink-0"></i>
+    <span>Você abriu a página diretamente pelo arquivo. Para carregar os dados locais, execute <strong>python -m http.server 8000</strong> ou abra pelo atalho <strong>abrir_dashboard.bat</strong>.</span>
+  </div>
+
+  <!-- Header Elegante & Analítico -->
+  <header class="glass-header sticky top-0 z-40 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Logo e Título do Produto (Alinhado com a Logo) -->
+      <div class="flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center shadow-md shadow-brand-500/25 text-white shrink-0" data-tooltip="Radar de Oportunidades Públicas em Tecnologia">
+          <i data-lucide="radar" class="w-6 h-6 animate-pulse"></i>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 leading-none">
+            Radar de Concursos TI
+          </h1>
+          <span id="pipeline-status-badge" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200" data-tooltip="Status da base de dados">
+            <span id="pipeline-status-dot" class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+            <span id="pipeline-status-text">Ativo</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Ações do Topo -->
+      <div class="flex items-center gap-2 sm:gap-2.5">
+        
+        <!-- Botão Meus Alvos (Favoritos) -->
+        <button 
+          id="btn-toggle-alvos" 
+          class="px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 hover:border-amber-400 hover:text-amber-600 transition flex items-center gap-2 text-xs sm:text-[13px] font-bold shadow-sm"
+          data-tooltip="Exibir apenas editais salvos nos favoritos"
+        >
+          <i data-lucide="star" class="w-4 h-4 text-amber-500 shrink-0"></i>
+          <span>Meus Alvos</span>
+          <span id="alvos-badge-count" class="px-1.5 py-0.5 rounded-full bg-slate-100 text-[11px] font-extrabold text-slate-700">0</span>
+        </button>
+
+        <!-- Botão de Atualização com Confirmação -->
+        <button 
+          id="btn-trigger-update" 
+          class="px-3.5 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white transition flex items-center gap-2 text-xs sm:text-[13px] font-bold shadow-sm shadow-brand-500/25"
+          data-tooltip="Recarregar base consolidada (Requer confirmação)"
+        >
+          <i data-lucide="refresh-cw" class="w-4 h-4 shrink-0"></i>
+          <span class="hidden sm:inline">Atualizar Varredura</span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Container Principal -->
+  <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full space-y-7">
+
+    <!-- Seção de Overview / Métricas Dinâmicas -->
+    <section aria-label="Indicadores da Base">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        
+        <!-- Métrica 1: Total de Editais -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm relative overflow-hidden group">
+          <div class="flex items-center justify-between">
+            <p class="text-[12px] font-bold text-slate-500 uppercase tracking-wider">Editais de TI</p>
+            <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center">
+              <i data-lucide="briefcase" class="w-5 h-5"></i>
+            </div>
+          </div>
+          <div class="mt-3 flex items-baseline gap-2">
+            <span id="metric-total-editais" class="text-3xl font-extrabold text-slate-900 tabular-nums">0</span>
+            <span class="text-xs text-slate-500 font-medium">oportunidades</span>
+          </div>
+          <p id="metric-breakdown-niveis" class="text-[13px] text-emerald-600 mt-2 font-medium flex items-center gap-1">
+            <i data-lucide="check-circle-2" class="w-4 h-4 shrink-0"></i>
+            <span>Inscrições ativas e futuras</span>
+          </p>
+        </div>
+
+        <!-- Métrica 2: Cidades Atendidas -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm relative overflow-hidden">
+          <div class="flex items-center justify-between">
+            <p class="text-[12px] font-bold text-slate-500 uppercase tracking-wider">Cidades Atendidas</p>
+            <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center">
+              <i data-lucide="map-pin" class="w-5 h-5"></i>
+            </div>
+          </div>
+          <div class="mt-3 flex items-baseline gap-2">
+            <span id="metric-cidades-count" class="text-3xl font-extrabold text-slate-900 tabular-nums">0</span>
+            <span class="text-xs text-slate-500 font-medium">polos com vagas</span>
+          </div>
+          <p id="metric-cidade-mais-proxima" class="text-[13px] text-slate-500 mt-2 flex items-center gap-1 truncate">
+            <i data-lucide="compass" class="w-4 h-4 shrink-0"></i>
+            <span>Sul de MG e Interior/Capital SP</span>
+          </p>
+        </div>
+
+        <!-- Métrica 3: Raio e Telemetria -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm relative overflow-hidden">
+          <div class="flex items-center justify-between">
+            <p class="text-[12px] font-bold text-slate-500 uppercase tracking-wider">Raio Monitorado</p>
+            <div id="metric-raio-icon-container" class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center">
+              <i id="metric-raio-icon" data-lucide="map" class="w-5 h-5"></i>
+            </div>
+          </div>
+          <div class="mt-3 flex items-baseline gap-2">
+            <span id="metric-raio-km" class="text-3xl font-extrabold text-slate-900 tabular-nums">250</span>
+            <span class="text-xs text-slate-500 font-medium">km de Muzambinho</span>
+          </div>
+          <p id="metric-metodo-rota" class="text-[13px] text-slate-500 mt-2 flex items-center gap-1.5 truncate">
+            <i data-lucide="navigation" class="w-4 h-4 text-purple-500 shrink-0"></i>
+            <span>Distância em linha reta</span>
+          </p>
+        </div>
+
+        <!-- Métrica 4: Maior Salário Encontrado -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm relative overflow-hidden">
+          <div class="flex items-center justify-between">
+            <p class="text-[12px] font-bold text-slate-500 uppercase tracking-wider">Teto Remuneração</p>
+            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+              <i data-lucide="badge-dollar-sign" class="w-5 h-5"></i>
+            </div>
+          </div>
+          <div class="mt-3 flex items-baseline gap-2">
+            <span id="metric-maior-salario" class="text-2xl sm:text-3xl font-extrabold text-slate-900 tabular-nums">Indisponível</span>
+          </div>
+          <p id="metric-media-salarial" class="text-[13px] text-slate-500 mt-2 flex items-center gap-1 truncate">
+            <i data-lucide="graduation-cap" class="w-4 h-4 shrink-0"></i>
+            <span>Médio, Técnico e Superior</span>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Controles Avançados & Filtros (SaaS Style) -->
+    <section class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm space-y-5" aria-label="Painel de Filtros">
+      
+      <!-- Linha 1: Barra de Busca, Filtro UF e Ordenação -->
+      <div class="flex flex-col lg:flex-row gap-4 items-center justify-between">
+        
+        <!-- Campo de Pesquisa Geral -->
+        <div class="relative w-full lg:max-w-md">
+          <i data-lucide="search" class="w-5 h-5 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+          <input 
+            type="text" 
+            id="search-input" 
+            placeholder="Pesquisar cidade, órgão ou termo (ex: Santa Rita, Redes, IFSP)..." 
+            class="w-full pl-10 pr-10 py-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition placeholder:text-slate-400"
+          />
+          <button id="btn-clear-search" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600" title="Limpar pesquisa">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <!-- Filtros Rápidos de UF e Ordenação -->
+        <div class="flex flex-wrap items-center gap-3 w-full lg:w-auto justify-start lg:justify-end">
+          <div class="flex rounded-xl bg-slate-100 p-1 text-xs sm:text-[13px] font-semibold text-slate-600">
+            <button data-filter-uf="TODOS" class="filter-uf-btn px-3 py-1.5 rounded-lg bg-white text-slate-900 shadow-sm transition">Todos</button>
+            <button data-filter-uf="MG" class="filter-uf-btn px-3 py-1.5 rounded-lg hover:text-slate-900 transition">Minas Gerais</button>
+            <button data-filter-uf="SP" class="filter-uf-btn px-3 py-1.5 rounded-lg hover:text-slate-900 transition">São Paulo</button>
+            <button data-filter-uf="RJ" class="filter-uf-btn px-3 py-1.5 rounded-lg hover:text-slate-900 transition">Rio de Janeiro</button>
+          </div>
+
+          <select id="sort-select" class="text-xs sm:text-[13px] font-semibold py-2 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500/20">
+            <option value="prazo-asc" selected>Inscrição mais Urgente</option>
+            <option value="distancia-asc">Menor Distância</option>
+            <option value="salario-desc">Maior Salário</option>
+            <option value="cidade-asc">Cidade (A-Z)</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- Linha 2: Níveis (Médio > Técnico > Superior), Área de Atuação (Chips) e Slider de Salário -->
+      <div class="pt-4 border-t border-slate-100 grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
+        
+        <!-- Checkboxes: Níveis (Ordem: Médio -> Técnico -> Superior) -->
+        <div class="md:col-span-3 space-y-2">
+          <label class="text-xs font-bold text-slate-600 uppercase tracking-wider flex items-center gap-1.5">
+            <i data-lucide="graduation-cap" class="w-4 h-4 text-brand-600"></i>
+            Níveis:
+          </label>
+          <div class="flex items-center gap-3 text-[13px] font-semibold text-slate-700">
+            <label class="inline-flex items-center gap-1.5 cursor-pointer select-none" data-tooltip="Oportunidades de Nível Médio">
+              <input type="checkbox" id="check-medio" value="Médio" class="rounded text-brand-600 focus:ring-brand-500 w-4 h-4">
+              <span>Médio</span>
+            </label>
+            <label class="inline-flex items-center gap-1.5 cursor-pointer select-none" data-tooltip="Oportunidades de Nível Técnico em TI">
+              <input type="checkbox" id="check-tecnico" value="Técnico" class="rounded text-brand-600 focus:ring-brand-500 w-4 h-4">
+              <span>Técnico</span>
+            </label>
+            <label class="inline-flex items-center gap-1.5 cursor-pointer select-none" data-tooltip="Oportunidades de Nível Superior em TI">
+              <input type="checkbox" id="check-superior" value="Superior" checked class="rounded text-brand-600 focus:ring-brand-500 w-4 h-4">
+              <span>Superior</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Chips: Áreas de Atuação -->
+        <div class="md:col-span-5 space-y-2">
+          <label class="text-xs font-bold text-slate-600 uppercase tracking-wider flex items-center gap-1.5">
+            <i data-lucide="layers" class="w-4 h-4 text-brand-600"></i>
+            Área de Atuação:
+          </label>
+          <div class="flex flex-wrap gap-1.5">
+            <button data-chip-area="TODAS" class="chip-area-btn px-3 py-1 rounded-lg text-[13px] font-semibold bg-brand-600 text-white shadow-sm transition">Todas</button>
+            <button data-chip-area="Infraestrutura e Redes" class="chip-area-btn px-3 py-1 rounded-lg text-[13px] font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Infraestrutura e Redes</button>
+            <button data-chip-area="Programação e Sistemas" class="chip-area-btn px-3 py-1 rounded-lg text-[13px] font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Programação e Sistemas</button>
+            <button data-chip-area="Dados e IA" class="chip-area-btn px-3 py-1 rounded-lg text-[13px] font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Dados e IA</button>
+          </div>
+        </div>
+
+        <!-- Slider: Salário Mínimo (Padrão Inicial: R$ 4.000) -->
+        <div class="md:col-span-4 space-y-2">
+          <div class="flex items-center justify-between text-xs">
+            <label for="salary-slider" class="font-bold text-slate-600 uppercase tracking-wider flex items-center gap-1.5">
+              <i data-lucide="wallet" class="w-4 h-4 text-emerald-600"></i>
+              Salário Mínimo:
+            </label>
+            <span id="salary-slider-label" class="font-bold text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-md tabular-nums text-xs">&gt;= R$ 4.000</span>
+          </div>
+          <input 
+            type="range" 
+            id="salary-slider" 
+            min="0" 
+            max="20000" 
+            step="500" 
+            value="4000" 
+            class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"
+            data-tooltip="Filtrar certames por piso salarial comprovado no edital"
+          />
+          <div class="flex justify-between text-xs text-slate-400 font-medium tabular-nums">
+            <span>R$ 0</span>
+            <span>R$ 10.000</span>
+            <span>R$ 20.000+</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Barra de Status da Listagem & Controles de Visualização -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-[13px] text-slate-500 px-1">
+      <div class="flex flex-wrap items-center gap-3">
+        <span id="results-count-text" class="font-semibold text-slate-700">Buscando dados consolidados dos editais...</span>
+        
+        <!-- Botão Alternador de Modo de Visualização (Recolhido / Expandido) -->
+        <button 
+          id="btn-toggle-view-mode" 
+          type="button"
+          class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 hover:text-brand-600 transition text-xs font-semibold shadow-sm select-none"
+          data-tooltip="Alternar todos os cards entre visão compacta e completa"
+        >
+          <i id="view-mode-icon" data-lucide="chevrons-down-up" class="w-3.5 h-3.5 text-brand-600"></i>
+          <span id="view-mode-label">Expandir Cards</span>
+        </button>
+      </div>
+
+      <span id="last-updated-text" class="font-medium text-slate-500 tabular-nums">Última varredura: Indisponível</span>
+    </div>
+
+    <!-- Grid de Cards de Editais (Alinhamento em CSS Grid com auto-stretch para altura 100% uniforme) -->
+    <section id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" aria-label="Lista de Editais">
+      <!-- Cards renderizados dinamicamente via JS -->
+    </section>
+
+    <!-- Estado Vazio / Sem Resultados -->
+    <div id="empty-state" class="hidden text-center py-14 px-5 bg-white rounded-2xl border border-slate-200/80 shadow-sm max-w-lg mx-auto space-y-4">
+      <div id="empty-state-badge" class="hidden inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-700 border border-amber-200 mx-auto">
+        <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400 text-amber-500"></i>
+        <span>Filtro "Meus Alvos" está ativo</span>
+      </div>
+      <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 mx-auto flex items-center justify-center">
+        <i data-lucide="search-x" class="w-6 h-6"></i>
+      </div>
+      <div>
+        <h3 id="empty-state-title" class="text-base font-bold text-slate-900">Nenhum edital encontrado com estes filtros</h3>
+        <p id="empty-state-desc" class="text-xs sm:text-[13px] text-slate-500 mt-1.5 leading-relaxed">
+          Tente ajustar o salário mínimo, marcar outras opções de nível (Médio, Técnico ou Superior), desativar a opção <strong>Meus Alvos</strong> caso esteja ativa ou limpar o termo digitado.
+        </p>
+      </div>
+      <button id="btn-reset-filters" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs sm:text-[13px] font-bold shadow-sm shadow-brand-500/20 transition">
+        <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+        Restaurar Filtros Padrão
+      </button>
+    </div>
+
+  </main>
+
+  <!-- Modal de Confirmação de Atualização (Bloqueio Geral de 3 Horas) -->
+  <div id="modal-confirmacao" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-100 space-y-4">
+      <div class="flex items-start gap-4">
+        <div class="w-11 h-11 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+          <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-slate-900">Atualizar Varredura de Editais?</h3>
+          <p class="text-xs sm:text-[13px] text-slate-500 mt-1 leading-relaxed">
+            Esta operação irá consultar a base consolidada de editais no raio de 250km de Muzambinho. Para garantir estabilidade e preservar recursos das fontes, haverá um <strong>bloqueio geral de 3 horas</strong> após a confirmação.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs sm:text-[13px] text-slate-600 flex items-center gap-2">
+        <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+        <span>Bloqueio geral ativo: 1 atualização a cada 3 horas (independente de sessão).</span>
+      </div>
+
+      <div class="flex items-center justify-end gap-3 pt-2">
+        <button id="btn-modal-cancelar" class="px-4 py-2 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50 text-xs sm:text-[13px] font-bold transition">
+          Cancelar
+        </button>
+        <button id="btn-modal-confirmar" class="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs sm:text-[13px] font-bold shadow-sm shadow-brand-500/25 transition flex items-center gap-2">
+          <i data-lucide="check" class="w-4 h-4"></i>
+          Sim, Atualizar Agora
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast de Notificação -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2.5 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl text-xs sm:text-[13px] font-semibold border border-slate-700/60">
+    <i data-lucide="info" class="w-4 h-4 text-brand-400 shrink-0"></i>
+    <span id="toast-message">Operação executada.</span>
+  </div>
+
+  <!-- Rodapé Executivo de Portfólio & Telemetria -->
+  <footer class="mt-auto border-t border-slate-200/90 bg-white py-6 text-xs sm:text-[13px] text-slate-600">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      
+      <!-- Linha Principal: Identificação do Autor e Redes Profissionais -->
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+        <div class="space-y-1">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-sm font-extrabold text-slate-900 tracking-tight">Bruno Bianchi Leo</span>
+            <span class="px-2 py-0.5 rounded-md text-[11px] font-bold bg-brand-50 text-brand-700 border border-brand-200">
+              Bacharel em Ciência da Computação
+            </span>
+          </div>
+          <p class="text-xs text-slate-500 font-medium">
+            Engenharia de Automação, AI Ops, RevOps &amp; Produto • Projeto de Portfólio (Python + Georreferenciamento IBGE/ORS + CI/CD)
+          </p>
+        </div>
+
+        <!-- Botões de Contato e Portfólio (com SVGs Oficiais Integrados e Alinhamento em Linha) -->
+        <div class="flex items-center gap-2.5 shrink-0 self-start md:self-center">
+          <a
+            href="https://www.linkedin.com/in/bruno-bianchi-leo"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#0a66c2] hover:bg-[#084e96] text-white text-xs font-bold shadow-sm shadow-[#0a66c2]/20 transition"
+            data-tooltip="Acessar perfil de Bruno Bianchi Leo no LinkedIn (linkedin.com/in/bruno-bianchi-leo)"
+          >
+            <svg class="w-4 h-4 shrink-0 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28"/>
+            </svg>
+            <span>LinkedIn</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-80 shrink-0"></i>
+          </a>
+
+          <a
+            href="https://github.com/BBLBruno"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-slate-200 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition shadow-sm"
+            data-tooltip="Acessar repositórios de Bruno Bianchi Leo no GitHub (github.com/BBLBruno)"
+          >
+            <svg class="w-4 h-4 shrink-0 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            <span>GitHub</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-400 shrink-0"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Linha Secundária: Telemetria do Sistema -->
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-slate-500">
+        <span id="footer-left-info" class="font-medium">
+          Radar de Concursos TI • Monitoramento Automatizado (Seg, Qua e Sex)
+        </span>
+        <span id="footer-right-info" class="text-slate-500 tabular-nums font-mono text-xs">
+          Origem: Muzambinho - MG • Raio: 250 km
+        </span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Lógica da Aplicação (JavaScript) -->
+  <script>
+    // Chave de Persistência no LocalStorage
+    const PREFS_KEY = 'radar_concursos_filtros_prefs';
+
+    // Filtros Padrões para Primeira Visita (Tudo recolhido, Superior, Urgente, R$ 4.000)
+    const PREFS_PADRAO = {
+      isCardsCollapsed: true,
+      currentEscolaridades: ['Superior'],
+      currentSort: 'prazo-asc',
+      currentMinSalary: 4000,
+      currentFilterUf: 'TODOS',
+      currentAreaChip: 'TODAS',
+      currentSearchTerm: '',
+      showOnlyAlvos: false
+    };
+
+    // Estado Global (Zero Dados Estáticos / Inventados)
+    let editaisData = [];
+    let metadadosData = {};
+    let alvosSalvos = new Set();
+    let currentFilterUf = 'TODOS';
+    let currentSearchTerm = '';
+    let currentSort = 'prazo-asc';
+    let currentAreaChip = 'TODAS';
+    let currentMinSalary = 4000;
+    let currentEscolaridades = ['Superior'];
+    let showOnlyAlvos = false;
+    let isCoolingDown = false;
+    let isCardsCollapsed = true; // Padrão: Tudo recolhido
+    let individualCardOverrides = new Map(); // editalId -> boolean (true: recolhido, false: expandido)
+    let ultimosEditaisFiltrados = [];
+    let toastTimeout = null;
+
+    // Inicialização da Página
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.location.protocol === 'file:') {
+        document.getElementById('file-protocol-alert').classList.remove('hidden');
+      }
+
+      carregarAlvosDoLocalStorage();
+      carregarPreferencias();
+      sincronizarDOMComEstado();
+      configurarTooltipsGlobais();
+      configurarEventos();
+      iniciarMonitoramentoBloqueioGeral();
+      carregarDados();
+    });
+
+    // 0. Persistência de Filtros & Preferências do Usuário via LocalStorage
+    function carregarPreferencias() {
+      try {
+        const raw = localStorage.getItem(PREFS_KEY);
+        if (raw) {
+          const prefs = JSON.parse(raw);
+          if (prefs.isCardsCollapsed !== undefined) isCardsCollapsed = Boolean(prefs.isCardsCollapsed);
+          if (Array.isArray(prefs.currentEscolaridades) && prefs.currentEscolaridades.length > 0) {
+            currentEscolaridades = prefs.currentEscolaridades;
+          }
+          if (prefs.currentSort) currentSort = prefs.currentSort;
+          if (typeof prefs.currentMinSalary === 'number') currentMinSalary = prefs.currentMinSalary;
+          if (prefs.currentFilterUf) currentFilterUf = prefs.currentFilterUf;
+          if (prefs.currentAreaChip) currentAreaChip = prefs.currentAreaChip;
+          if (typeof prefs.currentSearchTerm === 'string') currentSearchTerm = prefs.currentSearchTerm;
+          if (prefs.showOnlyAlvos !== undefined) showOnlyAlvos = Boolean(prefs.showOnlyAlvos);
+        } else {
+          // Primeira visita: aplicar padrões estritos solicitados
+          isCardsCollapsed = PREFS_PADRAO.isCardsCollapsed;
+          currentEscolaridades = [...PREFS_PADRAO.currentEscolaridades];
+          currentSort = PREFS_PADRAO.currentSort;
+          currentMinSalary = PREFS_PADRAO.currentMinSalary;
+          currentFilterUf = PREFS_PADRAO.currentFilterUf;
+          currentAreaChip = PREFS_PADRAO.currentAreaChip;
+          currentSearchTerm = PREFS_PADRAO.currentSearchTerm;
+          showOnlyAlvos = PREFS_PADRAO.showOnlyAlvos;
+        }
+      } catch (e) {
+        console.warn("Aviso ao carregar preferências de filtros:", e);
+      }
+    }
+
+    function salvarPreferencias() {
+      try {
+        const prefs = {
+          isCardsCollapsed,
+          currentEscolaridades,
+          currentSort,
+          currentMinSalary,
+          currentFilterUf,
+          currentAreaChip,
+          currentSearchTerm,
+          showOnlyAlvos
+        };
+        localStorage.setItem(PREFS_KEY, JSON.stringify(prefs));
+      } catch (e) {
+        console.warn("Aviso ao salvar preferências de filtros:", e);
+      }
+    }
+
+    function sincronizarDOMComEstado() {
+      // 1. Checkboxes de Níveis
+      const checkMedio = document.getElementById('check-medio');
+      const checkTecnico = document.getElementById('check-tecnico');
+      const checkSuperior = document.getElementById('check-superior');
+      if (checkMedio) checkMedio.checked = currentEscolaridades.includes('Médio');
+      if (checkTecnico) checkTecnico.checked = currentEscolaridades.includes('Técnico');
+      if (checkSuperior) checkSuperior.checked = currentEscolaridades.includes('Superior');
+
+      // 2. Slider e Rótulo de Salário
+      const salarySlider = document.getElementById('salary-slider');
+      const salaryLabel = document.getElementById('salary-slider-label');
+      if (salarySlider) salarySlider.value = currentMinSalary;
+      if (salaryLabel) {
+        salaryLabel.textContent = currentMinSalary === 0 
+          ? "Qualquer valor" 
+          : `>= R$ ${currentMinSalary.toLocaleString('pt-BR')}`;
+      }
+
+      // 3. Select de Ordenação
+      const sortSelect = document.getElementById('sort-select');
+      if (sortSelect) sortSelect.value = currentSort;
+
+      // 4. Campo de Busca
+      const searchInput = document.getElementById('search-input');
+      const btnClearSearch = document.getElementById('btn-clear-search');
+      if (searchInput) searchInput.value = currentSearchTerm;
+      if (btnClearSearch) btnClearSearch.classList.toggle('hidden', currentSearchTerm.length === 0);
+
+      // 5. Botões de UF
+      document.querySelectorAll('.filter-uf-btn').forEach(btn => {
+        const uf = btn.getAttribute('data-filter-uf');
+        const isSelected = uf === currentFilterUf;
+        btn.classList.toggle('bg-white', isSelected);
+        btn.classList.toggle('text-slate-900', isSelected);
+        btn.classList.toggle('shadow-sm', isSelected);
+      });
+
+      // 6. Chips de Área
+      document.querySelectorAll('.chip-area-btn').forEach(btn => {
+        const area = btn.getAttribute('data-chip-area');
+        const isSelected = area === currentAreaChip;
+        btn.classList.toggle('bg-brand-600', isSelected);
+        btn.classList.toggle('text-white', isSelected);
+        btn.classList.toggle('shadow-sm', isSelected);
+        btn.classList.toggle('bg-slate-100', !isSelected);
+        btn.classList.toggle('text-slate-600', !isSelected);
+      });
+
+      // 7. Botão Meus Alvos e Botão View Mode
+      atualizarEstiloBotaoAlvos();
+      atualizarBotaoViewMode();
+    }
+
+    // 1. Gestão de Alvos (Favoritos) via LocalStorage
+    function carregarAlvosDoLocalStorage() {
+      try {
+        const raw = localStorage.getItem('alvos_concursos_ti');
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed)) {
+            alvosSalvos = new Set(parsed);
+          }
+        }
+      } catch (e) {
+        alvosSalvos = new Set();
+      }
+      atualizarBadgeAlvos();
+    }
+
+    function toggleAlvo(editalId) {
+      if (alvosSalvos.has(editalId)) {
+        alvosSalvos.delete(editalId);
+        exibirToast("Removido dos Meus Alvos.");
+      } else {
+        alvosSalvos.add(editalId);
+        exibirToast("Adicionado aos Meus Alvos.");
+      }
+      try {
+        localStorage.setItem('alvos_concursos_ti', JSON.stringify([...alvosSalvos]));
+      } catch (e) {}
+      atualizarBadgeAlvos();
+      atualizarDashboard();
+    }
+
+    function atualizarBadgeAlvos() {
+      document.getElementById('alvos-badge-count').textContent = alvosSalvos.size;
+    }
+
+    function atualizarEstiloBotaoAlvos() {
+      const btnToggleAlvos = document.getElementById('btn-toggle-alvos');
+      if (!btnToggleAlvos) return;
+      btnToggleAlvos.classList.toggle('bg-amber-500', showOnlyAlvos);
+      btnToggleAlvos.classList.toggle('text-white', showOnlyAlvos);
+      btnToggleAlvos.classList.toggle('border-amber-500', showOnlyAlvos);
+      btnToggleAlvos.classList.toggle('hover:text-white', showOnlyAlvos);
+      btnToggleAlvos.classList.toggle('bg-white', !showOnlyAlvos);
+      btnToggleAlvos.classList.toggle('text-slate-700', !showOnlyAlvos);
+      btnToggleAlvos.classList.toggle('hover:text-amber-600', !showOnlyAlvos);
+
+      const starIcon = btnToggleAlvos.querySelector('svg') || btnToggleAlvos.querySelector('i');
+      if (starIcon) {
+        starIcon.classList.toggle('text-white', showOnlyAlvos);
+        starIcon.classList.toggle('fill-white', showOnlyAlvos);
+        starIcon.classList.toggle('text-amber-500', !showOnlyAlvos);
+      }
+    }
+
+    // 2. Sistema Global de Tooltips com Tratamento de Bordas de Tela
+    function configurarTooltipsGlobais() {
+      const tooltipEl = document.getElementById('global-tooltip');
+      document.body.addEventListener('mouseover', (e) => {
+        const target = e.target.closest('[data-tooltip]');
+        if (target) {
+          const text = target.getAttribute('data-tooltip');
+          if (!text) return;
+          tooltipEl.textContent = text;
+          tooltipEl.classList.remove('opacity-0');
+          const rect = target.getBoundingClientRect();
+          const tipRect = tooltipEl.getBoundingClientRect();
+          
+          let top = rect.top - tipRect.height - 8;
+          if (top < 8) top = rect.bottom + 8;
+
+          let left = rect.left + (rect.width / 2);
+          const halfWidth = tipRect.width / 2;
+          const margin = 12;
+
+          if (left - halfWidth < margin) {
+            left = halfWidth + margin;
+          } else if (left + halfWidth > window.innerWidth - margin) {
+            left = window.innerWidth - halfWidth - margin;
+          }
+
+          tooltipEl.style.top = `${top}px`;
+          tooltipEl.style.left = `${left}px`;
+          tooltipEl.style.transform = `translateX(-50%)`;
+        }
+      });
+
+      document.body.addEventListener('mouseout', (e) => {
+        const target = e.target.closest('[data-tooltip]');
+        if (target) {
+          tooltipEl.classList.add('opacity-0');
+        }
+      });
+    }
+
+    // 3. Carregamento do JSON com Cache-Busting
+    async function carregarDados() {
+      const resultsText = document.getElementById('results-count-text');
+      const statusDot = document.getElementById('pipeline-status-dot');
+      const statusText = document.getElementById('pipeline-status-text');
+
+      resultsText.textContent = "Buscando dados consolidados dos editais...";
+
+      try {
+        const response = await fetch(`concursos_muzambinho_ti.json?t=${Date.now()}`);
+        if (!response.ok) throw new Error(`HTTP error ${response.status}`);
+
+        const data = await response.json();
+        editaisData = Array.isArray(data.editais) ? data.editais : [];
+        metadadosData = data.metadados || {};
+
+        // Metadados reais no Footer
+        const origem = metadadosData.cidade_origem || 'Muzambinho - MG';
+        const raio = metadadosData.raio_max_km !== undefined ? `${metadadosData.raio_max_km}km` : '250km';
+        const canais = metadadosData.total_canais_monitorados !== undefined ? `${metadadosData.total_canais_monitorados} canais` : '21 canais';
+
+        const footerRight = document.getElementById('footer-right-info');
+        if (footerRight) {
+          footerRight.textContent = `Origem: ${origem} • Raio: ${raio} • Fontes: ${canais}`;
+        }
+
+        if (metadadosData.gerado_em) {
+          const dt = new Date(metadadosData.gerado_em);
+          const dataFormatada = isNaN(dt.getTime()) ? 'Indisponível' : dt.toLocaleString('pt-BR');
+          document.getElementById('last-updated-text').textContent = `Última varredura: ${dataFormatada}`;
+        } else {
+          document.getElementById('last-updated-text').textContent = 'Última varredura: Indisponível';
+        }
+
+        statusDot.className = "w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping";
+        statusText.textContent = "Ativo";
+
+        atualizarMetricasOverview();
+        atualizarDashboard();
+        atualizarEstadoBotaoAtualizar();
+      } catch (error) {
+        console.warn("Aviso ao carregar JSON:", error);
+        editaisData = [];
+        metadadosData = {};
+        statusDot.className = "w-1.5 h-1.5 rounded-full bg-rose-500";
+        statusText.textContent = "Indisponível";
+        resultsText.textContent = "Nenhum arquivo JSON carregado. Verifique o servidor local.";
+        atualizarMetricasOverview();
+        atualizarDashboard();
+        atualizarEstadoBotaoAtualizar();
+      }
+    }
+
+    // 4. Métricas do Overview (100% Dinâmicas a partir do JSON)
+    function atualizarMetricasOverview() {
+      const elTotal = document.getElementById('metric-total-editais');
+      const elBreakdown = document.getElementById('metric-breakdown-niveis');
+      const elCidades = document.getElementById('metric-cidades-count');
+      const elProxima = document.getElementById('metric-cidade-mais-proxima');
+      const elRaio = document.getElementById('metric-raio-km');
+      const elMetodo = document.getElementById('metric-metodo-rota');
+      const elRaioIcon = document.getElementById('metric-raio-icon');
+      const elMaiorSal = document.getElementById('metric-maior-salario');
+      const elMediaSal = document.getElementById('metric-media-salarial');
+
+      if (!editaisData || editaisData.length === 0) {
+        elTotal.textContent = '0';
+        elBreakdown.innerHTML = `<i data-lucide="info" class="w-4 h-4 shrink-0"></i><span>Indisponível</span>`;
+        elCidades.textContent = '0';
+        elProxima.innerHTML = `<i data-lucide="compass" class="w-4 h-4 shrink-0"></i><span>Indisponível</span>`;
+        elRaio.textContent = metadadosData.raio_max_km !== undefined ? metadadosData.raio_max_km : '250';
+        elMetodo.innerHTML = `<i data-lucide="map" class="w-4 h-4 text-purple-500 shrink-0"></i><span>Indisponível</span>`;
+        elMaiorSal.textContent = 'Indisponível';
+        elMediaSal.innerHTML = `<i data-lucide="graduation-cap" class="w-4 h-4 shrink-0"></i><span>Indisponível</span>`;
+        lucide.createIcons();
+        return;
+      }
+
+      // Distribuição por nível
+      const countMT = editaisData.filter(e =>
+        Array.isArray(e.escolaridade_niveis) &&
+        (e.escolaridade_niveis.includes('Médio') || e.escolaridade_niveis.includes('Técnico'))
+      ).length;
+      const countSup = editaisData.filter(e =>
+        Array.isArray(e.escolaridade_niveis) &&
+        e.escolaridade_niveis.includes('Superior')
+      ).length;
+
+      elTotal.textContent = editaisData.length;
+      elBreakdown.innerHTML = `<i data-lucide="check-circle-2" class="w-4 h-4 shrink-0 text-emerald-600"></i><span>${countMT} Médio/Técnico • ${countSup} Superior</span>`;
+
+      // Cidades e polo mais próximo
+      const cidadesSet = new Set(editaisData.filter(e => e.cidade && e.uf).map(e => `${e.cidade}-${e.uf}`));
+      elCidades.textContent = cidadesSet.size;
+
+      const comDistancia = editaisData.filter(e => typeof e.distancia_km === 'number');
+      if (comDistancia.length > 0) {
+        const maisProximo = [...comDistancia].sort((a, b) => a.distancia_km - b.distancia_km)[0];
+        elProxima.innerHTML = `<i data-lucide="map-pin" class="w-4 h-4 text-sky-600 shrink-0"></i><span>Mais próximo: ${maisProximo.cidade} (${maisProximo.distancia_km} km)</span>`;
+      } else {
+        elProxima.innerHTML = `<i data-lucide="compass" class="w-4 h-4 shrink-0"></i><span>Indisponível</span>`;
+      }
+
+      // Raio e telemetria: Se OpenRouteService estiver ativo exibe carro, senão exibe mapa
+      const orsAtivo = Boolean(metadadosData.openrouteservice_ativo);
+      elRaio.textContent = metadadosData.raio_max_km !== undefined ? metadadosData.raio_max_km : '250';
+      if (orsAtivo) {
+        if (elRaioIcon) elRaioIcon.setAttribute('data-lucide', 'car');
+        elMetodo.innerHTML = `<i data-lucide="car" class="w-4 h-4 text-purple-500 shrink-0"></i><span>Distância rodoviária real</span>`;
+      } else {
+        if (elRaioIcon) elRaioIcon.setAttribute('data-lucide', 'map');
+        elMetodo.setAttribute('data-tooltip', 'Distância em linha reta. A estimativa de condução rodoviária está indisponível no momento.');
+        elMetodo.innerHTML = `<i data-lucide="map" class="w-4 h-4 text-purple-500 shrink-0"></i><span>Distância em linha reta</span>`;
+      }
+
+      // Salários
+      const salariosValidos = editaisData
+        .map(e => e.salario_num)
+        .filter(v => typeof v === 'number' && v > 0);
+
+      if (salariosValidos.length > 0) {
+        const maxSal = Math.max(...salariosValidos);
+        const mediaSal = salariosValidos.reduce((acc, v) => acc + v, 0) / salariosValidos.length;
+        elMaiorSal.textContent = `R$ ${maxSal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        elMediaSal.innerHTML = `<i data-lucide="badge-percent" class="w-4 h-4 text-emerald-600 shrink-0"></i><span>Média: R$ ${mediaSal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>`;
+      } else {
+        elMaiorSal.textContent = 'Indisponível';
+        elMediaSal.innerHTML = `<i data-lucide="graduation-cap" class="w-4 h-4 shrink-0"></i><span>Indisponível</span>`;
+      }
+
+      lucide.createIcons();
+    }
+
+    // 5. Configuração de Todos os Eventos da Interface
+    function configurarEventos() {
+      const searchInput = document.getElementById('search-input');
+      const btnClearSearch = document.getElementById('btn-clear-search');
+      const sortSelect = document.getElementById('sort-select');
+      const salarySlider = document.getElementById('salary-slider');
+      const salaryLabel = document.getElementById('salary-slider-label');
+      const btnToggleAlvos = document.getElementById('btn-toggle-alvos');
+      const btnTriggerUpdate = document.getElementById('btn-trigger-update');
+      const modal = document.getElementById('modal-confirmacao');
+      const btnModalCancelar = document.getElementById('btn-modal-cancelar');
+      const btnModalConfirmar = document.getElementById('btn-modal-confirmar');
+      const btnResetFilters = document.getElementById('btn-reset-filters');
+
+      // Busca Textual
+      searchInput.addEventListener('input', (e) => {
+        currentSearchTerm = e.target.value.trim().toLowerCase();
+        btnClearSearch.classList.toggle('hidden', currentSearchTerm.length === 0);
+        salvarPreferencias();
+        atualizarDashboard();
+      });
+
+      btnClearSearch.addEventListener('click', () => {
+        searchInput.value = '';
+        currentSearchTerm = '';
+        btnClearSearch.classList.add('hidden');
+        searchInput.focus();
+        salvarPreferencias();
+        atualizarDashboard();
+      });
+
+      // Filtro de UF
+      document.querySelectorAll('.filter-uf-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          document.querySelectorAll('.filter-uf-btn').forEach(b => {
+            b.classList.remove('bg-white', 'text-slate-900', 'shadow-sm');
+          });
+          e.currentTarget.classList.add('bg-white', 'text-slate-900', 'shadow-sm');
+          currentFilterUf = e.currentTarget.getAttribute('data-filter-uf');
+          salvarPreferencias();
+          atualizarDashboard();
+        });
+      });
+
+      // Chips: Áreas de Atuação
+      document.querySelectorAll('.chip-area-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          document.querySelectorAll('.chip-area-btn').forEach(b => {
+            b.classList.remove('bg-brand-600', 'text-white', 'shadow-sm');
+            b.classList.add('bg-slate-100', 'text-slate-600');
+          });
+          e.currentTarget.classList.remove('bg-slate-100', 'text-slate-600');
+          e.currentTarget.classList.add('bg-brand-600', 'text-white', 'shadow-sm');
+          currentAreaChip = e.currentTarget.getAttribute('data-chip-area');
+          salvarPreferencias();
+          atualizarDashboard();
+        });
+      });
+
+      // Checkboxes de Escolaridade (Ordem: Médio -> Técnico -> Superior)
+      ['check-medio', 'check-tecnico', 'check-superior'].forEach(id => {
+        document.getElementById(id).addEventListener('change', () => {
+          currentEscolaridades = [];
+          if (document.getElementById('check-medio').checked) currentEscolaridades.push('Médio');
+          if (document.getElementById('check-tecnico').checked) currentEscolaridades.push('Técnico');
+          if (document.getElementById('check-superior').checked) currentEscolaridades.push('Superior');
+          salvarPreferencias();
+          atualizarDashboard();
+        });
+      });
+
+      // Slider de Salário
+      salarySlider.addEventListener('input', (e) => {
+        const val = parseInt(e.target.value, 10);
+        currentMinSalary = val;
+        salaryLabel.textContent = val === 0 ? "Qualquer valor" : `>= R$ ${val.toLocaleString('pt-BR')}`;
+        salvarPreferencias();
+        atualizarDashboard();
+      });
+
+      // Ordenação
+      sortSelect.addEventListener('change', (e) => {
+        currentSort = e.target.value;
+        salvarPreferencias();
+        atualizarDashboard();
+      });
+
+      // Toggle Meus Alvos
+      btnToggleAlvos.addEventListener('click', () => {
+        showOnlyAlvos = !showOnlyAlvos;
+        atualizarEstiloBotaoAlvos();
+        salvarPreferencias();
+        atualizarDashboard();
+      });
+
+      // Resetar Filtros (Restaura os Padrões Solicitados e Salva)
+      btnResetFilters.addEventListener('click', () => {
+        restaurarFiltrosPadrao();
+      });
+
+      // Alternador de Visualização dos Cards (Expandir / Recolher Todos)
+      const btnToggleViewMode = document.getElementById('btn-toggle-view-mode');
+      if (btnToggleViewMode) {
+        btnToggleViewMode.addEventListener('click', toggleGlobalViewMode);
+      }
+
+      // Modal de Atualização
+      btnTriggerUpdate.addEventListener('click', () => {
+        const restante = calcularTempoRestanteBloqueio();
+        if (restante > 0) {
+          exibirToast(`Sistema em bloqueio geral. Próxima atualização disponível em ${formatarTempoRestante(restante)}.`);
+          return;
+        }
+        modal.classList.remove('hidden');
+      });
+
+      btnModalCancelar.addEventListener('click', () => {
+        modal.classList.add('hidden');
+      });
+
+      btnModalConfirmar.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        executarAtualizacaoAntiSpam();
+      });
+
+      // Fechar modal ao clicar no backdrop ou com a tecla Escape
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.add('hidden');
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          modal.classList.add('hidden');
+        }
+      });
+    }
+
+    // 5.1 Função de Restauração para os Filtros Padrões
+    function restaurarFiltrosPadrao() {
+      isCardsCollapsed = PREFS_PADRAO.isCardsCollapsed;
+      currentEscolaridades = [...PREFS_PADRAO.currentEscolaridades];
+      currentSort = PREFS_PADRAO.currentSort;
+      currentMinSalary = PREFS_PADRAO.currentMinSalary;
+      currentFilterUf = PREFS_PADRAO.currentFilterUf;
+      currentAreaChip = PREFS_PADRAO.currentAreaChip;
+      currentSearchTerm = PREFS_PADRAO.currentSearchTerm;
+      showOnlyAlvos = PREFS_PADRAO.showOnlyAlvos;
+      individualCardOverrides.clear();
+
+      sincronizarDOMComEstado();
+      salvarPreferencias();
+      atualizarDashboard();
+      exibirToast("Filtros restaurados para o padrão.");
+    }
+
+    // 6. Atualização com Bloqueio Geral de 3 Horas (Global & Independente de Sessão)
+    const INTERVALO_BLOQUEIO_MS = 3 * 60 * 60 * 1000; // 3 Horas (10.800.000 ms)
+    const STORAGE_KEY_BLOQUEIO = 'radar_bloqueio_atualizacao_manual';
+    let timerBloqueioInterval = null;
+
+    function obterUltimoTimestampVarredura() {
+      let tsServidor = 0;
+      if (metadadosData && metadadosData.gerado_em) {
+        const t = new Date(metadadosData.gerado_em).getTime();
+        if (!isNaN(t)) tsServidor = t;
+      }
+      let tsLocal = 0;
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY_BLOQUEIO);
+        if (raw) {
+          const parsed = parseInt(raw, 10);
+          if (!isNaN(parsed)) tsLocal = parsed;
+        }
+      } catch (e) {}
+
+      return Math.max(tsServidor, tsLocal);
+    }
+
+    function calcularTempoRestanteBloqueio() {
+      const ultimoTs = obterUltimoTimestampVarredura();
+      if (!ultimoTs) return 0;
+      const decorrido = Date.now() - ultimoTs;
+      const restante = INTERVALO_BLOQUEIO_MS - decorrido;
+      return restante > 0 ? restante : 0;
+    }
+
+    function formatarTempoRestante(ms) {
+      const totalSegundos = Math.ceil(ms / 1000);
+      const horas = Math.floor(totalSegundos / 3600);
+      const minutos = Math.floor((totalSegundos % 3600) / 60);
+      const segundos = totalSegundos % 60;
+
+      if (horas > 0) {
+        return `${horas}h ${minutos}m`;
+      }
+      if (minutos > 0) {
+        return `${minutos}m ${segundos}s`;
+      }
+      return `${segundos}s`;
+    }
+
+    function atualizarEstadoBotaoAtualizar() {
+      const btn = document.getElementById('btn-trigger-update');
+      if (!btn) return;
+
+      const restante = calcularTempoRestanteBloqueio();
+      if (restante > 0) {
+        isCoolingDown = true;
+        btn.className = "px-3.5 py-2 rounded-xl bg-slate-100 border border-slate-200 text-slate-400 cursor-not-allowed transition flex items-center gap-2 text-xs sm:text-[13px] font-bold shadow-none select-none";
+        btn.innerHTML = `<i data-lucide="lock" class="w-4 h-4 text-slate-400 shrink-0"></i><span class="tabular-nums">Aguarde ${formatarTempoRestante(restante)}</span>`;
+        btn.setAttribute('data-tooltip', `Bloqueio geral ativo (1 varredura a cada 3 horas). Disponível em ${formatarTempoRestante(restante)}.`);
+      } else {
+        isCoolingDown = false;
+        btn.className = "px-3.5 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white transition flex items-center gap-2 text-xs sm:text-[13px] font-bold shadow-sm shadow-brand-500/25 cursor-pointer";
+        btn.innerHTML = `<i data-lucide="refresh-cw" class="w-4 h-4 shrink-0"></i><span class="hidden sm:inline">Atualizar Varredura</span>`;
+        btn.setAttribute('data-tooltip', 'Recarregar base consolidada (Requer confirmação)');
+      }
+      lucide.createIcons();
+    }
+
+    function iniciarMonitoramentoBloqueioGeral() {
+      atualizarEstadoBotaoAtualizar();
+      if (timerBloqueioInterval) clearInterval(timerBloqueioInterval);
+      timerBloqueioInterval = setInterval(() => {
+        atualizarEstadoBotaoAtualizar();
+      }, 5000);
+    }
+
+    function executarAtualizacaoAntiSpam() {
+      const restante = calcularTempoRestanteBloqueio();
+      if (restante > 0) {
+        exibirToast(`Sistema em bloqueio geral. Próxima atualização disponível em ${formatarTempoRestante(restante)}.`);
+        atualizarEstadoBotaoAtualizar();
+        return;
+      }
+
+      const agora = Date.now();
+      try {
+        localStorage.setItem(STORAGE_KEY_BLOQUEIO, agora.toString());
+      } catch (e) {}
+
+      if (metadadosData) {
+        metadadosData.gerado_em = new Date(agora).toISOString();
+      }
+
+      exibirToast("Iniciando sincronização dos editais...");
+      atualizarEstadoBotaoAtualizar();
+
+      carregarDados().then(() => {
+        exibirToast("Base de editais sincronizada. Bloqueio geral ativado (3 horas).");
+      }).catch(() => {
+        exibirToast("Base de editais recarregada.");
+      }).finally(() => {
+        atualizarEstadoBotaoAtualizar();
+      });
+    }
+
+    function exibirToast(mensagem) {
+      const toast = document.getElementById('toast');
+      if (!toast) return;
+      document.getElementById('toast-message').textContent = mensagem;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3500);
+    }
+
+    // 7. SLA de Urgência (Sem emojis; apenas Urgente, Atenção ou Contagem de dias por cor)
+    function calcularSLA(prazoStr) {
+      if (!prazoStr || prazoStr === 'Indisponível') {
+        return {
+          label: "Indisponível",
+          classe: "bg-slate-100 text-slate-600 border-slate-200 font-medium",
+          icon: "calendar",
+          diasRestantes: 9999
+        };
+      }
+
+      const datas = prazoStr.match(/(\d{2})\/(\d{2})\/(\d{4})/g);
+      if (!datas || datas.length === 0) {
+        return {
+          label: "Indisponível",
+          classe: "bg-slate-100 text-slate-600 border-slate-200 font-medium",
+          icon: "calendar",
+          diasRestantes: 9999
+        };
+      }
+
+      const datasValidas = datas.map(dStr => {
+        const [d, m, y] = dStr.split('/').map(Number);
+        return new Date(y, m - 1, d);
+      });
+
+      const dataFinal = new Date(Math.max(...datasValidas));
+      const hoje = new Date();
+      hoje.setHours(0, 0, 0, 0);
+
+      const diffDays = Math.ceil((dataFinal - hoje) / (1000 * 60 * 60 * 24));
+
+      if (diffDays < 0) {
+        return {
+          label: "Encerrado",
+          classe: "bg-slate-100 text-slate-400 border-slate-200 line-through font-medium",
+          icon: "x-circle",
+          diasRestantes: diffDays
+        };
+      }
+
+      // SLA Vermelha Pulsante (Menos de 5 dias ou último dia)
+      if (diffDays <= 5) {
+        const diasTxt = diffDays === 0 ? "Encerra hoje" : (diffDays === 1 ? "1 dia" : `${diffDays} dias`);
+        return {
+          label: `Urgente • ${diasTxt}`,
+          classe: "bg-rose-50 text-rose-700 border-rose-300 font-extrabold animate-pulse",
+          icon: "flame",
+          diasRestantes: diffDays
+        };
+      }
+
+      // SLA Amarela (Menos de 15 dias)
+      if (diffDays <= 15) {
+        return {
+          label: `Atenção • ${diffDays} dias`,
+          classe: "bg-amber-50 text-amber-700 border-amber-300 font-bold",
+          icon: "clock",
+          diasRestantes: diffDays
+        };
+      }
+
+      // SLA Verde (Mais de 15 dias: Apenas contagem de dias e cor, sem a palavra "Confortável")
+      return {
+        label: `${diffDays} dias`,
+        classe: "bg-emerald-50 text-emerald-700 border-emerald-300 font-semibold",
+        icon: "check-circle",
+        diasRestantes: diffDays
+      };
+    }
+
+    // 8. Expandir / Recolher Cargos de um Card Específico
+    window.toggleCargosCard = function(editalId, btn) {
+      const container = document.getElementById(`cargos-extra-${editalId}`);
+      if (!container) return;
+      const isHidden = container.classList.contains('hidden');
+      container.classList.toggle('hidden');
+
+      const toggleText = btn.querySelector('.toggle-text');
+      const chevron = btn.querySelector('svg') || btn.querySelector('i');
+      const extraCount = btn.getAttribute('data-total') || '1';
+
+      if (isHidden) {
+        toggleText.textContent = 'Recolher';
+        if (chevron) chevron.style.transform = 'rotate(180deg)';
+      } else {
+        toggleText.textContent = `+${extraCount} outros`;
+        if (chevron) chevron.style.transform = 'rotate(0deg)';
+      }
+    };
+
+    // 8.1 Alternador Global de Visualização (Expandir / Recolher Todos os Cards)
+    function toggleGlobalViewMode() {
+      isCardsCollapsed = !isCardsCollapsed;
+      individualCardOverrides.clear();
+      atualizarBotaoViewMode();
+      salvarPreferencias();
+      renderizarCards(ultimosEditaisFiltrados);
+      exibirToast(isCardsCollapsed ? "Cards recolhidos (modo compacto ativado)." : "Cards expandidos (modo detalhado ativado).");
+    }
+
+    function atualizarBotaoViewMode() {
+      const label = document.getElementById('view-mode-label');
+      const icon = document.getElementById('view-mode-icon');
+      if (label) {
+        label.textContent = isCardsCollapsed ? "Expandir Cards" : "Recolher Cards";
+      }
+      if (icon) {
+        icon.setAttribute('data-lucide', isCardsCollapsed ? 'chevrons-down-up' : 'chevrons-up-down');
+        lucide.createIcons();
+      }
+    }
+
+    // 8.2 Alternador Individual de Visualização de um Card Específico
+    window.toggleCardSingleView = function(editalId) {
+      const estadoAtual = individualCardOverrides.has(editalId)
+        ? individualCardOverrides.get(editalId)
+        : isCardsCollapsed;
+      individualCardOverrides.set(editalId, !estadoAtual);
+      renderizarCards(ultimosEditaisFiltrados);
+    };
+
+    // 9. Filtragem Matemática, Geográfica e Visual
+    function atualizarDashboard() {
+      let filtrados = editaisData.filter(item => {
+        // Filtro Meus Alvos
+        if (showOnlyAlvos && !alvosSalvos.has(item.id)) {
+          return false;
+        }
+
+        // Filtro UF
+        if (currentFilterUf !== 'TODOS' && item.uf !== currentFilterUf) {
+          return false;
+        }
+
+        // Filtro de Escolaridade (Checkboxes)
+        const niveisItem = Array.isArray(item.escolaridade_niveis) && item.escolaridade_niveis.length > 0
+          ? item.escolaridade_niveis
+          : [];
+        const atendeEscolaridade = currentEscolaridades.some(esc => niveisItem.includes(esc));
+        if (!atendeEscolaridade) {
+          return false;
+        }
+
+        // Filtro de Salário Mínimo
+        if (currentMinSalary > 0) {
+          if (typeof item.salario_num !== 'number' || item.salario_num < currentMinSalary) {
+            return false;
+          }
+        }
+
+        // Filtro de Área de Atuação (Chips)
+        if (currentAreaChip !== 'TODAS') {
+          const areasItem = Array.isArray(item.areas_atuacao) ? item.areas_atuacao : [];
+          if (!areasItem.includes(currentAreaChip)) {
+            return false;
+          }
+        }
+
+        // Filtro de Busca Textual Geral (Busca por Órgão, Cidade, UF, Título, Banca, Cargos ou Áreas)
+        if (currentSearchTerm) {
+          const matchCidade = (item.cidade || '').toLowerCase().includes(currentSearchTerm);
+          const matchUf = (item.uf || '').toLowerCase() === currentSearchTerm;
+          const matchOrgao = (item.orgao || '').toLowerCase().includes(currentSearchTerm);
+          const matchTitulo = (item.titulo || '').toLowerCase().includes(currentSearchTerm);
+          const matchBanca = (item.banca_organizadora || '').toLowerCase().includes(currentSearchTerm);
+          const matchCargos = (item.cargos_ti_identificados || []).some(c => c.toLowerCase().includes(currentSearchTerm));
+          const matchAreas = (item.areas_atuacao || []).some(a => a.toLowerCase().includes(currentSearchTerm));
+          if (!matchCidade && !matchUf && !matchOrgao && !matchTitulo && !matchBanca && !matchCargos && !matchAreas) {
+            return false;
+          }
+        }
+
+        return true;
+      });
+
+      // Ordenação
+      filtrados.sort((a, b) => {
+        if (currentSort === 'distancia-asc') {
+          const da = typeof a.distancia_km === 'number' ? a.distancia_km : 9999;
+          const db = typeof b.distancia_km === 'number' ? b.distancia_km : 9999;
+          return da - db;
+        }
+        if (currentSort === 'salario-desc') {
+          const sa = typeof a.salario_num === 'number' ? a.salario_num : -1;
+          const sb = typeof b.salario_num === 'number' ? b.salario_num : -1;
+          return sb - sa;
+        }
+        if (currentSort === 'cidade-asc') {
+          return (a.cidade || '').localeCompare(b.cidade || '');
+        }
+        if (currentSort === 'prazo-asc') {
+          const aDias = calcularSLA(a.data_limite_inscricao).diasRestantes;
+          const bDias = calcularSLA(b.data_limite_inscricao).diasRestantes;
+          // Ordenação inteligente: urgentes primeiro (0, 1, 2...), sem data no final (15000), encerrados no fim de tudo (20000+)
+          const aScore = aDias < 0 ? 20000 + Math.abs(aDias) : (aDias === 9999 ? 15000 : aDias);
+          const bScore = bDias < 0 ? 20000 + Math.abs(bDias) : (bDias === 9999 ? 15000 : bDias);
+          return aScore - bScore;
+        }
+        return 0;
+      });
+
+      ultimosEditaisFiltrados = filtrados;
+      renderizarCards(filtrados);
+    }
+
+    // 10. Renderização dos Cards Estilizados (Uniformidade de Altura & Modos Expandido/Recolhido)
+    function renderizarCards(editais) {
+      const container = document.getElementById('cards-container');
+      const emptyState = document.getElementById('empty-state');
+      const emptyStateBadge = document.getElementById('empty-state-badge');
+      const emptyStateTitle = document.getElementById('empty-state-title');
+      const emptyStateDesc = document.getElementById('empty-state-desc');
+      const resultsText = document.getElementById('results-count-text');
+
+      container.innerHTML = '';
+
+      if (editais.length === 0) {
+        emptyState.classList.remove('hidden');
+
+        if (showOnlyAlvos) {
+          if (emptyStateBadge) emptyStateBadge.classList.remove('hidden');
+          if (alvosSalvos.size === 0) {
+            resultsText.textContent = "Nenhum resultado com os filtros selecionados (Filtro 'Meus Alvos' está ativo — 0 salvos).";
+            if (emptyStateTitle) emptyStateTitle.textContent = "A opção 'Meus Alvos' está ativa, mas nenhum edital foi salvo";
+            if (emptyStateDesc) {
+              emptyStateDesc.innerHTML = "O filtro <strong>Meus Alvos</strong> está ativo no topo da página. Clique novamente em <strong>Meus Alvos</strong> ou em <strong>Restaurar Filtros Padrão</strong> para exibir todos os editais, e marque a estrela nos cards que desejar acompanhar.";
+            }
+          } else {
+            resultsText.textContent = `Nenhum resultado com os filtros selecionados (Filtro 'Meus Alvos' está ativo — ${alvosSalvos.size} salvo${alvosSalvos.size === 1 ? '' : 's'}).`;
+            if (emptyStateTitle) emptyStateTitle.textContent = "Nenhum edital salvo corresponde aos filtros atuais (Meus Alvos ativo)";
+            if (emptyStateDesc) {
+              emptyStateDesc.innerHTML = "A opção <strong>Meus Alvos</strong> está ativa. Tente ajustar o salário mínimo, marcar outras opções de nível (Médio, Técnico ou Superior), desativar <strong>Meus Alvos</strong> ou limpar o termo digitado.";
+            }
+          }
+        } else {
+          if (emptyStateBadge) emptyStateBadge.classList.add('hidden');
+          resultsText.textContent = "Nenhum resultado com os filtros selecionados.";
+          if (emptyStateTitle) emptyStateTitle.textContent = "Nenhum edital encontrado com estes filtros";
+          if (emptyStateDesc) {
+            emptyStateDesc.innerHTML = "Tente ajustar o salário mínimo, marcar outras opções de nível (Médio, Técnico ou Superior), verificar se a opção <strong>Meus Alvos</strong> está ativa ou limpar o termo digitado.";
+          }
+        }
+
+        lucide.createIcons();
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      const alvosSuffix = showOnlyAlvos ? " • Filtro 'Meus Alvos' ativo" : "";
+      resultsText.textContent = `Exibindo ${editais.length} ${editais.length === 1 ? 'bloco de edital' : 'blocos de editais'} de TI${alvosSuffix}`;
+
+      // Ordem canônica de exibição das badges de escolaridade: Médio > Técnico > Superior
+      const ordemNiveis = ['Médio', 'Técnico', 'Superior'];
+
+      editais.forEach(item => {
+        const card = document.createElement('article');
+        // h-full com CSS Grid garante que todos os cards da mesma linha tenham a exata mesma altura
+        card.className = "h-full bg-white rounded-2xl border border-slate-200/80 p-5 shadow-sm card-hover hover:border-brand-300 flex flex-col justify-between relative group";
+
+        const isFavoritado = alvosSalvos.has(item.id);
+        const sla = calcularSLA(item.data_limite_inscricao);
+
+        // Define se este card específico deve estar recolhido ou expandido
+        const isCollapsed = individualCardOverrides.has(item.id)
+          ? individualCardOverrides.get(item.id)
+          : isCardsCollapsed;
+
+        // Badge de Distância de Condução
+        let badgeDistColor = "bg-emerald-50 text-emerald-700 border-emerald-200";
+        if (item.distancia_km > 120 && item.distancia_km <= 200) {
+          badgeDistColor = "bg-sky-50 text-sky-700 border-sky-200";
+        } else if (item.distancia_km > 200) {
+          badgeDistColor = "bg-purple-50 text-purple-700 border-purple-200";
+        }
+
+        const temRotaCarro = typeof item.distancia_carro_km === 'number' && item.distancia_carro_km > 0;
+        const tempoStr = item.tempo_conducao_formatado && item.tempo_conducao_formatado !== 'Indisponível'
+          ? item.tempo_conducao_formatado
+          : null;
+
+        let iconeDistancia = 'map';
+        let textoDistancia = 'Indisponível';
+        let tooltipDistancia = 'Distância calculada a partir de Muzambinho';
+
+        if (item.distancia_km === 0) {
+          iconeDistancia = 'map-pin';
+          textoDistancia = 'Muzambinho (0 km)';
+          tooltipDistancia = 'Município de origem da busca.';
+        } else if (temRotaCarro && tempoStr) {
+          iconeDistancia = 'car';
+          textoDistancia = `${item.distancia_carro_km} km`;
+          tooltipDistancia = `Distância rodoviária real: ${item.distancia_carro_km} km • Tempo estimado de condução: ${tempoStr}.`;
+        } else {
+          iconeDistancia = 'map';
+          const kmValor = typeof item.distancia_reta_km === 'number' ? item.distancia_reta_km : item.distancia_km;
+          textoDistancia = kmValor ? `${kmValor} km (linha reta)` : 'Indisponível';
+          tooltipDistancia = 'Distância em linha reta. A estimativa de condução rodoviária está indisponível no momento.';
+        }
+
+        // Tags das Áreas
+        const tagsHtml = (Array.isArray(item.areas_atuacao) && item.areas_atuacao.length > 0)
+          ? item.areas_atuacao.map(area => `<span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200/60">#${area}</span>`).join(' ')
+          : '<span class="text-xs text-slate-400 font-medium">#Geral</span>';
+
+        // Escolaridades (Médio > Técnico > Superior)
+        const niveisOrdenados = Array.isArray(item.escolaridade_niveis) && item.escolaridade_niveis.length > 0
+          ? [...item.escolaridade_niveis].sort((a, b) => ordemNiveis.indexOf(a) - ordemNiveis.indexOf(b))
+          : ['Indisponível'];
+
+        const escHtml = niveisOrdenados.map(esc => {
+          let badgeCor = "bg-amber-50 text-amber-700 border-amber-200";
+          if (esc === 'Médio') badgeCor = "bg-sky-50 text-sky-700 border-sky-200";
+          if (esc === 'Superior') badgeCor = "bg-indigo-50 text-indigo-700 border-indigo-200";
+          return `<span class="px-2 py-0.5 rounded text-[11px] font-bold border ${badgeCor}">${esc}</span>`;
+        }).join(' ');
+
+        // Lista de Cargos de TI Identificados
+        const cargosLista = Array.isArray(item.cargos_ti_identificados) && item.cargos_ti_identificados.length > 0
+          ? item.cargos_ti_identificados
+          : ['Indisponível'];
+
+        // Links de Ação
+        const temLinkOficial = item.link_edital_oficial && item.link_edital_oficial !== 'Indisponível';
+        const linkPrincipal = temLinkOficial ? item.link_edital_oficial : item.link_pci;
+        const textoBotao = temLinkOficial ? "Edital Oficial" : "Edital no PCI";
+
+        let corpoCardHtml = '';
+
+        if (isCollapsed) {
+          // ==============================
+          // MODO RECOLHIDO (COMPACTO)
+          // Exibe Cabeçalho + SLA + Órgão (padronizado) + Salário & Nível + Rodapé
+          // ==============================
+          corpoCardHtml = `
+            <div class="flex-1 flex flex-col">
+              <!-- Cabeçalho: Cidade, Distância, Botão de Expandir e Favoritos -->
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <div class="flex items-center gap-1.5 text-[13px] sm:text-sm font-bold text-slate-700 truncate">
+                  <i data-lucide="map-pin" class="w-4 h-4 text-brand-600 shrink-0"></i>
+                  <span class="truncate">${item.cidade || 'Indisponível'} - ${item.uf || 'Indisponível'}</span>
+                </div>
+
+                <div class="flex items-center gap-1.5 shrink-0">
+                  <span 
+                    class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold border ${badgeDistColor}"
+                    data-tooltip="${tooltipDistancia}"
+                  >
+                    <i data-lucide="${iconeDistancia}" class="w-3.5 h-3.5 shrink-0"></i>
+                    <span>${textoDistancia}</span>
+                    ${(temRotaCarro && tempoStr) ? `<span class="text-[11px] opacity-80 font-normal">(${tempoStr})</span>` : ''}
+                  </span>
+
+                  <!-- Botão Expandir Card Individual -->
+                  <button 
+                    type="button"
+                    onclick="toggleCardSingleView('${item.id}')" 
+                    class="p-1 rounded-lg border border-slate-200 hover:border-brand-300 text-slate-400 hover:text-brand-600 transition bg-white"
+                    data-tooltip="Expandir detalhes deste edital"
+                  >
+                    <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                  </button>
+
+                  <!-- Botão de Estrela (Favoritos / Meus Alvos) -->
+                  <button 
+                    onclick="toggleAlvo('${item.id}')" 
+                    class="p-1 rounded-lg border border-slate-200 hover:border-amber-400 text-slate-400 hover:text-amber-500 transition ${isFavoritado ? 'text-amber-500 border-amber-300 bg-amber-50' : 'bg-white'}"
+                    data-tooltip="${isFavoritado ? 'Remover dos Meus Alvos' : 'Salvar nos Meus Alvos'}"
+                  >
+                    <i data-lucide="star" class="w-3.5 h-3.5 ${isFavoritado ? 'fill-amber-400 text-amber-500' : ''}"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- SLA de Urgência de Inscrição -->
+              <div class="mb-3">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg text-xs font-semibold border tabular-nums ${sla.classe}" data-tooltip="Status do prazo de inscrição">
+                  <i data-lucide="${sla.icon}" class="w-3.5 h-3.5 shrink-0"></i>
+                  <span>${sla.label}</span>
+                </span>
+              </div>
+
+              <!-- Nome do Órgão (Estritamente padronizado em 2 linhas) -->
+              <h2 class="text-base sm:text-[17px] font-bold text-slate-900 leading-snug line-clamp-2 min-h-[2.85rem] max-h-[2.85rem] hover:text-brand-600 transition" title="${item.orgao}">
+                ${item.orgao}
+              </h2>
+
+              <!-- Bloco Compacto: Salário e Nível -->
+              <div class="mt-3 p-3 rounded-xl bg-slate-50 border border-slate-100/90 flex items-center justify-between gap-2 flex-wrap">
+                <div class="flex items-center gap-1.5 text-xs sm:text-[13px]">
+                  <span class="font-semibold text-slate-500">Salário:</span>
+                  <span class="text-xs sm:text-[13px] font-extrabold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200 tabular-nums">
+                    ${item.salario_formatado || 'Indisponível'}
+                  </span>
+                </div>
+                <div class="flex items-center gap-1">
+                  ${escHtml}
+                </div>
+              </div>
+            </div>
+          `;
+        } else {
+          // ==============================
+          // MODO EXPANDIDO (COMPLETO)
+          // Exibe Descrição, Bloco Completo e Tags com alturas clamp padronizadas
+          // ==============================
+          let cargosHtml = '';
+          if (cargosLista.length === 1) {
+            cargosHtml = `
+              <div class="pt-2 border-t border-slate-200/60 text-[13px]">
+                <span class="text-xs font-semibold text-slate-500 block mb-1">Cargo TI:</span>
+                <div class="flex items-start gap-1.5 leading-snug text-slate-800 font-medium line-clamp-2 min-h-[2.4rem] max-h-[2.4rem]">
+                  <span class="text-brand-600 font-bold shrink-0">•</span>
+                  <span class="line-clamp-2">${cargosLista[0]}</span>
+                </div>
+              </div>
+            `;
+          } else {
+            cargosHtml = `
+              <div class="pt-2 border-t border-slate-200/60 text-[13px]">
+                <div class="flex items-center justify-between gap-1 mb-1.5">
+                  <span class="text-xs font-semibold text-slate-500">Cargos TI (${cargosLista.length}):</span>
+                  <button 
+                    type="button"
+                    onclick="toggleCargosCard('${item.id}', this)"
+                    data-total="${cargosLista.length - 1}"
+                    class="inline-flex items-center gap-1 text-xs font-bold text-brand-600 hover:text-brand-700 transition cursor-pointer select-none py-0.5 px-1.5 rounded hover:bg-brand-50"
+                    data-tooltip="Expandir todos os cargos deste concurso"
+                  >
+                    <span class="toggle-text">+${cargosLista.length - 1} outros</span>
+                    <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform duration-200"></i>
+                  </button>
+                </div>
+                
+                <!-- Primeiro cargo sempre visível com altura clamp padronizada -->
+                <div class="flex items-start gap-1.5 leading-snug text-slate-800 font-medium line-clamp-2 min-h-[2.4rem] max-h-[2.4rem]">
+                  <span class="text-brand-600 font-bold shrink-0">•</span>
+                  <span class="line-clamp-2">${cargosLista[0]}</span>
+                </div>
+
+                <!-- Demais cargos colapsados por padrão (o usuário expande manualmente) -->
+                <div id="cargos-extra-${item.id}" class="hidden mt-2 pt-2 border-t border-slate-200/50 space-y-1.5 max-h-52 overflow-y-auto pr-1">
+                  ${cargosLista.slice(1).map(c => `
+                    <div class="flex items-start gap-1.5 leading-snug text-slate-700 font-medium">
+                      <span class="text-brand-600 font-bold shrink-0">•</span>
+                      <span>${c}</span>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            `;
+          }
+
+          corpoCardHtml = `
+            <div class="flex-1 flex flex-col">
+              <!-- Cabeçalho: Cidade, Distância, Botão de Recolher e Favoritos -->
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <div class="flex items-center gap-1.5 text-[13px] sm:text-sm font-bold text-slate-700 truncate">
+                  <i data-lucide="map-pin" class="w-4 h-4 text-brand-600 shrink-0"></i>
+                  <span class="truncate">${item.cidade || 'Indisponível'} - ${item.uf || 'Indisponível'}</span>
+                </div>
+
+                <div class="flex items-center gap-1.5 shrink-0">
+                  <span 
+                    class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold border ${badgeDistColor}"
+                    data-tooltip="${tooltipDistancia}"
+                  >
+                    <i data-lucide="${iconeDistancia}" class="w-3.5 h-3.5 shrink-0"></i>
+                    <span>${textoDistancia}</span>
+                    ${(temRotaCarro && tempoStr) ? `<span class="text-[11px] opacity-80 font-normal">(${tempoStr})</span>` : ''}
+                  </span>
+
+                  <!-- Botão Recolher Card Individual -->
+                  <button 
+                    type="button"
+                    onclick="toggleCardSingleView('${item.id}')" 
+                    class="p-1 rounded-lg border border-slate-200 hover:border-brand-300 text-slate-400 hover:text-brand-600 transition bg-white"
+                    data-tooltip="Recolher detalhes deste edital"
+                  >
+                    <i data-lucide="minimize-2" class="w-3.5 h-3.5"></i>
+                  </button>
+
+                  <!-- Botão de Estrela (Favoritos / Meus Alvos) -->
+                  <button 
+                    onclick="toggleAlvo('${item.id}')" 
+                    class="p-1 rounded-lg border border-slate-200 hover:border-amber-400 text-slate-400 hover:text-amber-500 transition ${isFavoritado ? 'text-amber-500 border-amber-300 bg-amber-50' : 'bg-white'}"
+                    data-tooltip="${isFavoritado ? 'Remover dos Meus Alvos' : 'Salvar nos Meus Alvos'}"
+                  >
+                    <i data-lucide="star" class="w-3.5 h-3.5 ${isFavoritado ? 'fill-amber-400 text-amber-500' : ''}"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- SLA de Urgência de Inscrição -->
+              <div class="mb-3">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg text-xs font-semibold border tabular-nums ${sla.classe}" data-tooltip="Status do prazo de inscrição">
+                  <i data-lucide="${sla.icon}" class="w-3.5 h-3.5 shrink-0"></i>
+                  <span>${sla.label}</span>
+                </span>
+              </div>
+
+              <!-- Nome do Órgão (Padronizado em 2 linhas) -->
+              <h2 class="text-base sm:text-[17px] font-bold text-slate-900 leading-snug line-clamp-2 min-h-[2.85rem] max-h-[2.85rem] hover:text-brand-600 transition" title="${item.orgao}">
+                ${item.orgao}
+              </h2>
+
+              <!-- Descrição do Concurso (Padronizada em 2 linhas) -->
+              <p class="text-xs sm:text-[13px] text-slate-500 mt-1 line-clamp-2 min-h-[2.5rem] max-h-[2.5rem] leading-relaxed" title="${item.titulo}">
+                ${item.titulo}
+              </p>
+
+              <!-- Bloco de Destaque: Salário, Nível e Cargos -->
+              <div class="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-100/90 space-y-2">
+                <div class="flex items-center gap-1.5 text-xs sm:text-[13px] flex-wrap">
+                  <span class="font-semibold text-slate-500">Salário:</span>
+                  <span class="text-xs sm:text-[13px] font-extrabold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200 tabular-nums">
+                    ${item.salario_formatado || 'Indisponível'}
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-1.5 text-xs sm:text-[13px] flex-wrap">
+                  <span class="font-semibold text-slate-500">Nível:</span>
+                  <div class="flex flex-wrap gap-1">
+                    ${escHtml}
+                  </div>
+                </div>
+
+                <!-- Cargos TI com primeiro item nivelado e restante recolhido -->
+                ${cargosHtml}
+              </div>
+
+              <!-- Tags das Áreas (Limitadas em 1 linha de altura para evitar desalinhamento) -->
+              <div class="mt-3 flex flex-wrap gap-1.5 h-7 overflow-hidden">
+                ${tagsHtml}
+              </div>
+            </div>
+          `;
+        }
+
+        // Rodapé Comum a Todos os Cards (Alinhado estritamente na base via mt-auto)
+        card.innerHTML = `
+          ${corpoCardHtml}
+
+          <div class="mt-auto pt-4 border-t border-slate-100 flex flex-col gap-3">
+            <div class="flex items-center justify-between text-xs sm:text-[13px] font-medium text-slate-500">
+              <span class="flex items-center gap-1.5">
+                <i data-lucide="calendar" class="w-4 h-4 text-slate-400"></i>
+                Inscrições até:
+              </span>
+              <span class="font-bold text-slate-800 tabular-nums">${item.data_limite_inscricao || 'Indisponível'}</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <a 
+                href="${linkPrincipal}" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs sm:text-[13px] font-bold shadow-sm shadow-brand-500/20 transition"
+                data-tooltip="Abrir edital oficial ou banca"
+              >
+                <span>${textoBotao}</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5 shrink-0"></i>
+              </a>
+
+              <a 
+                href="${item.link_pci}" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs sm:text-[13px] font-semibold transition"
+                data-tooltip="Ver resumo no PCI Concursos"
+              >
+                <span>PCI Notícia</span>
+                <i data-lucide="newspaper" class="w-3.5 h-3.5 text-slate-400 shrink-0"></i>
+              </a>
+            </div>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

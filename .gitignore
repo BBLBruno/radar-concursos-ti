@@ -1,0 +1,22 @@
+# Python cache e artefatos locais
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+
+# Variáveis de ambiente locais (chaves de API privadas)
+.env
+.env.local
+
+# Diretórios de deploy e editores
+.vercel/
+.vscode/
+.idea/
+
+# Arquivos temporários do sistema operacional
+.DS_Store
+Thumbs.db
