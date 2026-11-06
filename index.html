@@ -96,18 +96,18 @@
 
   <!-- Header Elegante & Analítico -->
   <header class="glass-header sticky top-0 z-40 transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3 sm:gap-4">
       
       <!-- Logo e Título do Produto (Alinhado com a Logo) -->
-      <div class="flex items-center gap-3.5">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center shadow-md shadow-brand-500/25 text-white shrink-0" data-tooltip="Radar de Oportunidades Públicas em Tecnologia">
-          <i data-lucide="radar" class="w-6 h-6 animate-pulse"></i>
+      <div class="flex items-center gap-2.5 sm:gap-3.5 min-w-0">
+        <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center shadow-md shadow-brand-500/25 text-white shrink-0" data-tooltip="Radar de Oportunidades Públicas em Tecnologia">
+          <i data-lucide="radar" class="w-5 h-5 sm:w-6 sm:h-6 animate-pulse"></i>
         </div>
-        <div class="flex items-center gap-2.5">
-          <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 leading-none">
+        <div class="flex items-center gap-2 sm:gap-2.5 min-w-0">
+          <h1 class="text-base sm:text-2xl font-extrabold tracking-tight text-slate-900 leading-none truncate">
             Radar de Concursos TI
           </h1>
-          <span id="pipeline-status-badge" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200" data-tooltip="Status da base de dados">
+          <span id="pipeline-status-badge" class="inline-flex items-center gap-1.5 px-2 sm:px-2.5 py-0.5 rounded-full text-[11px] sm:text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 shrink-0" data-tooltip="Status da base de dados">
             <span id="pipeline-status-dot" class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
             <span id="pipeline-status-text">Ativo</span>
           </span>
@@ -115,27 +115,17 @@
       </div>
 
       <!-- Ações do Topo -->
-      <div class="flex items-center gap-2 sm:gap-2.5">
+      <div class="flex items-center gap-2 shrink-0">
         
         <!-- Botão Meus Alvos (Favoritos) -->
         <button 
           id="btn-toggle-alvos" 
-          class="px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 hover:border-amber-400 hover:text-amber-600 transition flex items-center gap-2 text-xs sm:text-[13px] font-bold shadow-sm"
+          class="px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl border border-slate-200 bg-white text-slate-700 hover:border-amber-400 hover:text-amber-600 transition flex items-center gap-1.5 sm:gap-2 text-xs sm:text-[13px] font-bold shadow-sm whitespace-nowrap"
           data-tooltip="Exibir apenas editais salvos nos favoritos"
         >
           <i data-lucide="star" class="w-4 h-4 text-amber-500 shrink-0"></i>
           <span>Meus Alvos</span>
           <span id="alvos-badge-count" class="px-1.5 py-0.5 rounded-full bg-slate-100 text-[11px] font-extrabold text-slate-700">0</span>
-        </button>
-
-        <!-- Botão de Atualização com Confirmação -->
-        <button 
-          id="btn-trigger-update" 
-          class="px-3.5 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white transition flex items-center gap-2 text-xs sm:text-[13px] font-bold shadow-sm shadow-brand-500/25"
-          data-tooltip="Recarregar base consolidada (Requer confirmação)"
-        >
-          <i data-lucide="refresh-cw" class="w-4 h-4 shrink-0"></i>
-          <span class="hidden sm:inline">Atualizar Varredura</span>
         </button>
 
       </div>
@@ -379,44 +369,6 @@
 
   </main>
 
-  <!-- Modal de Confirmação de Atualização (Bloqueio Geral de 3 Horas) -->
-  <div id="modal-confirmacao" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-100 space-y-4">
-      <div class="flex items-start gap-4">
-        <div class="w-11 h-11 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
-          <i data-lucide="refresh-cw" class="w-5 h-5"></i>
-        </div>
-        <div>
-          <h3 class="text-base font-bold text-slate-900">Sincronizar Varredura de Editais?</h3>
-          <p class="text-xs sm:text-[13px] text-slate-500 mt-1 leading-relaxed">
-            Esta ação sincroniza em tempo real o dashboard com a base consolidada de editais (raio de 250km de Muzambinho). As varreduras automáticas nos 21 canais são processadas em segundo plano via <strong>GitHub Actions</strong> (Seg, Qua e Sex) ou terminal Python.
-          </p>
-          <div class="mt-2.5">
-            <a href="https://github.com/BBLBruno/radar-concursos-ti/actions" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-700 transition">
-              <span>Acompanhar execuções no GitHub Actions</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs sm:text-[13px] text-slate-600 flex items-center gap-2">
-        <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
-        <span>Bloqueio operacional: 1 requisição a cada 3 horas (independente de sessão).</span>
-      </div>
-
-      <div class="flex items-center justify-end gap-3 pt-2">
-        <button id="btn-modal-cancelar" class="px-4 py-2 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50 text-xs sm:text-[13px] font-bold transition">
-          Cancelar
-        </button>
-        <button id="btn-modal-confirmar" class="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs sm:text-[13px] font-bold shadow-sm shadow-brand-500/25 transition flex items-center gap-2">
-          <i data-lucide="check" class="w-4 h-4"></i>
-          Sim, Atualizar Agora
-        </button>
-      </div>
-    </div>
-  </div>
-
   <!-- Toast de Notificação -->
   <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2.5 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl text-xs sm:text-[13px] font-semibold border border-slate-700/60">
     <i data-lucide="info" class="w-4 h-4 text-brand-400 shrink-0"></i>
@@ -476,7 +428,7 @@
       <!-- Linha Secundária: Telemetria do Sistema -->
       <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-slate-500">
         <span id="footer-left-info" class="font-medium">
-          Radar de Concursos TI • Monitoramento Automatizado (Seg, Qua e Sex)
+          Radar de Concursos TI • Monitoramento Automatizado (Segunda, Quarta e Sexta)
         </span>
         <span id="footer-right-info" class="text-slate-500 tabular-nums font-mono text-xs">
           Origem: Muzambinho - MG • Raio: 250 km
@@ -514,7 +466,6 @@
     let currentMinSalary = 4000;
     let currentEscolaridades = ['Superior'];
     let showOnlyAlvos = false;
-    let isCoolingDown = false;
     let isCardsCollapsed = true; // Padrão: Tudo recolhido
     let individualCardOverrides = new Map(); // editalId -> boolean (true: recolhido, false: expandido)
     let ultimosEditaisFiltrados = [];
@@ -531,7 +482,6 @@
       sincronizarDOMComEstado();
       configurarTooltipsGlobais();
       configurarEventos();
-      iniciarMonitoramentoBloqueioGeral();
       carregarDados();
     });
 
@@ -772,7 +722,6 @@
 
         atualizarMetricasOverview();
         atualizarDashboard();
-        atualizarEstadoBotaoAtualizar();
       } catch (error) {
         console.warn("Aviso ao carregar JSON:", error);
         editaisData = [];
@@ -782,7 +731,6 @@
         resultsText.textContent = "Nenhum arquivo JSON carregado. Verifique o servidor local.";
         atualizarMetricasOverview();
         atualizarDashboard();
-        atualizarEstadoBotaoAtualizar();
       }
     }
 
@@ -874,10 +822,6 @@
       const salarySlider = document.getElementById('salary-slider');
       const salaryLabel = document.getElementById('salary-slider-label');
       const btnToggleAlvos = document.getElementById('btn-toggle-alvos');
-      const btnTriggerUpdate = document.getElementById('btn-trigger-update');
-      const modal = document.getElementById('modal-confirmacao');
-      const btnModalCancelar = document.getElementById('btn-modal-cancelar');
-      const btnModalConfirmar = document.getElementById('btn-modal-confirmar');
       const btnResetFilters = document.getElementById('btn-reset-filters');
 
       // Busca Textual
@@ -971,36 +915,6 @@
       if (btnToggleViewMode) {
         btnToggleViewMode.addEventListener('click', toggleGlobalViewMode);
       }
-
-      // Modal de Atualização
-      btnTriggerUpdate.addEventListener('click', () => {
-        const restante = calcularTempoRestanteBloqueio();
-        if (restante > 0) {
-          exibirToast(`Sistema em bloqueio geral. Próxima atualização disponível em ${formatarTempoRestante(restante)}.`);
-          return;
-        }
-        modal.classList.remove('hidden');
-      });
-
-      btnModalCancelar.addEventListener('click', () => {
-        modal.classList.add('hidden');
-      });
-
-      btnModalConfirmar.addEventListener('click', () => {
-        modal.classList.add('hidden');
-        executarAtualizacaoAntiSpam();
-      });
-
-      // Fechar modal ao clicar no backdrop ou com a tecla Escape
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) modal.classList.add('hidden');
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-          modal.classList.add('hidden');
-        }
-      });
     }
 
     // 5.1 Função de Restauração para os Filtros Padrões
@@ -1021,111 +935,7 @@
       exibirToast("Filtros restaurados para o padrão.");
     }
 
-    // 6. Atualização com Bloqueio Geral de 3 Horas (Global & Independente de Sessão)
-    const INTERVALO_BLOQUEIO_MS = 3 * 60 * 60 * 1000; // 3 Horas (10.800.000 ms)
-    const STORAGE_KEY_BLOQUEIO = 'radar_bloqueio_atualizacao_manual';
-    let timerBloqueioInterval = null;
-
-    function obterUltimoTimestampVarredura() {
-      let tsServidor = 0;
-      if (metadadosData && metadadosData.gerado_em) {
-        const t = new Date(metadadosData.gerado_em).getTime();
-        if (!isNaN(t)) tsServidor = t;
-      }
-      let tsLocal = 0;
-      try {
-        const raw = localStorage.getItem(STORAGE_KEY_BLOQUEIO);
-        if (raw) {
-          const parsed = parseInt(raw, 10);
-          if (!isNaN(parsed)) tsLocal = parsed;
-        }
-      } catch (e) {}
-
-      return Math.max(tsServidor, tsLocal);
-    }
-
-    function calcularTempoRestanteBloqueio() {
-      const ultimoTs = obterUltimoTimestampVarredura();
-      if (!ultimoTs) return 0;
-      const decorrido = Date.now() - ultimoTs;
-      const restante = INTERVALO_BLOQUEIO_MS - decorrido;
-      return restante > 0 ? restante : 0;
-    }
-
-    function formatarTempoRestante(ms) {
-      const totalSegundos = Math.ceil(ms / 1000);
-      const horas = Math.floor(totalSegundos / 3600);
-      const minutos = Math.floor((totalSegundos % 3600) / 60);
-      const segundos = totalSegundos % 60;
-
-      if (horas > 0) {
-        return `${horas}h ${minutos}m`;
-      }
-      if (minutos > 0) {
-        return `${minutos}m ${segundos}s`;
-      }
-      return `${segundos}s`;
-    }
-
-    function atualizarEstadoBotaoAtualizar() {
-      const btn = document.getElementById('btn-trigger-update');
-      if (!btn) return;
-
-      const restante = calcularTempoRestanteBloqueio();
-      if (restante > 0) {
-        isCoolingDown = true;
-        btn.className = "px-3.5 py-2 rounded-xl bg-slate-100 border border-slate-200 text-slate-400 cursor-not-allowed transition flex items-center gap-2 text-xs sm:text-[13px] font-bold shadow-none select-none";
-        btn.innerHTML = `<i data-lucide="lock" class="w-4 h-4 text-slate-400 shrink-0"></i><span class="tabular-nums">Aguarde ${formatarTempoRestante(restante)}</span>`;
-        btn.setAttribute('data-tooltip', `Bloqueio geral ativo (1 varredura a cada 3 horas). Disponível em ${formatarTempoRestante(restante)}.`);
-      } else {
-        isCoolingDown = false;
-        btn.className = "px-3.5 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white transition flex items-center gap-2 text-xs sm:text-[13px] font-bold shadow-sm shadow-brand-500/25 cursor-pointer";
-        btn.innerHTML = `<i data-lucide="refresh-cw" class="w-4 h-4 shrink-0"></i><span class="hidden sm:inline">Atualizar Varredura</span>`;
-        btn.setAttribute('data-tooltip', 'Recarregar base consolidada (Requer confirmação)');
-      }
-      lucide.createIcons();
-    }
-
-    function iniciarMonitoramentoBloqueioGeral() {
-      atualizarEstadoBotaoAtualizar();
-      if (timerBloqueioInterval) clearInterval(timerBloqueioInterval);
-      timerBloqueioInterval = setInterval(() => {
-        atualizarEstadoBotaoAtualizar();
-      }, 5000);
-    }
-
-    function executarAtualizacaoAntiSpam() {
-      const restante = calcularTempoRestanteBloqueio();
-      if (restante > 0) {
-        exibirToast(`Sistema em bloqueio operacional. Próxima sincronização disponível em ${formatarTempoRestante(restante)}.`);
-        atualizarEstadoBotaoAtualizar();
-        return;
-      }
-
-      const agora = Date.now();
-      try {
-        localStorage.setItem(STORAGE_KEY_BLOQUEIO, agora.toString());
-      } catch (e) {}
-
-      const geradoEmAnterior = metadadosData ? metadadosData.gerado_em : null;
-
-      exibirToast("Sincronizando dados consolidados dos editais...");
-      atualizarEstadoBotaoAtualizar();
-
-      carregarDados().then(() => {
-        const novoGeradoEm = metadadosData ? metadadosData.gerado_em : null;
-        if (novoGeradoEm && novoGeradoEm !== geradoEmAnterior) {
-          exibirToast("Base sincronizada com nova varredura de editais!");
-        } else {
-          exibirToast("Base sincronizada. Você já está na versão mais recente disponível.");
-        }
-      }).catch(() => {
-        exibirToast("Base de editais recarregada com sucesso.");
-      }).finally(() => {
-        atualizarEstadoBotaoAtualizar();
-      });
-    }
-
+    // 6. Notificações Toast
     function exibirToast(mensagem) {
       const toast = document.getElementById('toast');
       if (!toast) return;
@@ -1474,10 +1284,10 @@
           corpoCardHtml = `
             <div class="flex-1 flex flex-col">
               <!-- Cabeçalho: Cidade, Distância, Botão de Expandir e Favoritos -->
-              <div class="flex items-center justify-between gap-2 mb-3">
-                <div class="flex items-center gap-1.5 text-[13px] sm:text-sm font-bold text-slate-700 truncate">
+              <div class="flex items-center justify-between gap-2 mb-3 min-w-0">
+                <div class="flex items-center gap-1.5 text-[13px] sm:text-sm font-bold text-slate-700 min-w-0 flex-1 mr-1">
                   <i data-lucide="map-pin" class="w-4 h-4 text-brand-600 shrink-0"></i>
-                  <span class="truncate">${item.cidade || 'Indisponível'} - ${item.uf || 'Indisponível'}</span>
+                  <span class="truncate min-w-0 block cidade-truncate-target" data-full-cidade="${item.cidade || 'Indisponível'} - ${item.uf || 'Indisponível'}">${item.cidade || 'Indisponível'} - ${item.uf || 'Indisponível'}</span>
                 </div>
 
                 <div class="flex items-center gap-1.5 shrink-0">
@@ -1593,10 +1403,10 @@
           corpoCardHtml = `
             <div class="flex-1 flex flex-col">
               <!-- Cabeçalho: Cidade, Distância, Botão de Recolher e Favoritos -->
-              <div class="flex items-center justify-between gap-2 mb-3">
-                <div class="flex items-center gap-1.5 text-[13px] sm:text-sm font-bold text-slate-700 truncate">
+              <div class="flex items-center justify-between gap-2 mb-3 min-w-0">
+                <div class="flex items-center gap-1.5 text-[13px] sm:text-sm font-bold text-slate-700 min-w-0 flex-1 mr-1">
                   <i data-lucide="map-pin" class="w-4 h-4 text-brand-600 shrink-0"></i>
-                  <span class="truncate">${item.cidade || 'Indisponível'} - ${item.uf || 'Indisponível'}</span>
+                  <span class="truncate min-w-0 block cidade-truncate-target" data-full-cidade="${item.cidade || 'Indisponível'} - ${item.uf || 'Indisponível'}">${item.cidade || 'Indisponível'} - ${item.uf || 'Indisponível'}</span>
                 </div>
 
                 <div class="flex items-center gap-1.5 shrink-0">
@@ -1719,7 +1529,30 @@
       });
 
       lucide.createIcons();
+      ajustarTooltipsCidadesTruncadas();
+      requestAnimationFrame(ajustarTooltipsCidadesTruncadas);
     }
+
+    // 11. Ajuste Dinâmico de Tooltips para Cidades Truncadas (Ativa tooltip estritamente quando há corte visual)
+    function ajustarTooltipsCidadesTruncadas() {
+      document.querySelectorAll('.cidade-truncate-target').forEach(el => {
+        // Se o scrollWidth for maior que o clientWidth, o nome da cidade foi truncado com reticências
+        if (el.scrollWidth > el.clientWidth) {
+          const nomeCompleto = el.getAttribute('data-full-cidade');
+          if (nomeCompleto) {
+            el.setAttribute('data-tooltip', nomeCompleto);
+            el.classList.add('cursor-help');
+          }
+        } else {
+          el.removeAttribute('data-tooltip');
+          el.classList.remove('cursor-help');
+        }
+      });
+    }
+
+    window.addEventListener('resize', () => {
+      ajustarTooltipsCidadesTruncadas();
+    });
   </script>
 </body>
 </html>
