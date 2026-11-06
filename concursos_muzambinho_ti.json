@@ -1,21 +1,21 @@
 {
   "metadados": {
-    "gerado_em": "2026-10-29T11:50:17.597465",
+    "gerado_em": "2026-11-06T18:55:18.136661",
     "cidade_origem": "Muzambinho - MG",
     "coordenadas_origem": [
       -21.3708,
       -46.5264
     ],
     "raio_max_km": 250.0,
-    "openrouteservice_ativo": false,
-    "metodo_distancia_ativo": "Geodésico Oficial IBGE (Linha Reta)",
+    "openrouteservice_ativo": true,
+    "metodo_distancia_ativo": "OpenRouteService (driving-car)",
     "escopo_escolaridade": [
       "Médio",
       "Técnico",
       "Superior"
     ],
     "area_atuacao": "Tecnologia da Informação / Computação",
-    "total_editais_encontrados": 22,
+    "total_editais_encontrados": 18,
     "total_canais_monitorados": 21,
     "fontes_consultadas": [
       "Sudeste",
@@ -47,16 +47,16 @@
       "orgao": "MGS - Minas Gerais Administração e Serviços S.A.",
       "cidade": "Guaxupé",
       "uf": "MG",
-      "distancia_km": 20.2,
-      "distancia_carro_km": null,
+      "distancia_km": 26.9,
+      "distancia_carro_km": 26.9,
       "distancia_reta_km": 20.2,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
+      "tempo_conducao_min": 31,
+      "tempo_conducao_formatado": "31 min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "MGS abre processo seletivo com vagas imediatas e cadastro de reserva em diversas áreas",
       "link_pci": "https://www.pciconcursos.com.br/noticias/mgs-abre-processo-seletivo-com-vagas-imediatas-e-cadastro-de-reserva-em-diversas-areas",
-      "link_edital_oficial": "https://www.ibfc.org.br/",
-      "banca_organizadora": "IBFC",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
       "vagas_salario": "643 vagas até R$ 3.911,17 Vários Cargos Fundamental / Médio / Técnico",
       "salario_num": 3911.17,
       "salario_formatado": "Até R$ 3.911,17",
@@ -71,23 +71,23 @@
       "cargos_ti_identificados": [
         "Técnico Especializado em Informática"
       ],
-      "data_extracao": "2026-10-29T11:50:15.435423"
+      "data_extracao": "2026-11-06T18:55:17.509181"
     },
     {
       "id": "fundacaoeducacionalguacuanaspabreconcursopublicoparabibliotecarioetecnicoeminformatica-mt",
       "orgao": "FEG - Fundação Educacional Guaçuana",
       "cidade": "Mogi Guaçu",
       "uf": "SP",
-      "distancia_km": 118.9,
-      "distancia_carro_km": null,
+      "distancia_km": 161.8,
+      "distancia_carro_km": 161.8,
       "distancia_reta_km": 118.9,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
+      "tempo_conducao_min": 142,
+      "tempo_conducao_formatado": "2h 22min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "Fundação Educacional Guaçuana - SP abre concurso público para Bibliotecário e Técnico em Informática",
       "link_pci": "https://www.pciconcursos.com.br/noticias/fundacao-educacional-guacuana-sp-abre-concurso-publico-para-bibliotecario-e-tecnico-em-informatica",
-      "link_edital_oficial": "https://www.publiconsult.com.br/",
-      "banca_organizadora": "www.publiconsult.com.br",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
       "vagas_salario": "2 vagas até R$ 2.969,41 Bibliotecário, Técnico em Informática Médio / Técnico / Superior",
       "salario_num": 2969.41,
       "salario_formatado": "Até R$ 2.969,41",
@@ -102,23 +102,23 @@
       "cargos_ti_identificados": [
         "Técnico em Informática (1 vaga e cadastro de reserva)"
       ],
-      "data_extracao": "2026-10-29T11:49:10.632598"
+      "data_extracao": "2026-11-06T18:54:37.320587"
     },
     {
       "id": "prefeituradelemespabreconcursopublicocomsalariosdeate13359-sup",
       "orgao": "Prefeitura de Leme",
       "cidade": "Leme",
       "uf": "SP",
-      "distancia_km": 126.3,
-      "distancia_carro_km": null,
+      "distancia_km": 167.5,
+      "distancia_carro_km": 167.5,
       "distancia_reta_km": 126.3,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
+      "tempo_conducao_min": 157,
+      "tempo_conducao_formatado": "2h 37min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "Prefeitura de Leme - SP abre concurso público com salários de até R$ 13.359,44",
       "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-leme-sp-abre-concurso-publico-com-salarios-de-ate-13359",
-      "link_edital_oficial": "https://indepac.selecao.net.br/informacoes/121/",
-      "banca_organizadora": "INDEPAC",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
       "vagas_salario": "29 vagas até R$ 13.359,44 Vários Cargos Fundamental / Médio / Técnico / Superior",
       "salario_num": 13359.44,
       "salario_formatado": "Até R$ 13.359,44",
@@ -128,27 +128,27 @@
       "areas_atuacao": [
         "Programação e Sistemas"
       ],
-      "data_limite_inscricao": "30/10 a 30/11/2026",
+      "data_limite_inscricao": "30/11/2026",
       "cargos_ti_identificados": [
         "Analista de Tecnologia da Informação (1 vaga)"
       ],
-      "data_extracao": "2026-10-29T11:49:31.915089"
+      "data_extracao": "2026-11-06T18:54:51.695963"
     },
     {
       "id": "ifspretificaprocessoseletivocomvagasparaprofessoressubstitutos-sup",
       "orgao": "IFSP - Instituto Federal de Educação, Ciência e Tecnologia de São Paulo",
       "cidade": "Sertãozinho",
       "uf": "SP",
-      "distancia_km": 153.7,
-      "distancia_carro_km": null,
+      "distancia_km": 208.0,
+      "distancia_carro_km": 208.0,
       "distancia_reta_km": 153.7,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
+      "tempo_conducao_min": 173,
+      "tempo_conducao_formatado": "2h 53min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "IFSP retifica processo seletivo com vagas para professores substitutos",
       "link_pci": "https://www.pciconcursos.com.br/noticias/ifsp-retifica-processo-seletivo-com-vagas-para-professores-substitutos",
-      "link_edital_oficial": "https://concursopublico.ifsp.edu.br/",
-      "banca_organizadora": "concursopublico.ifsp.edu.br",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
       "vagas_salario": "79 vagas até R$ 8.340,33 Professor Substituto Superior",
       "salario_num": 8340.33,
       "salario_formatado": "Até R$ 8.340,33",
@@ -170,53 +170,84 @@
         "Professor substituto de Informática (1 vaga) - São Paulo",
         "Professor substituto de Informática (1 vaga) - Sertãozinho"
       ],
-      "data_extracao": "2026-10-29T11:49:16.379521"
+      "data_extracao": "2026-11-06T18:54:42.716979"
     },
     {
-      "id": "prefeituradeguataparaspabreselecaoparacadastrodereservaemdiversasareas-sup",
-      "orgao": "Prefeitura de Guatapará",
-      "cidade": "Guatapará",
+      "id": "seteccampinasspabreconcursopublicocomsalariosdeate10428-mt",
+      "orgao": "SETEC - Serviços Técnicos Gerais de Campinas (Nível Médio / Técnico)",
+      "cidade": "Campinas",
       "uf": "SP",
-      "distancia_km": 156.8,
-      "distancia_carro_km": null,
-      "distancia_reta_km": 156.8,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
-      "titulo": "Prefeitura de Guatapará - SP abre seleção para cadastro de reserva em diversas áreas",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-guatapara-sp-abre-selecao-para-cadastro-de-reserva-em-diversas-areas",
-      "link_edital_oficial": "https://www.portal.cmmconcursos.com.br/",
-      "banca_organizadora": "www.portal.cmmconcursos.com.br",
-      "vagas_salario": "Cadastro de reserva até R$ 3.242,00 Agente Comunitário de Saúde, Técnico Agrícola, PEB II Médio / Técnico / Superior",
-      "salario_num": null,
-      "salario_formatado": "R$ 19,42/hora-aula",
+      "distancia_km": 221.5,
+      "distancia_carro_km": 221.5,
+      "distancia_reta_km": 179.4,
+      "tempo_conducao_min": 182,
+      "tempo_conducao_formatado": "3h 02min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
+      "titulo": "SETEC Campinas - SP abre concurso público com salários de até R$ 10.428,05",
+      "link_pci": "https://www.pciconcursos.com.br/noticias/setec-campinas-sp-abre-concurso-publico-com-salarios-de-ate-10428",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
+      "vagas_salario": "39 vagas até R$ 10.428,05 Vários Cargos Fundamental / Médio / Técnico / Superior",
+      "salario_num": 10428.05,
+      "salario_formatado": "Até R$ 10.428,05",
+      "escolaridade_niveis": [
+        "Médio",
+        "Técnico"
+      ],
+      "areas_atuacao": [
+        "Infraestrutura e Redes"
+      ],
+      "data_limite_inscricao": "04/12/2026",
+      "cargos_ti_identificados": [
+        "Agente de Suporte Técnico (4 vagas + CR)"
+      ],
+      "data_extracao": "2026-11-06T18:54:34.079908"
+    },
+    {
+      "id": "seteccampinasspabreconcursopublicocomsalariosdeate10428-sup",
+      "orgao": "SETEC - Serviços Técnicos Gerais de Campinas (Nível Superior)",
+      "cidade": "Campinas",
+      "uf": "SP",
+      "distancia_km": 221.5,
+      "distancia_carro_km": 221.5,
+      "distancia_reta_km": 179.4,
+      "tempo_conducao_min": 182,
+      "tempo_conducao_formatado": "3h 02min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
+      "titulo": "SETEC Campinas - SP abre concurso público com salários de até R$ 10.428,05",
+      "link_pci": "https://www.pciconcursos.com.br/noticias/setec-campinas-sp-abre-concurso-publico-com-salarios-de-ate-10428",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
+      "vagas_salario": "39 vagas até R$ 10.428,05 Vários Cargos Fundamental / Médio / Técnico / Superior",
+      "salario_num": 10428.05,
+      "salario_formatado": "Até R$ 10.428,05",
       "escolaridade_niveis": [
         "Superior"
       ],
       "areas_atuacao": [
         "Programação e Sistemas"
       ],
-      "data_limite_inscricao": "01/11/2026",
+      "data_limite_inscricao": "04/12/2026",
       "cargos_ti_identificados": [
-        "PEB II - Informática (CR)"
+        "Analista Técnico (Informática) (1 vaga + CR)"
       ],
-      "data_extracao": "2026-10-29T11:49:27.618669"
+      "data_extracao": "2026-11-06T18:54:34.080078"
     },
     {
       "id": "unifeimgabreconcursopublicoparaprofessoresdomagisteriosuperior-sup",
       "orgao": "UNIFEI - Universidade Federal de Itajubá",
       "cidade": "Itajubá",
       "uf": "MG",
-      "distancia_km": 160.6,
-      "distancia_carro_km": null,
+      "distancia_km": 229.5,
+      "distancia_carro_km": 229.5,
       "distancia_reta_km": 160.6,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
+      "tempo_conducao_min": 225,
+      "tempo_conducao_formatado": "3h 45min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "UNIFEI - MG abre concurso público para professores do magistério superior",
       "link_pci": "https://www.pciconcursos.com.br/noticias/unifei-mg-abre-concurso-publico-para-professores-do-magisterio-superior",
-      "link_edital_oficial": "https://sigrh.unifei.edu.br/sigrh/public/home.jsf",
-      "banca_organizadora": "sigrh.unifei.edu.br",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
       "vagas_salario": "27 vagas até R$ 13.753,96 Professor do Magistério Superior Superior",
       "salario_num": 13753.96,
       "salario_formatado": "R$ 13.753,96",
@@ -241,175 +272,53 @@
         "Professor de Programação e Desenvolvimento de Sistemas Aplicados à Ciência de Dados (1 vaga)",
         "Professor de Computação, Algoritmos e Fundamentos de Programação (1 vaga)"
       ],
-      "data_extracao": "2026-10-29T11:50:12.900352"
+      "data_extracao": "2026-11-06T18:55:15.465512"
     },
     {
-      "id": "seteccampinasspabreconcursopublicocomsalariosdeate10428-mt",
-      "orgao": "SETEC - Serviços Técnicos Gerais de Campinas (Nível Médio / Técnico)",
-      "cidade": "Campinas",
+      "id": "iprejundejundiaispabreconcursopublicocomsalariosdeate15123-sup",
+      "orgao": "IPREJUN - Instituto de Previdência do Município de Jundiaí",
+      "cidade": "Jundiaí",
       "uf": "SP",
-      "distancia_km": 179.4,
-      "distancia_carro_km": null,
-      "distancia_reta_km": 179.4,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
-      "titulo": "SETEC Campinas - SP abre concurso público com salários de até R$ 10.428,05",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/setec-campinas-sp-abre-concurso-publico-com-salarios-de-ate-10428",
-      "link_edital_oficial": "https://indepac.selecao.net.br/informacoes/109/",
-      "banca_organizadora": "indepac.selecao.net.br",
-      "vagas_salario": "39 vagas até R$ 10.428,05 Vários Cargos Fundamental / Médio / Técnico / Superior",
-      "salario_num": 10428.05,
-      "salario_formatado": "Até R$ 10.428,05",
-      "escolaridade_niveis": [
-        "Médio",
-        "Técnico"
-      ],
-      "areas_atuacao": [
-        "Infraestrutura e Redes"
-      ],
-      "data_limite_inscricao": "04/12/2026",
-      "cargos_ti_identificados": [
-        "Agente de Suporte Técnico (4 vagas + CR)"
-      ],
-      "data_extracao": "2026-10-29T11:49:06.285358"
-    },
-    {
-      "id": "seteccampinasspabreconcursopublicocomsalariosdeate10428-sup",
-      "orgao": "SETEC - Serviços Técnicos Gerais de Campinas (Nível Superior)",
-      "cidade": "Campinas",
-      "uf": "SP",
-      "distancia_km": 179.4,
-      "distancia_carro_km": null,
-      "distancia_reta_km": 179.4,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
-      "titulo": "SETEC Campinas - SP abre concurso público com salários de até R$ 10.428,05",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/setec-campinas-sp-abre-concurso-publico-com-salarios-de-ate-10428",
-      "link_edital_oficial": "https://indepac.selecao.net.br/informacoes/109/",
-      "banca_organizadora": "indepac.selecao.net.br",
-      "vagas_salario": "39 vagas até R$ 10.428,05 Vários Cargos Fundamental / Médio / Técnico / Superior",
-      "salario_num": 10428.05,
-      "salario_formatado": "Até R$ 10.428,05",
+      "distancia_km": 261.9,
+      "distancia_carro_km": 261.9,
+      "distancia_reta_km": 205.3,
+      "tempo_conducao_min": 209,
+      "tempo_conducao_formatado": "3h 29min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
+      "titulo": "IPREJUN de Jundiaí - SP abre concurso público com salários de até R$ 15.123,99",
+      "link_pci": "https://www.pciconcursos.com.br/noticias/iprejun-de-jundiai-sp-abre-concurso-publico-com-salarios-de-ate-15123",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
+      "vagas_salario": "4 vagas até R$ 15.123,99 Assistente de Administração, Analista de Planejamento, Gestão e Orçamento Médio / Superior",
+      "salario_num": 15123.99,
+      "salario_formatado": "Até R$ 15.123,99",
       "escolaridade_niveis": [
         "Superior"
       ],
       "areas_atuacao": [
         "Programação e Sistemas"
       ],
-      "data_limite_inscricao": "04/12/2026",
+      "data_limite_inscricao": "16/11 a 15/12/2026",
       "cargos_ti_identificados": [
-        "Analista Técnico (Informática) (1 vaga + CR)"
+        "Analista de Planejamento, Gestão e Orçamento - Informática (1 vaga)"
       ],
-      "data_extracao": "2026-10-29T11:49:06.285581"
-    },
-    {
-      "id": "prefeituradelagoadapratamgalteraperiododeinscricoesdoconcursopublicocomsalariosdeate21mil-sup",
-      "orgao": "Prefeitura de Lagoa da Prata",
-      "cidade": "Lagoa da Prata",
-      "uf": "MG",
-      "distancia_km": 181.6,
-      "distancia_carro_km": null,
-      "distancia_reta_km": 181.6,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
-      "titulo": "Prefeitura de Lagoa da Prata - MG altera período de inscrições do concurso público com salários de até R$ 21 mil",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-lagoa-da-prata-mg-altera-periodo-de-inscricoes-do-concurso-publico-com-salarios-de-ate-21-mil",
-      "link_edital_oficial": "https://www.ibgpconcursos.com.br/",
-      "banca_organizadora": "ibgpconcursos.com.br",
-      "vagas_salario": "105 vagas até R$ 21.489,70 Vários Cargos Fundamental / Médio / Técnico / Superior",
-      "salario_num": 21489.7,
-      "salario_formatado": "Até R$ 21.489,70",
-      "escolaridade_niveis": [
-        "Superior"
-      ],
-      "areas_atuacao": [
-        "Programação e Sistemas"
-      ],
-      "data_limite_inscricao": "03/11/2026",
-      "cargos_ti_identificados": [
-        "Analista de Sistemas (1 vaga)"
-      ],
-      "data_extracao": "2026-10-29T11:50:00.024749"
-    },
-    {
-      "id": "prefeituradetaquaritingaspabreconcursopublicoparadiversoscargos-mt",
-      "orgao": "Prefeitura de Taquaritinga (Nível Técnico)",
-      "cidade": "Taquaritinga",
-      "uf": "SP",
-      "distancia_km": 205.4,
-      "distancia_carro_km": null,
-      "distancia_reta_km": 205.4,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
-      "titulo": "Prefeitura de Taquaritinga - SP abre concurso público para diversos cargos",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-taquaritinga-sp-abre-concurso-publico-para-diversos-cargos",
-      "link_edital_oficial": "https://www.glconsultoria.com.br/",
-      "banca_organizadora": "www.glconsultoria.com.br",
-      "vagas_salario": "2 vagas até R$ 6.055,67 Vários Cargos Fundamental / Médio / Técnico / Superior",
-      "salario_num": 6055.67,
-      "salario_formatado": "Até R$ 6.055,67",
-      "escolaridade_niveis": [
-        "Técnico"
-      ],
-      "areas_atuacao": [
-        "Infraestrutura e Redes",
-        "Programação e Sistemas"
-      ],
-      "data_limite_inscricao": "05/11/2026",
-      "cargos_ti_identificados": [
-        "Técnico de Informática (CR)"
-      ],
-      "data_extracao": "2026-10-29T11:49:38.636065"
-    },
-    {
-      "id": "prefeituradetaquaritingaspabreconcursopublicoparadiversoscargos-sup",
-      "orgao": "Prefeitura de Taquaritinga (Nível Superior)",
-      "cidade": "Taquaritinga",
-      "uf": "SP",
-      "distancia_km": 205.4,
-      "distancia_carro_km": null,
-      "distancia_reta_km": 205.4,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
-      "titulo": "Prefeitura de Taquaritinga - SP abre concurso público para diversos cargos",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-taquaritinga-sp-abre-concurso-publico-para-diversos-cargos",
-      "link_edital_oficial": "https://www.glconsultoria.com.br/",
-      "banca_organizadora": "www.glconsultoria.com.br",
-      "vagas_salario": "2 vagas até R$ 6.055,67 Vários Cargos Fundamental / Médio / Técnico / Superior",
-      "salario_num": 6055.67,
-      "salario_formatado": "Até R$ 6.055,67",
-      "escolaridade_niveis": [
-        "Superior"
-      ],
-      "areas_atuacao": [
-        "Programação e Sistemas"
-      ],
-      "data_limite_inscricao": "05/11/2026",
-      "cargos_ti_identificados": [
-        "Analista de Sistemas (CR)"
-      ],
-      "data_extracao": "2026-10-29T11:49:38.636253"
+      "data_extracao": "2026-11-06T18:54:44.253478"
     },
     {
       "id": "ifspretificaeditaldeconcursopublicoparaocargodeprofessordoensinobasicotecnicoetecnologico-sup",
       "orgao": "IFSP - Instituto Federal de Educação, Ciência e Tecnologia de São Paulo",
       "cidade": "Capivari",
       "uf": "SP",
-      "distancia_km": 206.9,
-      "distancia_carro_km": null,
+      "distancia_km": 282.0,
+      "distancia_carro_km": 282.0,
       "distancia_reta_km": 206.9,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
+      "tempo_conducao_min": 226,
+      "tempo_conducao_formatado": "3h 46min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "IFSP retifica edital de concurso público para o cargo de Professor do Ensino Básico, Técnico e Tecnológico",
       "link_pci": "https://www.pciconcursos.com.br/noticias/ifsp-retifica-edital-de-concurso-publico-para-o-cargo-de-professor-do-ensino-basico-tecnico-e-tecnologico",
-      "link_edital_oficial": "https://concursopublico.ifsp.edu.br/",
-      "banca_organizadora": "IFSP",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
       "vagas_salario": "45 vagas até R$ 6.397,19 Professor do Ensino Básico, Técnico e Tecnológico Superior",
       "salario_num": 7356.77,
       "salario_formatado": "Até R$ 7.356,77",
@@ -431,114 +340,23 @@
         "Professor de Informática - São Miguel Paulista (2 vagas)",
         "Professor de Informática - São Paulo (1 vaga)"
       ],
-      "data_extracao": "2026-10-29T11:49:15.294195"
-    },
-    {
-      "id": "prefeituradejaborandispabreconcursopublicocomsalariosdeate5325-sup",
-      "orgao": "Prefeitura de Jaborandi",
-      "cidade": "Jaborandi",
-      "uf": "SP",
-      "distancia_km": 209.8,
-      "distancia_carro_km": null,
-      "distancia_reta_km": 209.8,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
-      "titulo": "Prefeitura de Jaborandi - SP abre concurso público com salários de até R$ 5.325,60",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-jaborandi-sp-abre-concurso-publico-com-salarios-de-ate-5325",
-      "link_edital_oficial": "https://www.glconsultoria.com.br/",
-      "banca_organizadora": "www.glconsultoria.com.br",
-      "vagas_salario": "31 vagas até R$ 5.325,60 Vários Cargos Fundamental / Médio / Técnico / Superior",
-      "salario_num": 5325.6,
-      "salario_formatado": "Até R$ 5.325,60",
-      "escolaridade_niveis": [
-        "Superior"
-      ],
-      "areas_atuacao": [
-        "Programação e Sistemas"
-      ],
-      "data_limite_inscricao": "05/11/2026",
-      "cargos_ti_identificados": [
-        "Professor de Educação Básica (PEB II) - Informática (1 vaga + CR)"
-      ],
-      "data_extracao": "2026-10-29T11:49:29.594332"
-    },
-    {
-      "id": "ipsmdesaojosedoscamposspabreconcursoparadiversoscargosdenivelsuperior-sup",
-      "orgao": "IPSM - Instituto de Previdência do Servidor Municipal",
-      "cidade": "São José dos Campos",
-      "uf": "SP",
-      "distancia_km": 212.8,
-      "distancia_carro_km": null,
-      "distancia_reta_km": 212.8,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
-      "titulo": "IPSM de São José dos Campos - SP abre concurso para diversos cargos de nível superior",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/ipsm-de-sao-jose-dos-campos-sp-abre-concurso-para-diversos-cargos-de-nivel-superior",
-      "link_edital_oficial": "https://www.institutoaocp.org.br/",
-      "banca_organizadora": "www.institutoaocp.org.br",
-      "vagas_salario": "17 vagas até R$ 5.860,31 Vários Cargos Superior",
-      "salario_num": 5185.46,
-      "salario_formatado": "Até R$ 5.185,46",
-      "escolaridade_niveis": [
-        "Superior"
-      ],
-      "areas_atuacao": [
-        "Programação e Sistemas"
-      ],
-      "data_limite_inscricao": "30/10/2026",
-      "cargos_ti_identificados": [
-        "Analista Previdenciário - TI (1 vaga + cadastro de reserva para PCD)"
-      ],
-      "data_extracao": "2026-10-29T11:49:17.224907"
-    },
-    {
-      "id": "prefeituradepiracemamgabreconcursoeprocessoseletivocomdiversasvagas-mt",
-      "orgao": "Prefeitura de Piracema",
-      "cidade": "Piracema",
-      "uf": "MG",
-      "distancia_km": 233.3,
-      "distancia_carro_km": null,
-      "distancia_reta_km": 233.3,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
-      "titulo": "Prefeitura de Piracema - MG abre concurso e processo seletivo com diversas vagas",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-piracema-mg-abre-concurso-e-processo-seletivo-com-diversas-vagas",
-      "link_edital_oficial": "https://www.idepi.org.br/",
-      "banca_organizadora": "www.idepi.org.br",
-      "vagas_salario": "132 vagas até R$ 18.647,01 Vários Cargos Fundamental / Médio / Técnico / Superior",
-      "salario_num": 18647.01,
-      "salario_formatado": "Até R$ 18.647,01",
-      "escolaridade_niveis": [
-        "Técnico"
-      ],
-      "areas_atuacao": [
-        "Infraestrutura e Redes",
-        "Programação e Sistemas"
-      ],
-      "data_limite_inscricao": "18/11/2026",
-      "cargos_ti_identificados": [
-        "Técnico em Informática (1 vaga)"
-      ],
-      "data_extracao": "2026-10-29T11:50:02.500103"
+      "data_extracao": "2026-11-06T18:54:41.058375"
     },
     {
       "id": "uspspabreconcursopublicoparaocargodeprofessortitularnaareadesistemasdecomputacao-sup",
       "orgao": "USP - Universidade de São Paulo",
       "cidade": "São Paulo",
       "uf": "SP",
-      "distancia_km": 240.7,
-      "distancia_carro_km": null,
+      "distancia_km": 318.7,
+      "distancia_carro_km": 318.7,
       "distancia_reta_km": 240.7,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
+      "tempo_conducao_min": 243,
+      "tempo_conducao_formatado": "4h 03min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "USP - SP abre concurso público para o cargo de Professor Titular na área de Sistemas de Computação",
       "link_pci": "https://www.pciconcursos.com.br/noticias/usp-sp-abre-concurso-publico-para-o-cargo-de-professor-titular-na-area-de-sistemas-de-computacao",
-      "link_edital_oficial": "https://uspdigital.usp.br/gr/admissao",
-      "banca_organizadora": "uspdigital.usp.br",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
       "vagas_salario": "1 vaga até R$ 24.309,11 Professor Titular Superior",
       "salario_num": 24309.11,
       "salario_formatado": "R$ 24.309,11",
@@ -552,23 +370,53 @@
       "cargos_ti_identificados": [
         "Professor Titular no Departamento de Sistemas de Computação, na área de Sistemas de Computação (1 vaga)"
       ],
-      "data_extracao": "2026-10-29T11:49:49.653536"
+      "data_extracao": "2026-11-06T18:55:00.513889"
     },
     {
-      "id": "trf3spmsabreconcursopublicoparaanalistasetecnicosjudiciarios-sup",
+      "id": "faculdadesebraespabrevagaparaprofessoradjuntodeengenhariadesoftware-sup",
+      "orgao": "Faculdade Sebrae",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "distancia_km": 318.7,
+      "distancia_carro_km": 318.7,
+      "distancia_reta_km": 240.7,
+      "tempo_conducao_min": 243,
+      "tempo_conducao_formatado": "4h 03min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
+      "titulo": "Faculdade Sebrae - SP abre vaga para professor adjunto de Engenharia de Software",
+      "link_pci": "https://www.pciconcursos.com.br/noticias/faculdade-sebrae-sp-abre-vaga-para-professor-adjunto-de-engenharia-de-software",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
+      "vagas_salario": "1 vaga até R$ 19.522,83 Professor Adjunto Superior",
+      "salario_num": 19522.83,
+      "salario_formatado": "R$ 19.522,83",
+      "escolaridade_niveis": [
+        "Superior"
+      ],
+      "areas_atuacao": [
+        "Programação e Sistemas"
+      ],
+      "data_limite_inscricao": "10/11/2026",
+      "cargos_ti_identificados": [
+        "Professor Adjunto - Engenharia de Software - Sistema da Informação (1 vaga)"
+      ],
+      "data_extracao": "2026-11-06T18:54:36.109581"
+    },
+    {
+      "id": "trf3spmsretificaconcursopublicoparaanalistasetecnicosjudiciarios-sup",
       "orgao": "TRF3 - Tribunal Regional Federal da 3ª Região (Nível Superior)",
       "cidade": "São Paulo",
       "uf": "SP",
-      "distancia_km": 240.7,
-      "distancia_carro_km": null,
+      "distancia_km": 318.7,
+      "distancia_carro_km": 318.7,
       "distancia_reta_km": 240.7,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
-      "titulo": "TRF3 - SP/MS abre concurso público para analistas e técnicos judiciários",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/trf3-sp-ms-abre-concurso-publico-para-analistas-e-tecnicos-judiciarios",
-      "link_edital_oficial": "https://www.vunesp.com.br/",
-      "banca_organizadora": "www.vunesp.com.br",
+      "tempo_conducao_min": 243,
+      "tempo_conducao_formatado": "4h 03min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
+      "titulo": "TRF3 - SP/MS retifica concurso público para analistas e técnicos judiciários",
+      "link_pci": "https://www.pciconcursos.com.br/noticias/trf3-sp-ms-retifica-concurso-publico-para-analistas-e-tecnicos-judiciarios",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
       "vagas_salario": "11 vagas até R$ 20.013,11 Analista Judiciário, Técnico Judiciário Técnico / Superior",
       "salario_num": 16040.87,
       "salario_formatado": "R$ 16.040,87",
@@ -579,58 +427,28 @@
         "Infraestrutura e Redes",
         "Programação e Sistemas"
       ],
-      "data_limite_inscricao": "04 a 23/11/2026",
+      "data_limite_inscricao": "23/11/2026",
       "cargos_ti_identificados": [
         "Analista Judiciário, especialidade: Análise de Sistemas de Informação (1 vaga)",
         "Analista Judiciário, especialidade: Suporte em Tecnologia da Informação (1 vaga)"
       ],
-      "data_extracao": "2026-10-29T11:50:16.369011"
+      "data_extracao": "2026-11-06T18:55:18.055752"
     },
     {
-      "id": "sefazspabreconcursopublicoparaanalistaemplanejamentoorcamentoefinancaspublicas-sup",
-      "orgao": "SEFAZ - Secretaria da Fazenda e Planejamento",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "distancia_km": 240.7,
-      "distancia_carro_km": null,
-      "distancia_reta_km": 240.7,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
-      "titulo": "SEFAZ - SP abre concurso público para Analista em Planejamento, Orçamento e Finanças Públicas",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/sefaz-sp-abre-concurso-publico-para-analista-em-planejamento-orcamento-e-financas-publicas",
-      "link_edital_oficial": "https://www.concursosfcc.com.br/",
-      "banca_organizadora": "www.concursosfcc.com.br",
-      "vagas_salario": "60 vagas até R$ 11.359,50 Analista em Planejamento, Orçamento e Finanças Públicas Superior",
-      "salario_num": 11359.5,
-      "salario_formatado": "R$ 11.359,50",
-      "escolaridade_niveis": [
-        "Superior"
-      ],
-      "areas_atuacao": [
-        "Dados e IA"
-      ],
-      "data_limite_inscricao": "03/11/2026",
-      "cargos_ti_identificados": [
-        "Analista em Planejamento, Orçamento e Finanças Públicas - Ciências de Dados e Tecnologia da Informação (20 vagas)"
-      ],
-      "data_extracao": "2026-10-29T11:49:41.500525"
-    },
-    {
-      "id": "trf3spmsabreconcursopublicoparaanalistasetecnicosjudiciarios-mt",
+      "id": "trf3spmsretificaconcursopublicoparaanalistasetecnicosjudiciarios-mt",
       "orgao": "TRF3 - Tribunal Regional Federal da 3ª Região (Nível Técnico)",
       "cidade": "São Paulo",
       "uf": "SP",
-      "distancia_km": 240.7,
-      "distancia_carro_km": null,
+      "distancia_km": 318.7,
+      "distancia_carro_km": 318.7,
       "distancia_reta_km": 240.7,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
-      "titulo": "TRF3 - SP/MS abre concurso público para analistas e técnicos judiciários",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/trf3-sp-ms-abre-concurso-publico-para-analistas-e-tecnicos-judiciarios",
-      "link_edital_oficial": "https://www.vunesp.com.br/",
-      "banca_organizadora": "www.vunesp.com.br",
+      "tempo_conducao_min": 243,
+      "tempo_conducao_formatado": "4h 03min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
+      "titulo": "TRF3 - SP/MS retifica concurso público para analistas e técnicos judiciários",
+      "link_pci": "https://www.pciconcursos.com.br/noticias/trf3-sp-ms-retifica-concurso-publico-para-analistas-e-tecnicos-judiciarios",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
       "vagas_salario": "11 vagas até R$ 20.013,11 Analista Judiciário, Técnico Judiciário Técnico / Superior",
       "salario_num": 9776.73,
       "salario_formatado": "R$ 9.776,73",
@@ -641,28 +459,28 @@
         "Infraestrutura e Redes",
         "Programação e Sistemas"
       ],
-      "data_limite_inscricao": "04 a 23/11/2026",
+      "data_limite_inscricao": "23/11/2026",
       "cargos_ti_identificados": [
         "Técnico Judiciário, especialidade: Desenvolvimento de Sistemas de Informação (5 vagas)",
         "Técnico Judiciário, especialidade: Suporte Técnico (4 vagas)"
       ],
-      "data_extracao": "2026-10-29T11:50:16.368858"
+      "data_extracao": "2026-11-06T18:55:18.055619"
     },
     {
       "id": "marinhadobrasil8distritonavalabrevagasparaoficiaisrm2emsp-sup",
       "orgao": "Marinha do Brasil - Comando do 8º Distrito Naval",
       "cidade": "São Paulo",
       "uf": "SP",
-      "distancia_km": 240.7,
-      "distancia_carro_km": null,
+      "distancia_km": 318.7,
+      "distancia_carro_km": 318.7,
       "distancia_reta_km": 240.7,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
+      "tempo_conducao_min": 243,
+      "tempo_conducao_formatado": "4h 03min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "Marinha do Brasil - 8º Distrito Naval abre vagas para Oficiais RM2 em SP",
       "link_pci": "https://www.pciconcursos.com.br/noticias/marinha-do-brasil-8-distrito-naval-abre-vagas-para-oficiais-rm2-em-sp",
-      "link_edital_oficial": "https://www.marinha.mil.br/com8dn/node/100",
-      "banca_organizadora": "Comando do 8º Distrito Naval",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
       "vagas_salario": "36 vagas Vários Cargos Superior",
       "salario_num": null,
       "salario_formatado": "Indisponível",
@@ -677,69 +495,128 @@
         "Informática, São Paulo - SP (1 vaga)",
         "Engenharia de Sistemas de Computação, São Paulo - SP (1 vaga)"
       ],
-      "data_extracao": "2026-10-29T11:49:17.952191"
+      "data_extracao": "2026-11-06T18:54:46.455030"
     },
     {
-      "id": "prefeituradecarapicuibaspabrenovosconcursosparacadastrodereservaemdiversasareas-mt",
-      "orgao": "Prefeitura do Município de Carapicuíba",
-      "cidade": "Carapicuíba",
+      "id": "prefeituradejandiraspabreconcursopublicocomsalariosdeate6812-mt",
+      "orgao": "Prefeitura de Jandira",
+      "cidade": "Jandira",
       "uf": "SP",
-      "distancia_km": 241.5,
-      "distancia_carro_km": null,
-      "distancia_reta_km": 241.5,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
-      "titulo": "Prefeitura de Carapicuíba - SP abre novos concursos para cadastro de reserva em diversas áreas",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-carapicuiba-sp-abre-novos-concursos-para-cadastro-de-reserva-em-diversas-areas",
-      "link_edital_oficial": "https://rboconcursos.selecao.net.br/",
-      "banca_organizadora": "rboconcursos.selecao.net.br",
-      "vagas_salario": "Cadastro de Reserva até R$ 12.118,50 Vários Cargos Médio / Técnico / Superior",
-      "salario_num": 12118.5,
-      "salario_formatado": "Até R$ 12.118,50",
+      "distancia_km": 324.1,
+      "distancia_carro_km": 324.1,
+      "distancia_reta_km": 242.9,
+      "tempo_conducao_min": 244,
+      "tempo_conducao_formatado": "4h 04min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
+      "titulo": "Prefeitura de Jandira - SP abre concurso público com salários de até R$ 6.812,14",
+      "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-jandira-sp-abre-concurso-publico-com-salarios-de-ate-6812",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
+      "vagas_salario": "308 vagas até R$ 6.812,14 Vários Cargos Fundamental / Médio / Superior",
+      "salario_num": 6812.14,
+      "salario_formatado": "Até R$ 6.812,14",
       "escolaridade_niveis": [
-        "Médio",
         "Técnico"
       ],
       "areas_atuacao": [
-        "Infraestrutura e Redes"
+        "Programação e Sistemas"
       ],
-      "data_limite_inscricao": "30/10/2026",
+      "data_limite_inscricao": "16/11/2026 a 04/01/2027",
       "cargos_ti_identificados": [
-        "Assistente de TI (CR)",
-        "Técnico em TI (CR)"
+        "Técnico em Tecnologia da Informação (2 vagas)"
       ],
-      "data_extracao": "2026-10-29T11:49:40.611903"
+      "data_extracao": "2026-11-06T18:54:50.302684"
     },
     {
-      "id": "prefeituradesaoroquespabreprocessoseletivoparaprofissionaisdaeducacao-sup",
-      "orgao": "Prefeitura da Estância Turística de São Roque",
-      "cidade": "São Roque",
+      "id": "prefeituradeguaratinguetaspabreconcursopublicocomsalariosdeate18540-sup",
+      "orgao": "Prefeitura da Estância Turística de Guaratinguetá",
+      "cidade": "Guaratinguetá",
       "uf": "SP",
-      "distancia_km": 247.3,
-      "distancia_carro_km": null,
-      "distancia_reta_km": 247.3,
-      "tempo_conducao_min": null,
-      "tempo_conducao_formatado": "Indisponível",
-      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
-      "titulo": "Prefeitura de São Roque - SP abre processo seletivo para profissionais da educação",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-sao-roque-sp-abre-processo-seletivo-para-profissionais-da-educacao",
-      "link_edital_oficial": "https://abcp.selecao.net.br/informacoes/2873/",
-      "banca_organizadora": "www.abconcursospublicos.org",
-      "vagas_salario": "Cadastro de reserva até R$ 2.805,09 Vários Cargos Médio / Superior",
-      "salario_num": null,
-      "salario_formatado": "R$ 29,27/hora-aula",
+      "distancia_km": 325.8,
+      "distancia_carro_km": 325.8,
+      "distancia_reta_km": 210.6,
+      "tempo_conducao_min": 297,
+      "tempo_conducao_formatado": "4h 57min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
+      "titulo": "Prefeitura de Guaratinguetá - SP abre concurso público com salários de até R$ 18.540,71",
+      "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-guaratingueta-sp-abre-concurso-publico-com-salarios-de-ate-18540",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
+      "vagas_salario": "107 vagas até R$ 18.540,71 Vários Cargos Fundamental / Médio / Técnico / Superior",
+      "salario_num": 18540.71,
+      "salario_formatado": "Até R$ 18.540,71",
       "escolaridade_niveis": [
         "Superior"
       ],
       "areas_atuacao": [
         "Programação e Sistemas"
       ],
-      "data_limite_inscricao": "05/11/2026",
+      "data_limite_inscricao": "16/11 a 15/12/2026",
       "cargos_ti_identificados": [
-        "Professor Adjunto de Ensino Fundamental II - Informática"
+        "Analista de Sistemas (1 vaga)"
       ],
-      "data_extracao": "2026-10-29T11:49:23.722510"
+      "data_extracao": "2026-11-06T18:54:47.783466"
+    },
+    {
+      "id": "prefeituradepiracemamgabreconcursoeprocessoseletivocomdiversasvagas-mt",
+      "orgao": "Prefeitura de Piracema",
+      "cidade": "Piracema",
+      "uf": "MG",
+      "distancia_km": 326.9,
+      "distancia_carro_km": 326.9,
+      "distancia_reta_km": 233.3,
+      "tempo_conducao_min": 296,
+      "tempo_conducao_formatado": "4h 56min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
+      "titulo": "Prefeitura de Piracema - MG abre concurso e processo seletivo com diversas vagas",
+      "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-piracema-mg-abre-concurso-e-processo-seletivo-com-diversas-vagas",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
+      "vagas_salario": "132 vagas até R$ 18.647,01 Vários Cargos Fundamental / Médio / Técnico / Superior",
+      "salario_num": 18647.01,
+      "salario_formatado": "Até R$ 18.647,01",
+      "escolaridade_niveis": [
+        "Técnico"
+      ],
+      "areas_atuacao": [
+        "Infraestrutura e Redes",
+        "Programação e Sistemas"
+      ],
+      "data_limite_inscricao": "18/11/2026",
+      "cargos_ti_identificados": [
+        "Técnico em Informática (1 vaga)"
+      ],
+      "data_extracao": "2026-11-06T18:55:07.616465"
+    },
+    {
+      "id": "ipsmdesaojosedoscamposspdivulgaretificacoesdeconcursopublico-sup",
+      "orgao": "IPSM - Instituto de Previdência do Servidor Municipal",
+      "cidade": "São José dos Campos",
+      "uf": "SP",
+      "distancia_km": 366.8,
+      "distancia_carro_km": 366.8,
+      "distancia_reta_km": 212.8,
+      "tempo_conducao_min": 274,
+      "tempo_conducao_formatado": "4h 34min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
+      "titulo": "IPSM de São José dos Campos - SP divulga retificações de concurso público",
+      "link_pci": "https://www.pciconcursos.com.br/noticias/ipsm-de-sao-jose-dos-campos-sp-divulga-retificacoes-de-concurso-publico",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
+      "vagas_salario": "17 vagas até R$ 5.860,31 Vários Cargos Superior",
+      "salario_num": 5185.46,
+      "salario_formatado": "Até R$ 5.185,46",
+      "escolaridade_niveis": [
+        "Superior"
+      ],
+      "areas_atuacao": [
+        "Programação e Sistemas"
+      ],
+      "data_limite_inscricao": "Prorrogado até 06/11/2026",
+      "cargos_ti_identificados": [
+        "Analista Previdenciário - TI (1 vaga + cadastro de reserva para PCD)"
+      ],
+      "data_extracao": "2026-11-06T18:54:45.910170"
     }
   ]
 }

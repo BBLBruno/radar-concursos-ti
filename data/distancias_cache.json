@@ -1,0 +1,93 @@
+{
+  "Campinas-SP": {
+    "distancia_carro_km": 221.5,
+    "distancia_reta_km": 179.4,
+    "tempo_conducao_min": 182,
+    "tempo_conducao_formatado": "3h 02min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "São Paulo-SP": {
+    "distancia_carro_km": 318.7,
+    "distancia_reta_km": 240.7,
+    "tempo_conducao_min": 243,
+    "tempo_conducao_formatado": "4h 03min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "Mogi Guaçu-SP": {
+    "distancia_carro_km": 161.8,
+    "distancia_reta_km": 118.9,
+    "tempo_conducao_min": 142,
+    "tempo_conducao_formatado": "2h 22min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "Capivari-SP": {
+    "distancia_carro_km": 282.0,
+    "distancia_reta_km": 206.9,
+    "tempo_conducao_min": 226,
+    "tempo_conducao_formatado": "3h 46min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "Sertãozinho-SP": {
+    "distancia_carro_km": 208.0,
+    "distancia_reta_km": 153.7,
+    "tempo_conducao_min": 173,
+    "tempo_conducao_formatado": "2h 53min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "Jundiaí-SP": {
+    "distancia_carro_km": 261.9,
+    "distancia_reta_km": 205.3,
+    "tempo_conducao_min": 209,
+    "tempo_conducao_formatado": "3h 29min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "São José dos Campos-SP": {
+    "distancia_carro_km": 366.8,
+    "distancia_reta_km": 212.8,
+    "tempo_conducao_min": 274,
+    "tempo_conducao_formatado": "4h 34min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "Guaratinguetá-SP": {
+    "distancia_carro_km": 325.8,
+    "distancia_reta_km": 210.6,
+    "tempo_conducao_min": 297,
+    "tempo_conducao_formatado": "4h 57min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "Jandira-SP": {
+    "distancia_carro_km": 324.1,
+    "distancia_reta_km": 242.9,
+    "tempo_conducao_min": 244,
+    "tempo_conducao_formatado": "4h 04min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "Leme-SP": {
+    "distancia_carro_km": 167.5,
+    "distancia_reta_km": 126.3,
+    "tempo_conducao_min": 157,
+    "tempo_conducao_formatado": "2h 37min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "Piracema-MG": {
+    "distancia_carro_km": 326.9,
+    "distancia_reta_km": 233.3,
+    "tempo_conducao_min": 296,
+    "tempo_conducao_formatado": "4h 56min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "Itajubá-MG": {
+    "distancia_carro_km": 229.5,
+    "distancia_reta_km": 160.6,
+    "tempo_conducao_min": 225,
+    "tempo_conducao_formatado": "3h 45min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "Guaxupé-MG": {
+    "distancia_carro_km": 26.9,
+    "distancia_reta_km": 20.2,
+    "tempo_conducao_min": 31,
+    "tempo_conducao_formatado": "31 min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
+  }
+}
