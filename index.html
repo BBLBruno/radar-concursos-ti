@@ -387,16 +387,22 @@
           <i data-lucide="refresh-cw" class="w-5 h-5"></i>
         </div>
         <div>
-          <h3 class="text-base font-bold text-slate-900">Atualizar Varredura de Editais?</h3>
+          <h3 class="text-base font-bold text-slate-900">Sincronizar Varredura de Editais?</h3>
           <p class="text-xs sm:text-[13px] text-slate-500 mt-1 leading-relaxed">
-            Esta operação irá consultar a base consolidada de editais no raio de 250km de Muzambinho. Para garantir estabilidade e preservar recursos das fontes, haverá um <strong>bloqueio geral de 3 horas</strong> após a confirmação.
+            Esta ação sincroniza em tempo real o dashboard com a base consolidada de editais (raio de 250km de Muzambinho). As varreduras automáticas nos 21 canais são processadas em segundo plano via <strong>GitHub Actions</strong> (Seg, Qua e Sex) ou terminal Python.
           </p>
+          <div class="mt-2.5">
+            <a href="https://github.com/BBLBruno/radar-concursos-ti/actions" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-700 transition">
+              <span>Acompanhar execuções no GitHub Actions</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
         </div>
       </div>
 
       <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs sm:text-[13px] text-slate-600 flex items-center gap-2">
         <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
-        <span>Bloqueio geral ativo: 1 atualização a cada 3 horas (independente de sessão).</span>
+        <span>Bloqueio operacional: 1 requisição a cada 3 horas (independente de sessão).</span>
       </div>
 
       <div class="flex items-center justify-end gap-3 pt-2">
@@ -1091,7 +1097,7 @@
     function executarAtualizacaoAntiSpam() {
       const restante = calcularTempoRestanteBloqueio();
       if (restante > 0) {
-        exibirToast(`Sistema em bloqueio geral. Próxima atualização disponível em ${formatarTempoRestante(restante)}.`);
+        exibirToast(`Sistema em bloqueio operacional. Próxima sincronização disponível em ${formatarTempoRestante(restante)}.`);
         atualizarEstadoBotaoAtualizar();
         return;
       }
@@ -1101,17 +1107,20 @@
         localStorage.setItem(STORAGE_KEY_BLOQUEIO, agora.toString());
       } catch (e) {}
 
-      if (metadadosData) {
-        metadadosData.gerado_em = new Date(agora).toISOString();
-      }
+      const geradoEmAnterior = metadadosData ? metadadosData.gerado_em : null;
 
-      exibirToast("Iniciando sincronização dos editais...");
+      exibirToast("Sincronizando dados consolidados dos editais...");
       atualizarEstadoBotaoAtualizar();
 
       carregarDados().then(() => {
-        exibirToast("Base de editais sincronizada. Bloqueio geral ativado (3 horas).");
+        const novoGeradoEm = metadadosData ? metadadosData.gerado_em : null;
+        if (novoGeradoEm && novoGeradoEm !== geradoEmAnterior) {
+          exibirToast("Base sincronizada com nova varredura de editais!");
+        } else {
+          exibirToast("Base sincronizada. Você já está na versão mais recente disponível.");
+        }
       }).catch(() => {
-        exibirToast("Base de editais recarregada.");
+        exibirToast("Base de editais recarregada com sucesso.");
       }).finally(() => {
         atualizarEstadoBotaoAtualizar();
       });
