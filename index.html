@@ -617,6 +617,7 @@
     }
 
     function toggleAlvo(editalId) {
+      esconderTooltipGlobal();
       if (alvosSalvos.has(editalId)) {
         alvosSalvos.delete(editalId);
         exibirToast("Removido dos Meus Alvos.");
@@ -654,14 +655,26 @@
       }
     }
 
+    function esconderTooltipGlobal() {
+      const tooltipEl = document.getElementById('global-tooltip');
+      if (tooltipEl) {
+        tooltipEl.classList.add('opacity-0');
+      }
+    }
+
     // 2. Sistema Global de Tooltips com Tratamento de Bordas de Tela
     function configurarTooltipsGlobais() {
       const tooltipEl = document.getElementById('global-tooltip');
+      if (!tooltipEl) return;
+
       document.body.addEventListener('mouseover', (e) => {
         const target = e.target.closest('[data-tooltip]');
         if (target) {
           const text = target.getAttribute('data-tooltip');
-          if (!text) return;
+          if (!text) {
+            esconderTooltipGlobal();
+            return;
+          }
           tooltipEl.textContent = text;
           tooltipEl.classList.remove('opacity-0');
           const rect = target.getBoundingClientRect();
@@ -683,15 +696,27 @@
           tooltipEl.style.top = `${top}px`;
           tooltipEl.style.left = `${left}px`;
           tooltipEl.style.transform = `translateX(-50%)`;
+        } else {
+          esconderTooltipGlobal();
         }
       });
 
       document.body.addEventListener('mouseout', (e) => {
         const target = e.target.closest('[data-tooltip]');
         if (target) {
-          tooltipEl.classList.add('opacity-0');
+          esconderTooltipGlobal();
         }
       });
+
+      // Esconde o tooltip ao clicar em qualquer botão/link para evitar hover órfão se o elemento for destruído
+      document.body.addEventListener('click', (e) => {
+        if (e.target.closest('button, a, input, select, [data-tooltip]')) {
+          esconderTooltipGlobal();
+        }
+      });
+
+      window.addEventListener('scroll', esconderTooltipGlobal, { passive: true });
+      document.addEventListener('mouseleave', esconderTooltipGlobal);
     }
 
     // 3. Carregamento do JSON com Cache-Busting
@@ -1051,6 +1076,7 @@
 
     // 8.1 Alternador Global de Visualização (Expandir / Recolher Todos os Cards)
     function toggleGlobalViewMode() {
+      esconderTooltipGlobal();
       isCardsCollapsed = !isCardsCollapsed;
       individualCardOverrides.clear();
       atualizarBotaoViewMode();
@@ -1073,6 +1099,7 @@
 
     // 8.2 Alternador Individual de Visualização de um Card Específico
     window.toggleCardSingleView = function(editalId) {
+      esconderTooltipGlobal();
       const estadoAtual = individualCardOverrides.has(editalId)
         ? individualCardOverrides.get(editalId)
         : isCardsCollapsed;
@@ -1082,6 +1109,7 @@
 
     // 9. Filtragem Matemática, Geográfica e Visual
     function atualizarDashboard() {
+      esconderTooltipGlobal();
       let filtrados = editaisData.filter(item => {
         // Filtro Meus Alvos
         if (showOnlyAlvos && !alvosSalvos.has(item.id)) {
@@ -1166,6 +1194,7 @@
 
     // 10. Renderização dos Cards Estilizados (Uniformidade de Altura & Modos Expandido/Recolhido)
     function renderizarCards(editais) {
+      esconderTooltipGlobal();
       const container = document.getElementById('cards-container');
       const emptyState = document.getElementById('empty-state');
       const emptyStateBadge = document.getElementById('empty-state-badge');
