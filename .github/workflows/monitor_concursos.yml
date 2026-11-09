@@ -2,8 +2,9 @@ name: Monitor de Concursos TI (Muzambinho - Raio 250km)
 
 on:
   schedule:
-    # 08:00 BRT (UTC-3) = 11:00 UTC, toda Segunda, Quarta e Sexta (1, 3, 5)
-    - cron: '0 11 * * 1,3,5'
+    # 08:25 BRT (UTC-3) = 11:25 UTC, toda Segunda, Quarta e Sexta (1, 3, 5)
+    # Minuto 25 escolhido para fugir do pico de sobrecarga (:00) do GitHub Actions
+    - cron: '25 11 * * 1,3,5'
   workflow_dispatch: # Permite disparar manualmente pelo painel do GitHub Actions
     inputs:
       force:
@@ -33,7 +34,7 @@ jobs:
           OPENROUTESERVICE_API_KEY: ${{ secrets.OPENROUTESERVICE_API_KEY }}
         run: |
           EXTRA_ARGS=""
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "${{ inputs.force }}" = "true" ]; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "${{ inputs.force }}" = "true" ] || [ "${{ github.event_name }}" = "schedule" ]; then
             EXTRA_ARGS="--force"
           fi
           python concursos_muzambinho.py --raio 250 --saida concursos_muzambinho_ti.json $EXTRA_ARGS
@@ -46,4 +47,4 @@ jobs:
           if [ -f data/distancias_cache.json ]; then
             git add data/distancias_cache.json
           fi
-          git diff --staged --quiet || (git commit -m "chore: atualização automática dos editais [skip ci]" && git push)
+          git diff --staged --quiet || (git commit -m "chore: atualização automática dos editais" && git pull --rebase origin main && git push)
