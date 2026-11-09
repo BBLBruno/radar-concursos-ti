@@ -7,12 +7,14 @@ Cálculo: OpenRouteService (Driving-Car) ou Distância Geodésica Oficial IBGE (
 
 import argparse
 import csv
+import html as html_lib
 import io
 import json
 import logging
 import math
 import os
 import re
+import ssl
 import sys
 import time
 import unicodedata
@@ -583,23 +585,23 @@ class BaseMunicipios:
 
 BANCA_KNOWLEDGE_BASE: Dict[str, Tuple[str, str]] = {
     "vunesp": ("Fundação VUNESP", "https://www.vunesp.com.br/"),
-    "ibfc": ("IBFC", "https://www.ibfc.org.br/"),
+    "ibfc": ("IBFC", "https://concursos.ibfc.org.br/"),
     "indepac": ("INDEPAC", "https://indepac.selecao.net.br/"),
     "publiconsult": ("Publiconsult", "https://www.publiconsult.com.br/"),
-    "integribrasil": ("Integri Brasil", "https://www.integribrasil.com.br/"),
+    "integribrasil": ("Integri Brasil", "https://www.integribrasil.com.br/Concurso"),
     "idepi": ("IDEPI", "https://www.idepi.org.br/"),
-    "rbo": ("RBO Concursos", "https://concursosrbo.com.br/"),
-    "unifei": ("UNIFEI - SigRH", "https://sigrh.unifei.edu.br/"),
+    "rbo": ("RBO Concursos", "https://sebrae.com.br/sp/sobre-nos/trabalhe-conosco"),
+    "unifei": ("UNIFEI - PROGEPE", "https://progepe.unifei.edu.br/concursos-e-processos-seletivos/"),
     "ifsp": ("Portal de Concursos IFSP", "https://concursopublico.ifsp.edu.br/"),
-    "usp": ("USP Digital", "https://uspdigital.usp.br/gr/"),
-    "ufabc": ("UFABC Concursos", "https://prograd.ufabc.edu.br/concursos"),
+    "usp": ("USP Digital", "https://uspdigital.usp.br/gr/admissao"),
+    "ufabc": ("UFABC Concursos", "https://www.ufabc.edu.br/concursos/docentes/inscricoes-abertas"),
     "marinha": ("Comando do 8º Distrito Naval", "https://www.marinha.mil.br/com8dn/node/100"),
     "fgv": ("FGV Conhecimento", "https://conhecimento.fgv.br/concursos"),
     "cebraspe": ("Cebraspe", "https://www.cebraspe.org.br/concursos"),
     "cespe": ("Cebraspe", "https://www.cebraspe.org.br/concursos"),
     "fcc": ("Fundação Carlos Chagas", "https://www.concursosfcc.com.br/"),
     "aocp": ("Instituto AOCP", "https://www.institutoaocp.org.br/"),
-    "ibgp": ("IBGP Concursos", "https://www.ibgpconcursos.com.br/"),
+    "ibgp": ("IBGP Concursos", "https://novo.ibgpconcursos.com.br/"),
     "instituto mais": ("Instituto Mais", "https://www.institutomais.org.br/"),
     "institutomais": ("Instituto Mais", "https://www.institutomais.org.br/"),
     "avanca sp": ("Avança SP", "https://www.avancasp.org.br/"),
@@ -613,7 +615,7 @@ BANCA_KNOWLEDGE_BASE: Dict[str, Tuple[str, str]] = {
     "reis auditores": ("Reis & Reis Auditores", "https://concursos.reisauditores.com.br/"),
     "cmm concursos": ("CMM Concursos", "https://www.cmmconcursos.com.br/"),
     "ab concursos": ("AB Concursos", "https://www.abconcursospublicos.org/"),
-    "faculdade sebrae": ("Faculdade Sebrae", "https://faculdadesebrae.com.br/")
+    "faculdade sebrae": ("Faculdade Sebrae", "https://sebrae.com.br/sp/sobre-nos/trabalhe-conosco")
 }
 
 
@@ -625,88 +627,243 @@ class ConcursosSudesteScraper:
         self.route_calc = route_calc
         self.raio_max_km = raio_max_km
         self._banca_html_cache: Dict[str, str] = {}
+        self._yahoo_cache: Dict[str, List[str]] = {}
+        self._ssl_ctx = ssl.create_default_context()
+        self._ssl_ctx.check_hostname = False
+        self._ssl_ctx.verify_mode = ssl.CERT_NONE
 
     def _fazer_requisicao(self, url: str, timeout: int = 15) -> str:
-        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
+        req = urllib.request.Request(url, headers={
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
+        })
+        with urllib.request.urlopen(req, timeout=timeout, context=self._ssl_ctx) as resp:
             return resp.read().decode("utf-8", errors="ignore")
 
-    def _resolver_link_direto_banca(self, banca_url: str, orgao: str, cidade: str) -> str:
+    @staticmethod
+    def _eh_url_concurso_especifico(url: str) -> bool:
+        u = url.lower()
+        padroes = (
+            r"/informacoes/\d+",
+            r"/publicacoes/[a-z0-9=]+/[a-z0-9=]+",
+            r"/concurso/detail/\d+",
+            r"concurso\.jsp\?cod=\d+",
+            r"/editais/edital-",
+            r"/edital-(?:no-)?\d+",
+            r"vunesp\.com\.br/[a-z]{4}\d{4}",
+            r"\.pdf($|\?)",
+            r"/node/\d+",
+            r"trabalhe-conosco/vagas-",
+        )
+        return any(re.search(p, u) for p in padroes)
+
+    @staticmethod
+    def _extrair_edital_hints(full_html: str) -> List[str]:
+        hints: List[str] = []
+        for m in re.finditer(r'class=["\'][^"\']*edital-pdf-link[^"\']*["\'][^>]*title=["\']([^"\']+)["\']', full_html, re.IGNORECASE):
+            t = m.group(1)
+            for n in re.findall(r"(\d{1,4})(?:/202\d)?", t):
+                if n not in ("2025", "2026", "2027"):
+                    hints.append(n)
+                    hints.append(n.lstrip("0") or "0")
+        for m in re.finditer(r"(?:edital|comunicado|aviso)[^0-9]{1,20}(\d{1,4})/202\d", full_html, re.IGNORECASE):
+            n = m.group(1)
+            hints.append(n)
+            hints.append(n.lstrip("0") or "0")
+        return list(dict.fromkeys(hints))
+
+    def _buscar_url_yahoo(self, query: str) -> List[str]:
+        if query in self._yahoo_cache:
+            return self._yahoo_cache[query]
+        resultados: List[str] = []
+        # 1. DuckDuckGo HTML Search
+        try:
+            u_ddg = "https://html.duckduckgo.com/html/?q=" + urllib.parse.quote(query)
+            h_ddg = self._fazer_requisicao(u_ddg, timeout=8)
+            uddgs = [urllib.parse.unquote(x) for x in re.findall(r'uddg=([^"&]+)', h_ddg)]
+            resultados.extend([x for x in uddgs if "duckduckgo.com" not in x])
+        except Exception:
+            pass
+        # 2. Yahoo Search fallback
+        if not resultados:
+            for _ in range(2):
+                try:
+                    u = "https://br.search.yahoo.com/search?p=" + urllib.parse.quote(query)
+                    h = self._fazer_requisicao(u, timeout=8)
+                    rus = [urllib.parse.unquote(x) for x in re.findall(r"/RU=([^/]+)/RK=", h)]
+                    res = [x for x in rus if "yahoo.com" not in x and "bing.com" not in x]
+                    if res:
+                        resultados.extend(res)
+                        break
+                except Exception:
+                    time.sleep(0.8)
+        if resultados:
+            self._yahoo_cache[query] = resultados
+        return resultados
+
+    def _resolver_link_direto_banca(
+        self,
+        banca_url: str,
+        orgao: str,
+        cidade: str,
+        uf: str = "",
+        titulo: str = "",
+        full_pci_html: str = ""
+    ) -> str:
         """
-        Quando o link do artigo aponta para a home de uma banca organizadora,
-        inspeciona a página da banca para encontrar o link direto do concurso específico.
-        Se não houver link profundo estático, mantém o link oficial da banca.
+        Resolve o link específico do edital/concurso dentro do portal da banca ou instituição,
+        combinando inspeção estrutural da página de listagem da banca e busca indexada de códigos (VUNESP, IDEPI, etc.).
         """
         if not banca_url or not banca_url.startswith("http"):
             return "Indisponível"
 
-        parsed = urllib.parse.urlparse(banca_url)
-        # Se a URL já possui caminho profundo específico (ex: /informacoes/109/, /node/100, forms.gle/...), manter
-        if parsed.path and parsed.path.strip("/") and not parsed.path.strip("/").startswith("v2"):
+        if self._eh_url_concurso_especifico(banca_url):
             return banca_url
 
+        edital_hints = self._extrair_edital_hints(full_pci_html) if full_pci_html else []
+        orgao_base = re.sub(r"\s*\(N[íi]vel.*?\)\s*", "", orgao, flags=re.IGNORECASE).strip()
+        partes_orgao = [normalize_text(p) for p in orgao_base.split("-") if p.strip()]
+        sigla_org = partes_orgao[0] if len(partes_orgao) > 1 and len(partes_orgao[0]) <= 10 else ""
+        nome_extenso_org = partes_orgao[-1] if partes_orgao else normalize_text(orgao_base)
+        nome_nucleo_org = re.sub(
+            r"^(prefeitura municipal da estancia turistica de|prefeitura da estancia turistica de|prefeitura municipal de|prefeitura de|municipio de|fundacao|instituto)\s+",
+            "",
+            nome_extenso_org
+        ).strip()
+        norm_cid = normalize_text(cidade)
+        norm_titulo = normalize_text(titulo)
+        norm_banca_url = normalize_text(banca_url)
+        portal_proprio_orgao = any(
+            tok in norm_banca_url
+            for tok in (sigla_org, nome_nucleo_org)
+            if tok and len(tok) >= 3
+        )
+
+        links_utilitarios = (
+            "acessibilidade", "ouvidoria", "fale-conosco", "contato", "quem-somos",
+            "institucional", "privacidade", "lgpd", "login", "arearestrita", "faq", "ajuda", "libras",
+            "wa.me", "whatsapp", "api.whatsapp", "facebook", "instagram", "youtube", "twitter", "linkedin",
+            "share", "compartilhar", "realiza_inscricao", "boleto", "candidato", "encerrados", "andamento"
+        )
+
+        # 1. Inspecionar a página de listagem da banca/instituição
         try:
             if banca_url not in self._banca_html_cache:
-                self._banca_html_cache[banca_url] = self._fazer_requisicao(banca_url, timeout=7)
+                self._banca_html_cache[banca_url] = self._fazer_requisicao(banca_url, timeout=8)
             html = self._banca_html_cache[banca_url]
 
-            norm_cid = normalize_text(cidade)
-            sigla_org = normalize_text(orgao.split("-")[0])
-            # Se a própria URL da banca já contém a sigla do órgão (ex: concursopublico.ifsp.edu.br),
-            # não usar a sigla sozinha como critério de link profundo para evitar links institucionais (acessibilidade, etc.)
-            usar_sigla = bool(sigla_org and len(sigla_org) > 2 and sigla_org not in normalize_text(banca_url))
+            melhor_url = None
+            melhor_score = 0
 
-            links_utilitarios = (
-                "acessibilidade", "ouvidoria", "fale-conosco", "contato", "quem-somos",
-                "institucional", "privacidade", "lgpd", "login", "arearestrita", "faq", "ajuda", "libras",
-                "wa.me", "whatsapp", "api.whatsapp", "facebook", "instagram", "youtube", "twitter", "linkedin",
-                "share", "compartilhar"
-            )
-
-            # Passagem 1: Texto ou href da âncora contém o nome da cidade ou sigla do órgão
             for m in re.finditer(r'<a\s+[^>]*href=["\']([^"\']+)["\'][^>]*>(.*?)</a>', html, re.DOTALL | re.IGNORECASE):
                 href = m.group(1).strip()
-                if href.startswith(("#", "javascript", "mailto", "tel")):
-                    continue
-                if any(u.lower() in href.lower() for u in links_utilitarios):
+                if not href or href.startswith(("#", "javascript", "mailto", "tel")):
                     continue
                 full_url = urllib.parse.urljoin(banca_url, href)
                 if full_url.rstrip("/") == banca_url.rstrip("/"):
                     continue
-                if any(u.lower() in full_url.lower() for u in links_utilitarios):
+                if any(u in full_url.lower() for u in links_utilitarios):
                     continue
-                text_norm = normalize_text(re.sub(r"<[^>]+>", " ", m.group(2)))
+
+                anchor_txt = normalize_text(html_lib.unescape(re.sub(r"<[^>]+>", " ", m.group(2))))
                 href_norm = normalize_text(href)
-                if any(u.lower() in text_norm for u in links_utilitarios):
-                    continue
-                if (norm_cid and len(norm_cid) > 3 and (norm_cid in text_norm or norm_cid in href_norm)) or (
-                    usar_sigla and (sigla_org in text_norm or sigla_org in href_norm)
-                ):
-                    return full_url
+                ctx_raw = html[max(0, m.start() - 1800):min(len(html), m.end() + 60)]
+                ctx_raw_unescaped = html_lib.unescape(re.sub(r"<[^>]+>", " ", ctx_raw))
+                ctx_window = normalize_text(ctx_raw_unescaped)
+                combined_direct = f"{anchor_txt} {href_norm}"
 
-            # Passagem 2: Contexto imediatamente anterior ao link menciona a cidade ou órgão
-            for m in re.finditer(r'<a\s+[^>]*href=["\']([^"\']+)["\'][^>]*>(.*?)</a>', html, re.DOTALL | re.IGNORECASE):
-                href = m.group(1).strip()
-                if href.startswith(("#", "javascript", "mailto", "tel")):
-                    continue
-                if any(u.lower() in href.lower() for u in links_utilitarios):
-                    continue
-                full_url = urllib.parse.urljoin(banca_url, href)
-                if full_url.rstrip("/") == banca_url.rstrip("/"):
-                    continue
-                if any(u.lower() in full_url.lower() for u in links_utilitarios):
-                    continue
-                ctx_before = normalize_text(re.sub(r"<[^>]+>", " ", html[max(0, m.start() - 300):m.start()]))
-                if (norm_cid and len(norm_cid) > 3 and norm_cid in ctx_before) or (
-                    usar_sigla and sigla_org in ctx_before
-                ):
-                    return full_url
+                score = 0
+                for h_num in edital_hints:
+                    if re.search(r"\b(?:edital|no|n)\s+0*" + re.escape(h_num) + r"(?:\b|202\d)", combined_direct):
+                        score += 65
+                    elif not portal_proprio_orgao and re.search(r"(?<!/)\b0*" + re.escape(h_num) + r"/202\d\b", ctx_raw_unescaped):
+                        score += 35
+
+                if "substituto" in norm_titulo and "substituto" in combined_direct:
+                    score += 35
+                elif "substituto" not in norm_titulo and "substituto" in combined_direct:
+                    score -= 35
+
+                if not portal_proprio_orgao:
+                    if nome_extenso_org and len(nome_extenso_org) > 5 and (nome_extenso_org in combined_direct or nome_extenso_org in ctx_window):
+                        score += 45
+                    elif nome_nucleo_org and len(nome_nucleo_org) > 4 and (nome_nucleo_org in combined_direct or nome_nucleo_org in ctx_window):
+                        score += 35
+
+                    if norm_cid and len(norm_cid) > 3 and norm_cid not in norm_banca_url:
+                        if norm_cid in combined_direct:
+                            score += 35
+                        elif norm_cid in ctx_window:
+                            score += 20
+
+                    if sigla_org and len(sigla_org) >= 3 and sigla_org not in norm_banca_url:
+                        if re.search(r"\b" + re.escape(sigla_org) + r"\b", combined_direct):
+                            score += 30
+                        elif re.search(r"\b" + re.escape(sigla_org) + r"\b", ctx_window):
+                            score += 20
+
+                if uf == "MG":
+                    if "minas gerais" in combined_direct or "minas gerais" in ctx_window:
+                        score += 15
+                    if "espirito santo" in combined_direct or "espirito santo" in ctx_window:
+                        score -= 40
+
+                if self._eh_url_concurso_especifico(full_url):
+                    score += 20
+
+                if re.search(r"20(?:1\d|2[0-5])", href.lower()):
+                    score -= 60
+
+                if score > melhor_score and score >= 45:
+                    melhor_score = score
+                    melhor_url = full_url
+
+            if melhor_url:
+                return melhor_url.split("?origem=")[0]
         except Exception:
             pass
 
+        # 2. Fallback via API / busca indexada para bancas com renderização JS/Cloudflare (IDEPI, VUNESP, Sebrae/RBO)
+        banca_dom = urllib.parse.urlparse(banca_url).netloc.replace("www.", "")
+        if "vunesp.com.br" in banca_dom:
+            termo = sigla_org.upper() if (sigla_org and sigla_org not in ("prefeitura",)) else cidade
+            for q_vun in (f"site:vunesp.com.br {termo} 2026", f"site:vunesp.com.br {termo}"):
+                for res_url in self._buscar_url_yahoo(q_vun):
+                    if re.search(r"vunesp\.com\.br/[A-Za-z]{4}\d{4}", res_url):
+                        return res_url
+        elif "idepi.org.br" in banca_dom:
+            for endpoint in ("https://www.idepi.org.br/rest/concurso/inscricaoAberta", "https://www.idepi.org.br/rest/concurso/emAndamento"):
+                try:
+                    if endpoint not in self._banca_html_cache:
+                        self._banca_html_cache[endpoint] = self._fazer_requisicao(endpoint, timeout=8)
+                    itens_idepi = json.loads(self._banca_html_cache[endpoint])
+                    for it in itens_idepi:
+                        texto_it = normalize_text(f"{it.get('instituicao', '')} {it.get('cidade', '')} {it.get('titulo', '')}")
+                        if norm_cid and norm_cid in texto_it and it.get("id"):
+                            return f"https://www.idepi.org.br/concurso.jsp?cod={it['id']}"
+                except Exception:
+                    pass
+            for res_url in self._buscar_url_yahoo(f"site:idepi.org.br {cidade}"):
+                if "concurso.jsp?cod=" in res_url:
+                    return res_url.split("&")[0]
+        elif "sebrae" in banca_dom or "rbo" in banca_dom:
+            hint_str = f" {edital_hints[0]}/2026" if edital_hints else ""
+            for res_url in self._buscar_url_yahoo(f"{orgao_base}{hint_str} edital comunicado"):
+                if "sebrae.com.br" in res_url and (".pdf" in res_url.lower() or "vagas-efetivas" in res_url.lower()):
+                    return res_url
+
         return banca_url
 
-    def _extrair_link_edital_e_banca(self, art_html: str, orgao: str, cidade: str) -> Tuple[str, str]:
+    def _extrair_link_edital_e_banca(
+        self,
+        art_html: str,
+        orgao: str,
+        cidade: str,
+        uf: str = "",
+        titulo: str = "",
+        full_pci_html: str = ""
+    ) -> Tuple[str, str]:
         """
         Extrai o link externo mais direto para inscrição/edital no site da banca ou instituição oficial.
         Suporta links com hash em data-link-noticia (Cloudflare Turnstile do PCI Concursos),
@@ -728,9 +885,13 @@ class ConcursosSudesteScraper:
                 dom = m_dom.group(1)
                 url = dom if dom.startswith("http") else f"https://{dom}"
                 nome_amigavel = txt
-                for k, (kb_nome, _) in BANCA_KNOWLEDGE_BASE.items():
+                for k, (kb_nome, kb_url) in BANCA_KNOWLEDGE_BASE.items():
                     if k in dom.lower():
                         nome_amigavel = kb_nome
+                        # Se o domínio extraído era apenas a raiz, usar a URL de listagem de concursos da base
+                        parsed_dom = urllib.parse.urlparse(url)
+                        if not parsed_dom.path or parsed_dom.path == "/":
+                            url = kb_url
                         break
                 candidatos.append((url, nome_amigavel))
                 continue
@@ -773,11 +934,18 @@ class ConcursosSudesteScraper:
         # Priorizar candidato com palavras de concurso/inscrição/banca
         link_escolhido, texto_escolhido = candidatos[0]
         for url, nome in candidatos:
-            if any(k in url.lower() for k in ["selecao", "concurso", "inscric", "sigrh", "uspdigital", "vunesp", "ibfc", "idepi", "rbo", "integri", "publiconsult", "indepac", "ibgp", "aocp"]):
+            if any(k in url.lower() for k in ["selecao", "concurso", "inscric", "progepe", "sigrh", "uspdigital", "vunesp", "ibfc", "idepi", "sebrae", "rbo", "integri", "publiconsult", "indepac", "ibgp", "aocp"]):
                 link_escolhido, texto_escolhido = url, nome
                 break
 
-        link_direto = self._resolver_link_direto_banca(link_escolhido, orgao, cidade)
+        link_direto = self._resolver_link_direto_banca(
+            link_escolhido,
+            orgao,
+            cidade,
+            uf=uf,
+            titulo=titulo,
+            full_pci_html=full_pci_html or art_html
+        )
         dominio = urllib.parse.urlparse(link_direto).netloc.replace("www.", "")
         banca_final = texto_escolhido if (texto_escolhido and len(texto_escolhido) <= 45 and not texto_escolhido.startswith("http")) else dominio
         return link_direto, (banca_final or "Indisponível")
@@ -1033,7 +1201,14 @@ class ConcursosSudesteScraper:
         dist_referencia = rota["distancia_carro_km"] if rota["distancia_carro_km"] is not None else rota["distancia_reta_km"]
 
         # Extrair link oficial direto e banca organizadora
-        link_direto, banca_nome = self._extrair_link_edital_e_banca(art_html, item["orgao"], municipio_final.nome)
+        link_direto, banca_nome = self._extrair_link_edital_e_banca(
+            art_html,
+            item["orgao"],
+            municipio_final.nome,
+            uf=municipio_final.uf,
+            titulo=item["titulo"],
+            full_pci_html=page_html
+        )
 
         id_base = re.sub(r"[^a-zA-Z0-9]", "", item["link"].split("/")[-1])
         tem_ambos_blocos = bool(bloco_mt_cargos and bloco_sup_cargos)
