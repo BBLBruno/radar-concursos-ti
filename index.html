@@ -471,6 +471,17 @@
     let ultimosEditaisFiltrados = [];
     let toastTimeout = null;
 
+    // Função de Sanitização para Prevenção de XSS (OWASP A03:2021)
+    function escapeHtml(str) {
+      if (str === null || str === undefined) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
     // Inicialização da Página
     document.addEventListener('DOMContentLoaded', () => {
       if (window.location.protocol === 'file:') {
@@ -1249,7 +1260,7 @@
 
         // Tags das Áreas
         const tagsHtml = (Array.isArray(item.areas_atuacao) && item.areas_atuacao.length > 0)
-          ? item.areas_atuacao.map(area => `<span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200/60">#${area}</span>`).join(' ')
+          ? item.areas_atuacao.map(area => `<span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200/60">#${escapeHtml(area)}</span>`).join(' ')
           : '<span class="text-xs text-slate-400 font-medium">#Geral</span>';
 
         // Escolaridades (Médio > Técnico > Superior)
@@ -1261,13 +1272,20 @@
           let badgeCor = "bg-amber-50 text-amber-700 border-amber-200";
           if (esc === 'Médio') badgeCor = "bg-sky-50 text-sky-700 border-sky-200";
           if (esc === 'Superior') badgeCor = "bg-indigo-50 text-indigo-700 border-indigo-200";
-          return `<span class="px-2 py-0.5 rounded text-[11px] font-bold border ${badgeCor}">${esc}</span>`;
+          return `<span class="px-2 py-0.5 rounded text-[11px] font-bold border ${badgeCor}">${escapeHtml(esc)}</span>`;
         }).join(' ');
 
         // Lista de Cargos de TI Identificados
         const cargosLista = Array.isArray(item.cargos_ti_identificados) && item.cargos_ti_identificados.length > 0
-          ? item.cargos_ti_identificados
+          ? item.cargos_ti_identificados.map(c => escapeHtml(c))
           : ['Indisponível'];
+
+        // Sanitização de Textos Dinâmicos (OWASP A03:2021)
+        const cidadeUfLimpa = escapeHtml(`${item.cidade || 'Indisponível'} - ${item.uf || 'Indisponível'}`);
+        const orgaoLimpo = escapeHtml(item.orgao || 'Órgão não informado');
+        const tituloLimpo = escapeHtml(item.titulo || '');
+        const salarioLimpo = escapeHtml(item.salario_formatado || 'Indisponível');
+        const prazoLimpo = escapeHtml(item.data_limite_inscricao || 'Indisponível');
 
         // Links de Ação
         const temLinkOficial = item.link_edital_oficial && item.link_edital_oficial !== 'Indisponível';
@@ -1287,7 +1305,7 @@
               <div class="flex items-center justify-between gap-2 mb-3 min-w-0">
                 <div class="flex items-center gap-1.5 text-[13px] sm:text-sm font-bold text-slate-700 min-w-0 flex-1 mr-1">
                   <i data-lucide="map-pin" class="w-4 h-4 text-brand-600 shrink-0"></i>
-                  <span class="truncate min-w-0 block cidade-truncate-target" data-full-cidade="${item.cidade || 'Indisponível'} - ${item.uf || 'Indisponível'}">${item.cidade || 'Indisponível'} - ${item.uf || 'Indisponível'}</span>
+                  <span class="truncate min-w-0 block cidade-truncate-target" data-full-cidade="${cidadeUfLimpa}">${cidadeUfLimpa}</span>
                 </div>
 
                 <div class="flex items-center gap-1.5 shrink-0">
@@ -1330,8 +1348,8 @@
               </div>
 
               <!-- Nome do Órgão (Estritamente padronizado em 2 linhas) -->
-              <h2 class="text-base sm:text-[17px] font-bold text-slate-900 leading-snug line-clamp-2 min-h-[2.85rem] max-h-[2.85rem] hover:text-brand-600 transition" title="${item.orgao}">
-                ${item.orgao}
+              <h2 class="text-base sm:text-[17px] font-bold text-slate-900 leading-snug line-clamp-2 min-h-[2.85rem] max-h-[2.85rem] hover:text-brand-600 transition" title="${orgaoLimpo}">
+                ${orgaoLimpo}
               </h2>
 
               <!-- Bloco Compacto: Salário e Nível -->
@@ -1339,7 +1357,7 @@
                 <div class="flex items-center gap-1.5 text-xs sm:text-[13px]">
                   <span class="font-semibold text-slate-500">Salário:</span>
                   <span class="text-xs sm:text-[13px] font-extrabold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200 tabular-nums">
-                    ${item.salario_formatado || 'Indisponível'}
+                    ${salarioLimpo}
                   </span>
                 </div>
                 <div class="flex items-center gap-1">
@@ -1406,7 +1424,7 @@
               <div class="flex items-center justify-between gap-2 mb-3 min-w-0">
                 <div class="flex items-center gap-1.5 text-[13px] sm:text-sm font-bold text-slate-700 min-w-0 flex-1 mr-1">
                   <i data-lucide="map-pin" class="w-4 h-4 text-brand-600 shrink-0"></i>
-                  <span class="truncate min-w-0 block cidade-truncate-target" data-full-cidade="${item.cidade || 'Indisponível'} - ${item.uf || 'Indisponível'}">${item.cidade || 'Indisponível'} - ${item.uf || 'Indisponível'}</span>
+                  <span class="truncate min-w-0 block cidade-truncate-target" data-full-cidade="${cidadeUfLimpa}">${cidadeUfLimpa}</span>
                 </div>
 
                 <div class="flex items-center gap-1.5 shrink-0">
@@ -1449,13 +1467,13 @@
               </div>
 
               <!-- Nome do Órgão (Padronizado em 2 linhas) -->
-              <h2 class="text-base sm:text-[17px] font-bold text-slate-900 leading-snug line-clamp-2 min-h-[2.85rem] max-h-[2.85rem] hover:text-brand-600 transition" title="${item.orgao}">
-                ${item.orgao}
+              <h2 class="text-base sm:text-[17px] font-bold text-slate-900 leading-snug line-clamp-2 min-h-[2.85rem] max-h-[2.85rem] hover:text-brand-600 transition" title="${orgaoLimpo}">
+                ${orgaoLimpo}
               </h2>
 
               <!-- Descrição do Concurso (Padronizada em 2 linhas) -->
-              <p class="text-xs sm:text-[13px] text-slate-500 mt-1 line-clamp-2 min-h-[2.5rem] max-h-[2.5rem] leading-relaxed" title="${item.titulo}">
-                ${item.titulo}
+              <p class="text-xs sm:text-[13px] text-slate-500 mt-1 line-clamp-2 min-h-[2.5rem] max-h-[2.5rem] leading-relaxed" title="${tituloLimpo}">
+                ${tituloLimpo}
               </p>
 
               <!-- Bloco de Destaque: Salário, Nível e Cargos -->
@@ -1463,7 +1481,7 @@
                 <div class="flex items-center gap-1.5 text-xs sm:text-[13px] flex-wrap">
                   <span class="font-semibold text-slate-500">Salário:</span>
                   <span class="text-xs sm:text-[13px] font-extrabold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200 tabular-nums">
-                    ${item.salario_formatado || 'Indisponível'}
+                    ${salarioLimpo}
                   </span>
                 </div>
 
@@ -1496,7 +1514,7 @@
                 <i data-lucide="calendar" class="w-4 h-4 text-slate-400"></i>
                 Inscrições até:
               </span>
-              <span class="font-bold text-slate-800 tabular-nums">${item.data_limite_inscricao || 'Indisponível'}</span>
+              <span class="font-bold text-slate-800 tabular-nums">${prazoLimpo}</span>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
