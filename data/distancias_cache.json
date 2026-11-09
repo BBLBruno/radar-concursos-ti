@@ -89,5 +89,12 @@
     "tempo_conducao_min": 31,
     "tempo_conducao_formatado": "31 min",
     "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "Itu-SP": {
+    "distancia_carro_km": 285.2,
+    "distancia_reta_km": 223.8,
+    "tempo_conducao_min": 222,
+    "tempo_conducao_formatado": "3h 42min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
   }
 }

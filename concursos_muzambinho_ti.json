@@ -1,6 +1,6 @@
 {
   "metadados": {
-    "gerado_em": "2026-11-06T18:55:18.136661",
+    "gerado_em": "2026-11-09T21:15:25.563900",
     "cidade_origem": "Muzambinho - MG",
     "coordenadas_origem": [
       -21.3708,
@@ -15,7 +15,7 @@
       "Superior"
     ],
     "area_atuacao": "Tecnologia da Informação / Computação",
-    "total_editais_encontrados": 18,
+    "total_editais_encontrados": 19,
     "total_canais_monitorados": 21,
     "fontes_consultadas": [
       "Sudeste",
@@ -71,7 +71,7 @@
       "cargos_ti_identificados": [
         "Técnico Especializado em Informática"
       ],
-      "data_extracao": "2026-11-06T18:55:17.509181"
+      "data_extracao": "2026-11-09T21:15:25.192498"
     },
     {
       "id": "fundacaoeducacionalguacuanaspabreconcursopublicoparabibliotecarioetecnicoeminformatica-mt",
@@ -102,7 +102,7 @@
       "cargos_ti_identificados": [
         "Técnico em Informática (1 vaga e cadastro de reserva)"
       ],
-      "data_extracao": "2026-11-06T18:54:37.320587"
+      "data_extracao": "2026-11-09T21:15:12.122490"
     },
     {
       "id": "prefeituradelemespabreconcursopublicocomsalariosdeate13359-sup",
@@ -132,7 +132,7 @@
       "cargos_ti_identificados": [
         "Analista de Tecnologia da Informação (1 vaga)"
       ],
-      "data_extracao": "2026-11-06T18:54:51.695963"
+      "data_extracao": "2026-11-09T21:15:15.340374"
     },
     {
       "id": "ifspretificaprocessoseletivocomvagasparaprofessoressubstitutos-sup",
@@ -170,7 +170,7 @@
         "Professor substituto de Informática (1 vaga) - São Paulo",
         "Professor substituto de Informática (1 vaga) - Sertãozinho"
       ],
-      "data_extracao": "2026-11-06T18:54:42.716979"
+      "data_extracao": "2026-11-09T21:15:13.448220"
     },
     {
       "id": "seteccampinasspabreconcursopublicocomsalariosdeate10428-mt",
@@ -201,7 +201,7 @@
       "cargos_ti_identificados": [
         "Agente de Suporte Técnico (4 vagas + CR)"
       ],
-      "data_extracao": "2026-11-06T18:54:34.079908"
+      "data_extracao": "2026-11-09T21:15:10.276374"
     },
     {
       "id": "seteccampinasspabreconcursopublicocomsalariosdeate10428-sup",
@@ -231,7 +231,7 @@
       "cargos_ti_identificados": [
         "Analista Técnico (Informática) (1 vaga + CR)"
       ],
-      "data_extracao": "2026-11-06T18:54:34.080078"
+      "data_extracao": "2026-11-09T21:15:10.276574"
     },
     {
       "id": "unifeimgabreconcursopublicoparaprofessoresdomagisteriosuperior-sup",
@@ -272,7 +272,7 @@
         "Professor de Programação e Desenvolvimento de Sistemas Aplicados à Ciência de Dados (1 vaga)",
         "Professor de Computação, Algoritmos e Fundamentos de Programação (1 vaga)"
       ],
-      "data_extracao": "2026-11-06T18:55:15.465512"
+      "data_extracao": "2026-11-09T21:15:24.625506"
     },
     {
       "id": "iprejundejundiaispabreconcursopublicocomsalariosdeate15123-sup",
@@ -302,7 +302,7 @@
       "cargos_ti_identificados": [
         "Analista de Planejamento, Gestão e Orçamento - Informática (1 vaga)"
       ],
-      "data_extracao": "2026-11-06T18:54:44.253478"
+      "data_extracao": "2026-11-09T21:15:13.661355"
     },
     {
       "id": "ifspretificaeditaldeconcursopublicoparaocargodeprofessordoensinobasicotecnicoetecnologico-sup",
@@ -340,7 +340,38 @@
         "Professor de Informática - São Miguel Paulista (2 vagas)",
         "Professor de Informática - São Paulo (1 vaga)"
       ],
-      "data_extracao": "2026-11-06T18:54:41.058375"
+      "data_extracao": "2026-11-09T21:15:13.049090"
+    },
+    {
+      "id": "cisituspabreconcursopublicocomsalariosdeate7553-mt",
+      "orgao": "CIS - Companhia Ituana de Saneamento",
+      "cidade": "Itu",
+      "uf": "SP",
+      "distancia_km": 285.2,
+      "distancia_carro_km": 285.2,
+      "distancia_reta_km": 223.8,
+      "tempo_conducao_min": 222,
+      "tempo_conducao_formatado": "3h 42min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
+      "titulo": "CIS Itu - SP abre concurso público com salários de até R$ 7.553,69",
+      "link_pci": "https://www.pciconcursos.com.br/noticias/cis-itu-sp-abre-concurso-publico-com-salarios-de-ate-7553",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
+      "vagas_salario": "28 vagas até R$ 7.553,69 Vários Cargos Fundamental / Médio / Técnico / Superior",
+      "salario_num": 7553.69,
+      "salario_formatado": "Até R$ 7.553,69",
+      "escolaridade_niveis": [
+        "Técnico"
+      ],
+      "areas_atuacao": [
+        "Infraestrutura e Redes",
+        "Programação e Sistemas"
+      ],
+      "data_limite_inscricao": "07/12/2026",
+      "cargos_ti_identificados": [
+        "Técnico em Informática (1 vaga)"
+      ],
+      "data_extracao": "2026-11-09T21:15:11.680936"
     },
     {
       "id": "uspspabreconcursopublicoparaocargodeprofessortitularnaareadesistemasdecomputacao-sup",
@@ -370,7 +401,7 @@
       "cargos_ti_identificados": [
         "Professor Titular no Departamento de Sistemas de Computação, na área de Sistemas de Computação (1 vaga)"
       ],
-      "data_extracao": "2026-11-06T18:55:00.513889"
+      "data_extracao": "2026-11-09T21:15:19.105378"
     },
     {
       "id": "faculdadesebraespabrevagaparaprofessoradjuntodeengenhariadesoftware-sup",
@@ -400,7 +431,7 @@
       "cargos_ti_identificados": [
         "Professor Adjunto - Engenharia de Software - Sistema da Informação (1 vaga)"
       ],
-      "data_extracao": "2026-11-06T18:54:36.109581"
+      "data_extracao": "2026-11-09T21:15:11.895627"
     },
     {
       "id": "trf3spmsretificaconcursopublicoparaanalistasetecnicosjudiciarios-sup",
@@ -432,7 +463,44 @@
         "Analista Judiciário, especialidade: Análise de Sistemas de Informação (1 vaga)",
         "Analista Judiciário, especialidade: Suporte em Tecnologia da Informação (1 vaga)"
       ],
-      "data_extracao": "2026-11-06T18:55:18.055752"
+      "data_extracao": "2026-11-09T21:15:25.482831"
+    },
+    {
+      "id": "ufabcspabreconcursopublicoparaprofessores-sup",
+      "orgao": "UFABC - Fundação Universidade Federal do ABC",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "distancia_km": 318.7,
+      "distancia_carro_km": 318.7,
+      "distancia_reta_km": 240.7,
+      "tempo_conducao_min": 243,
+      "tempo_conducao_formatado": "4h 03min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
+      "titulo": "UFABC - SP abre concurso público para professores",
+      "link_pci": "https://www.pciconcursos.com.br/noticias/ufabc-sp-abre-concurso-publico-para-professores",
+      "link_edital_oficial": "Indisponível",
+      "banca_organizadora": "Indisponível",
+      "vagas_salario": "79 vagas até R$ 13.753,96 Professor assistente Superior",
+      "salario_num": 13753.96,
+      "salario_formatado": "R$ 13.753,96",
+      "escolaridade_niveis": [
+        "Superior"
+      ],
+      "areas_atuacao": [
+        "Dados e IA",
+        "Infraestrutura e Redes",
+        "Programação e Sistemas"
+      ],
+      "data_limite_inscricao": "30/11/2026 a 28/01/2027",
+      "cargos_ti_identificados": [
+        "Professor assistente em Ciência da Computação, subárea Computação Gráfica (1 vaga)",
+        "Professor assistente em Ciência da Computação, subárea Engenharia de Software (1 vaga)",
+        "Professor assistente em Ciência de Dados, subárea Ciência de Dados Computacional (5 vagas)",
+        "Professor assistente em Engenharia de Informação, subárea Redes de Computadores (1 vaga)",
+        "Professor assistente em Física da Matéria Condensada, subárea Ciência de Dados aplicada à Estrutura Eletrônica e Propriedades de Átomos, Moléculas e Sólidos (1 vaga)",
+        "Professor assistente em Fundamentos da Ciência de Dados (2 vagas)"
+      ],
+      "data_extracao": "2026-11-09T21:15:17.607861"
     },
     {
       "id": "trf3spmsretificaconcursopublicoparaanalistasetecnicosjudiciarios-mt",
@@ -464,7 +532,7 @@
         "Técnico Judiciário, especialidade: Desenvolvimento de Sistemas de Informação (5 vagas)",
         "Técnico Judiciário, especialidade: Suporte Técnico (4 vagas)"
       ],
-      "data_extracao": "2026-11-06T18:55:18.055619"
+      "data_extracao": "2026-11-09T21:15:25.482665"
     },
     {
       "id": "marinhadobrasil8distritonavalabrevagasparaoficiaisrm2emsp-sup",
@@ -495,7 +563,7 @@
         "Informática, São Paulo - SP (1 vaga)",
         "Engenharia de Sistemas de Computação, São Paulo - SP (1 vaga)"
       ],
-      "data_extracao": "2026-11-06T18:54:46.455030"
+      "data_extracao": "2026-11-09T21:15:13.872311"
     },
     {
       "id": "prefeituradejandiraspabreconcursopublicocomsalariosdeate6812-mt",
@@ -525,7 +593,7 @@
       "cargos_ti_identificados": [
         "Técnico em Tecnologia da Informação (2 vagas)"
       ],
-      "data_extracao": "2026-11-06T18:54:50.302684"
+      "data_extracao": "2026-11-09T21:15:14.951746"
     },
     {
       "id": "prefeituradeguaratinguetaspabreconcursopublicocomsalariosdeate18540-sup",
@@ -555,7 +623,7 @@
       "cargos_ti_identificados": [
         "Analista de Sistemas (1 vaga)"
       ],
-      "data_extracao": "2026-11-06T18:54:47.783466"
+      "data_extracao": "2026-11-09T21:15:14.070141"
     },
     {
       "id": "prefeituradepiracemamgabreconcursoeprocessoseletivocomdiversasvagas-mt",
@@ -586,37 +654,7 @@
       "cargos_ti_identificados": [
         "Técnico em Informática (1 vaga)"
       ],
-      "data_extracao": "2026-11-06T18:55:07.616465"
-    },
-    {
-      "id": "ipsmdesaojosedoscamposspdivulgaretificacoesdeconcursopublico-sup",
-      "orgao": "IPSM - Instituto de Previdência do Servidor Municipal",
-      "cidade": "São José dos Campos",
-      "uf": "SP",
-      "distancia_km": 366.8,
-      "distancia_carro_km": 366.8,
-      "distancia_reta_km": 212.8,
-      "tempo_conducao_min": 274,
-      "tempo_conducao_formatado": "4h 34min",
-      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
-      "titulo": "IPSM de São José dos Campos - SP divulga retificações de concurso público",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/ipsm-de-sao-jose-dos-campos-sp-divulga-retificacoes-de-concurso-publico",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
-      "vagas_salario": "17 vagas até R$ 5.860,31 Vários Cargos Superior",
-      "salario_num": 5185.46,
-      "salario_formatado": "Até R$ 5.185,46",
-      "escolaridade_niveis": [
-        "Superior"
-      ],
-      "areas_atuacao": [
-        "Programação e Sistemas"
-      ],
-      "data_limite_inscricao": "Prorrogado até 06/11/2026",
-      "cargos_ti_identificados": [
-        "Analista Previdenciário - TI (1 vaga + cadastro de reserva para PCD)"
-      ],
-      "data_extracao": "2026-11-06T18:54:45.910170"
+      "data_extracao": "2026-11-09T21:15:21.917438"
     }
   ]
 }
