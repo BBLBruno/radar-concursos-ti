@@ -1,14 +1,14 @@
 {
   "metadados": {
-    "gerado_em": "2026-11-09T21:15:25.563900",
+    "gerado_em": "2026-11-09T18:06:12.072423",
     "cidade_origem": "Muzambinho - MG",
     "coordenadas_origem": [
       -21.3708,
       -46.5264
     ],
     "raio_max_km": 250.0,
-    "openrouteservice_ativo": true,
-    "metodo_distancia_ativo": "OpenRouteService (driving-car)",
+    "openrouteservice_ativo": false,
+    "metodo_distancia_ativo": "Geodésico Oficial IBGE (Linha Reta)",
     "escopo_escolaridade": [
       "Médio",
       "Técnico",
@@ -55,8 +55,8 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "MGS abre processo seletivo com vagas imediatas e cadastro de reserva em diversas áreas",
       "link_pci": "https://www.pciconcursos.com.br/noticias/mgs-abre-processo-seletivo-com-vagas-imediatas-e-cadastro-de-reserva-em-diversas-areas",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
+      "link_edital_oficial": "https://www.ibfc.org.br/",
+      "banca_organizadora": "IBFC",
       "vagas_salario": "643 vagas até R$ 3.911,17 Vários Cargos Fundamental / Médio / Técnico",
       "salario_num": 3911.17,
       "salario_formatado": "Até R$ 3.911,17",
@@ -71,7 +71,7 @@
       "cargos_ti_identificados": [
         "Técnico Especializado em Informática"
       ],
-      "data_extracao": "2026-11-09T21:15:25.192498"
+      "data_extracao": "2026-11-09T18:06:11.047000"
     },
     {
       "id": "fundacaoeducacionalguacuanaspabreconcursopublicoparabibliotecarioetecnicoeminformatica-mt",
@@ -86,8 +86,8 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "Fundação Educacional Guaçuana - SP abre concurso público para Bibliotecário e Técnico em Informática",
       "link_pci": "https://www.pciconcursos.com.br/noticias/fundacao-educacional-guacuana-sp-abre-concurso-publico-para-bibliotecario-e-tecnico-em-informatica",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
+      "link_edital_oficial": "https://www.publiconsult.com.br",
+      "banca_organizadora": "Publiconsult",
       "vagas_salario": "2 vagas até R$ 2.969,41 Bibliotecário, Técnico em Informática Médio / Técnico / Superior",
       "salario_num": 2969.41,
       "salario_formatado": "Até R$ 2.969,41",
@@ -102,7 +102,7 @@
       "cargos_ti_identificados": [
         "Técnico em Informática (1 vaga e cadastro de reserva)"
       ],
-      "data_extracao": "2026-11-09T21:15:12.122490"
+      "data_extracao": "2026-11-09T18:05:15.354683"
     },
     {
       "id": "prefeituradelemespabreconcursopublicocomsalariosdeate13359-sup",
@@ -117,8 +117,8 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "Prefeitura de Leme - SP abre concurso público com salários de até R$ 13.359,44",
       "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-leme-sp-abre-concurso-publico-com-salarios-de-ate-13359",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
+      "link_edital_oficial": "https://indepac.selecao.net.br/informacoes/121/",
+      "banca_organizadora": "INDEPAC",
       "vagas_salario": "29 vagas até R$ 13.359,44 Vários Cargos Fundamental / Médio / Técnico / Superior",
       "salario_num": 13359.44,
       "salario_formatado": "Até R$ 13.359,44",
@@ -132,7 +132,7 @@
       "cargos_ti_identificados": [
         "Analista de Tecnologia da Informação (1 vaga)"
       ],
-      "data_extracao": "2026-11-09T21:15:15.340374"
+      "data_extracao": "2026-11-09T18:05:28.993101"
     },
     {
       "id": "ifspretificaprocessoseletivocomvagasparaprofessoressubstitutos-sup",
@@ -147,8 +147,8 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "IFSP retifica processo seletivo com vagas para professores substitutos",
       "link_pci": "https://www.pciconcursos.com.br/noticias/ifsp-retifica-processo-seletivo-com-vagas-para-professores-substitutos",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
+      "link_edital_oficial": "https://concursopublico.ifsp.edu.br/",
+      "banca_organizadora": "Portal de Concursos IFSP",
       "vagas_salario": "79 vagas até R$ 8.340,33 Professor Substituto Superior",
       "salario_num": 8340.33,
       "salario_formatado": "Até R$ 8.340,33",
@@ -170,7 +170,7 @@
         "Professor substituto de Informática (1 vaga) - São Paulo",
         "Professor substituto de Informática (1 vaga) - Sertãozinho"
       ],
-      "data_extracao": "2026-11-09T21:15:13.448220"
+      "data_extracao": "2026-11-09T18:05:20.565002"
     },
     {
       "id": "seteccampinasspabreconcursopublicocomsalariosdeate10428-mt",
@@ -185,8 +185,8 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "SETEC Campinas - SP abre concurso público com salários de até R$ 10.428,05",
       "link_pci": "https://www.pciconcursos.com.br/noticias/setec-campinas-sp-abre-concurso-publico-com-salarios-de-ate-10428",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
+      "link_edital_oficial": "https://indepac.selecao.net.br/informacoes/109/",
+      "banca_organizadora": "INDEPAC",
       "vagas_salario": "39 vagas até R$ 10.428,05 Vários Cargos Fundamental / Médio / Técnico / Superior",
       "salario_num": 10428.05,
       "salario_formatado": "Até R$ 10.428,05",
@@ -201,7 +201,7 @@
       "cargos_ti_identificados": [
         "Agente de Suporte Técnico (4 vagas + CR)"
       ],
-      "data_extracao": "2026-11-09T21:15:10.276374"
+      "data_extracao": "2026-11-09T18:05:09.143997"
     },
     {
       "id": "seteccampinasspabreconcursopublicocomsalariosdeate10428-sup",
@@ -216,8 +216,8 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "SETEC Campinas - SP abre concurso público com salários de até R$ 10.428,05",
       "link_pci": "https://www.pciconcursos.com.br/noticias/setec-campinas-sp-abre-concurso-publico-com-salarios-de-ate-10428",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
+      "link_edital_oficial": "https://indepac.selecao.net.br/informacoes/109/",
+      "banca_organizadora": "INDEPAC",
       "vagas_salario": "39 vagas até R$ 10.428,05 Vários Cargos Fundamental / Médio / Técnico / Superior",
       "salario_num": 10428.05,
       "salario_formatado": "Até R$ 10.428,05",
@@ -231,7 +231,38 @@
       "cargos_ti_identificados": [
         "Analista Técnico (Informática) (1 vaga + CR)"
       ],
-      "data_extracao": "2026-11-09T21:15:10.276574"
+      "data_extracao": "2026-11-09T18:05:09.144424"
+    },
+    {
+      "id": "cisituspabreconcursopublicocomsalariosdeate7553-mt",
+      "orgao": "CIS - Companhia Ituana de Saneamento",
+      "cidade": "Itu",
+      "uf": "SP",
+      "distancia_km": 223.8,
+      "distancia_carro_km": null,
+      "distancia_reta_km": 223.8,
+      "tempo_conducao_min": null,
+      "tempo_conducao_formatado": "Indisponível",
+      "fonte_calculo_distancia": "Geodésico Oficial IBGE (Linha Reta)",
+      "titulo": "CIS Itu - SP abre concurso público com salários de até R$ 7.553,69",
+      "link_pci": "https://www.pciconcursos.com.br/noticias/cis-itu-sp-abre-concurso-publico-com-salarios-de-ate-7553",
+      "link_edital_oficial": "https://www.integribrasil.com.br/",
+      "banca_organizadora": "Integri Brasil",
+      "vagas_salario": "28 vagas até R$ 7.553,69 Vários Cargos Fundamental / Médio / Técnico / Superior",
+      "salario_num": 7553.69,
+      "salario_formatado": "Até R$ 7.553,69",
+      "escolaridade_niveis": [
+        "Técnico"
+      ],
+      "areas_atuacao": [
+        "Infraestrutura e Redes",
+        "Programação e Sistemas"
+      ],
+      "data_limite_inscricao": "07/12/2026",
+      "cargos_ti_identificados": [
+        "Técnico em Informática (1 vaga)"
+      ],
+      "data_extracao": "2026-11-09T18:05:11.904180"
     },
     {
       "id": "unifeimgabreconcursopublicoparaprofessoresdomagisteriosuperior-sup",
@@ -246,8 +277,8 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "UNIFEI - MG abre concurso público para professores do magistério superior",
       "link_pci": "https://www.pciconcursos.com.br/noticias/unifei-mg-abre-concurso-publico-para-professores-do-magisterio-superior",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
+      "link_edital_oficial": "https://sigrh.unifei.edu.br",
+      "banca_organizadora": "UNIFEI - SigRH",
       "vagas_salario": "27 vagas até R$ 13.753,96 Professor do Magistério Superior Superior",
       "salario_num": 13753.96,
       "salario_formatado": "R$ 13.753,96",
@@ -272,7 +303,7 @@
         "Professor de Programação e Desenvolvimento de Sistemas Aplicados à Ciência de Dados (1 vaga)",
         "Professor de Computação, Algoritmos e Fundamentos de Programação (1 vaga)"
       ],
-      "data_extracao": "2026-11-09T21:15:24.625506"
+      "data_extracao": "2026-11-09T18:06:08.461113"
     },
     {
       "id": "iprejundejundiaispabreconcursopublicocomsalariosdeate15123-sup",
@@ -287,8 +318,8 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "IPREJUN de Jundiaí - SP abre concurso público com salários de até R$ 15.123,99",
       "link_pci": "https://www.pciconcursos.com.br/noticias/iprejun-de-jundiai-sp-abre-concurso-publico-com-salarios-de-ate-15123",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
+      "link_edital_oficial": "https://www.vunesp.com.br",
+      "banca_organizadora": "Fundação VUNESP",
       "vagas_salario": "4 vagas até R$ 15.123,99 Assistente de Administração, Analista de Planejamento, Gestão e Orçamento Médio / Superior",
       "salario_num": 15123.99,
       "salario_formatado": "Até R$ 15.123,99",
@@ -302,7 +333,7 @@
       "cargos_ti_identificados": [
         "Analista de Planejamento, Gestão e Orçamento - Informática (1 vaga)"
       ],
-      "data_extracao": "2026-11-09T21:15:13.661355"
+      "data_extracao": "2026-11-09T18:05:21.434935"
     },
     {
       "id": "ifspretificaeditaldeconcursopublicoparaocargodeprofessordoensinobasicotecnicoetecnologico-sup",
@@ -317,8 +348,8 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "IFSP retifica edital de concurso público para o cargo de Professor do Ensino Básico, Técnico e Tecnológico",
       "link_pci": "https://www.pciconcursos.com.br/noticias/ifsp-retifica-edital-de-concurso-publico-para-o-cargo-de-professor-do-ensino-basico-tecnico-e-tecnologico",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
+      "link_edital_oficial": "https://concursopublico.ifsp.edu.br",
+      "banca_organizadora": "Portal de Concursos IFSP",
       "vagas_salario": "45 vagas até R$ 6.397,19 Professor do Ensino Básico, Técnico e Tecnológico Superior",
       "salario_num": 7356.77,
       "salario_formatado": "Até R$ 7.356,77",
@@ -340,38 +371,7 @@
         "Professor de Informática - São Miguel Paulista (2 vagas)",
         "Professor de Informática - São Paulo (1 vaga)"
       ],
-      "data_extracao": "2026-11-09T21:15:13.049090"
-    },
-    {
-      "id": "cisituspabreconcursopublicocomsalariosdeate7553-mt",
-      "orgao": "CIS - Companhia Ituana de Saneamento",
-      "cidade": "Itu",
-      "uf": "SP",
-      "distancia_km": 285.2,
-      "distancia_carro_km": 285.2,
-      "distancia_reta_km": 223.8,
-      "tempo_conducao_min": 222,
-      "tempo_conducao_formatado": "3h 42min",
-      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
-      "titulo": "CIS Itu - SP abre concurso público com salários de até R$ 7.553,69",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/cis-itu-sp-abre-concurso-publico-com-salarios-de-ate-7553",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
-      "vagas_salario": "28 vagas até R$ 7.553,69 Vários Cargos Fundamental / Médio / Técnico / Superior",
-      "salario_num": 7553.69,
-      "salario_formatado": "Até R$ 7.553,69",
-      "escolaridade_niveis": [
-        "Técnico"
-      ],
-      "areas_atuacao": [
-        "Infraestrutura e Redes",
-        "Programação e Sistemas"
-      ],
-      "data_limite_inscricao": "07/12/2026",
-      "cargos_ti_identificados": [
-        "Técnico em Informática (1 vaga)"
-      ],
-      "data_extracao": "2026-11-09T21:15:11.680936"
+      "data_extracao": "2026-11-09T18:05:19.109510"
     },
     {
       "id": "uspspabreconcursopublicoparaocargodeprofessortitularnaareadesistemasdecomputacao-sup",
@@ -386,8 +386,8 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "USP - SP abre concurso público para o cargo de Professor Titular na área de Sistemas de Computação",
       "link_pci": "https://www.pciconcursos.com.br/noticias/usp-sp-abre-concurso-publico-para-o-cargo-de-professor-titular-na-area-de-sistemas-de-computacao",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
+      "link_edital_oficial": "https://uspdigital.usp.br/gr/",
+      "banca_organizadora": "USP Digital",
       "vagas_salario": "1 vaga até R$ 24.309,11 Professor Titular Superior",
       "salario_num": 24309.11,
       "salario_formatado": "R$ 24.309,11",
@@ -401,7 +401,7 @@
       "cargos_ti_identificados": [
         "Professor Titular no Departamento de Sistemas de Computação, na área de Sistemas de Computação (1 vaga)"
       ],
-      "data_extracao": "2026-11-09T21:15:19.105378"
+      "data_extracao": "2026-11-09T18:05:45.340042"
     },
     {
       "id": "faculdadesebraespabrevagaparaprofessoradjuntodeengenhariadesoftware-sup",
@@ -416,8 +416,8 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "Faculdade Sebrae - SP abre vaga para professor adjunto de Engenharia de Software",
       "link_pci": "https://www.pciconcursos.com.br/noticias/faculdade-sebrae-sp-abre-vaga-para-professor-adjunto-de-engenharia-de-software",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
+      "link_edital_oficial": "https://concursosrbo.com.br/",
+      "banca_organizadora": "RBO Concursos",
       "vagas_salario": "1 vaga até R$ 19.522,83 Professor Adjunto Superior",
       "salario_num": 19522.83,
       "salario_formatado": "R$ 19.522,83",
@@ -431,7 +431,7 @@
       "cargos_ti_identificados": [
         "Professor Adjunto - Engenharia de Software - Sistema da Informação (1 vaga)"
       ],
-      "data_extracao": "2026-11-09T21:15:11.895627"
+      "data_extracao": "2026-11-09T18:05:12.805295"
     },
     {
       "id": "trf3spmsretificaconcursopublicoparaanalistasetecnicosjudiciarios-sup",
@@ -446,8 +446,8 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "TRF3 - SP/MS retifica concurso público para analistas e técnicos judiciários",
       "link_pci": "https://www.pciconcursos.com.br/noticias/trf3-sp-ms-retifica-concurso-publico-para-analistas-e-tecnicos-judiciarios",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
+      "link_edital_oficial": "https://www.vunesp.com.br",
+      "banca_organizadora": "Fundação VUNESP",
       "vagas_salario": "11 vagas até R$ 20.013,11 Analista Judiciário, Técnico Judiciário Técnico / Superior",
       "salario_num": 16040.87,
       "salario_formatado": "R$ 16.040,87",
@@ -463,7 +463,7 @@
         "Analista Judiciário, especialidade: Análise de Sistemas de Informação (1 vaga)",
         "Analista Judiciário, especialidade: Suporte em Tecnologia da Informação (1 vaga)"
       ],
-      "data_extracao": "2026-11-09T21:15:25.482831"
+      "data_extracao": "2026-11-09T18:06:11.990850"
     },
     {
       "id": "ufabcspabreconcursopublicoparaprofessores-sup",
@@ -478,8 +478,8 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "UFABC - SP abre concurso público para professores",
       "link_pci": "https://www.pciconcursos.com.br/noticias/ufabc-sp-abre-concurso-publico-para-professores",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
+      "link_edital_oficial": "https://prograd.ufabc.edu.br/concursos",
+      "banca_organizadora": "UFABC Concursos",
       "vagas_salario": "79 vagas até R$ 13.753,96 Professor assistente Superior",
       "salario_num": 13753.96,
       "salario_formatado": "R$ 13.753,96",
@@ -500,7 +500,7 @@
         "Professor assistente em Física da Matéria Condensada, subárea Ciência de Dados aplicada à Estrutura Eletrônica e Propriedades de Átomos, Moléculas e Sólidos (1 vaga)",
         "Professor assistente em Fundamentos da Ciência de Dados (2 vagas)"
       ],
-      "data_extracao": "2026-11-09T21:15:17.607861"
+      "data_extracao": "2026-11-09T18:05:38.668311"
     },
     {
       "id": "trf3spmsretificaconcursopublicoparaanalistasetecnicosjudiciarios-mt",
@@ -515,8 +515,8 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "TRF3 - SP/MS retifica concurso público para analistas e técnicos judiciários",
       "link_pci": "https://www.pciconcursos.com.br/noticias/trf3-sp-ms-retifica-concurso-publico-para-analistas-e-tecnicos-judiciarios",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
+      "link_edital_oficial": "https://www.vunesp.com.br",
+      "banca_organizadora": "Fundação VUNESP",
       "vagas_salario": "11 vagas até R$ 20.013,11 Analista Judiciário, Técnico Judiciário Técnico / Superior",
       "salario_num": 9776.73,
       "salario_formatado": "R$ 9.776,73",
@@ -532,7 +532,7 @@
         "Técnico Judiciário, especialidade: Desenvolvimento de Sistemas de Informação (5 vagas)",
         "Técnico Judiciário, especialidade: Suporte Técnico (4 vagas)"
       ],
-      "data_extracao": "2026-11-09T21:15:25.482665"
+      "data_extracao": "2026-11-09T18:06:11.990534"
     },
     {
       "id": "marinhadobrasil8distritonavalabrevagasparaoficiaisrm2emsp-sup",
@@ -547,8 +547,8 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "Marinha do Brasil - 8º Distrito Naval abre vagas para Oficiais RM2 em SP",
       "link_pci": "https://www.pciconcursos.com.br/noticias/marinha-do-brasil-8-distrito-naval-abre-vagas-para-oficiais-rm2-em-sp",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
+      "link_edital_oficial": "https://www.marinha.mil.br/com8dn/node/100",
+      "banca_organizadora": "Comando do 8º Distrito Naval",
       "vagas_salario": "36 vagas Vários Cargos Superior",
       "salario_num": null,
       "salario_formatado": "Indisponível",
@@ -563,7 +563,7 @@
         "Informática, São Paulo - SP (1 vaga)",
         "Engenharia de Sistemas de Computação, São Paulo - SP (1 vaga)"
       ],
-      "data_extracao": "2026-11-09T21:15:13.872311"
+      "data_extracao": "2026-11-09T18:05:22.172529"
     },
     {
       "id": "prefeituradejandiraspabreconcursopublicocomsalariosdeate6812-mt",
@@ -578,8 +578,8 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "Prefeitura de Jandira - SP abre concurso público com salários de até R$ 6.812,14",
       "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-jandira-sp-abre-concurso-publico-com-salarios-de-ate-6812",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
+      "link_edital_oficial": "https://www.vunesp.com.br/",
+      "banca_organizadora": "Fundação VUNESP",
       "vagas_salario": "308 vagas até R$ 6.812,14 Vários Cargos Fundamental / Médio / Superior",
       "salario_num": 6812.14,
       "salario_formatado": "Até R$ 6.812,14",
@@ -593,7 +593,7 @@
       "cargos_ti_identificados": [
         "Técnico em Tecnologia da Informação (2 vagas)"
       ],
-      "data_extracao": "2026-11-09T21:15:14.951746"
+      "data_extracao": "2026-11-09T18:05:27.080048"
     },
     {
       "id": "prefeituradeguaratinguetaspabreconcursopublicocomsalariosdeate18540-sup",
@@ -608,8 +608,8 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "Prefeitura de Guaratinguetá - SP abre concurso público com salários de até R$ 18.540,71",
       "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-guaratingueta-sp-abre-concurso-publico-com-salarios-de-ate-18540",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
+      "link_edital_oficial": "https://www.vunesp.com.br/",
+      "banca_organizadora": "Fundação VUNESP",
       "vagas_salario": "107 vagas até R$ 18.540,71 Vários Cargos Fundamental / Médio / Técnico / Superior",
       "salario_num": 18540.71,
       "salario_formatado": "Até R$ 18.540,71",
@@ -623,7 +623,7 @@
       "cargos_ti_identificados": [
         "Analista de Sistemas (1 vaga)"
       ],
-      "data_extracao": "2026-11-09T21:15:14.070141"
+      "data_extracao": "2026-11-09T18:05:23.083422"
     },
     {
       "id": "prefeituradepiracemamgabreconcursoeprocessoseletivocomdiversasvagas-mt",
@@ -638,8 +638,8 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "Prefeitura de Piracema - MG abre concurso e processo seletivo com diversas vagas",
       "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-piracema-mg-abre-concurso-e-processo-seletivo-com-diversas-vagas",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
+      "link_edital_oficial": "https://www.idepi.org.br",
+      "banca_organizadora": "IDEPI",
       "vagas_salario": "132 vagas até R$ 18.647,01 Vários Cargos Fundamental / Médio / Técnico / Superior",
       "salario_num": 18647.01,
       "salario_formatado": "Até R$ 18.647,01",
@@ -654,7 +654,7 @@
       "cargos_ti_identificados": [
         "Técnico em Informática (1 vaga)"
       ],
-      "data_extracao": "2026-11-09T21:15:21.917438"
+      "data_extracao": "2026-11-09T18:05:57.539045"
     }
   ]
 }

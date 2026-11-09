@@ -581,6 +581,42 @@ class BaseMunicipios:
         return achados[0] if achados else None
 
 
+BANCA_KNOWLEDGE_BASE: Dict[str, Tuple[str, str]] = {
+    "vunesp": ("Fundação VUNESP", "https://www.vunesp.com.br/"),
+    "ibfc": ("IBFC", "https://www.ibfc.org.br/"),
+    "indepac": ("INDEPAC", "https://indepac.selecao.net.br/"),
+    "publiconsult": ("Publiconsult", "https://www.publiconsult.com.br/"),
+    "integribrasil": ("Integri Brasil", "https://www.integribrasil.com.br/"),
+    "idepi": ("IDEPI", "https://www.idepi.org.br/"),
+    "rbo": ("RBO Concursos", "https://concursosrbo.com.br/"),
+    "unifei": ("UNIFEI - SigRH", "https://sigrh.unifei.edu.br/"),
+    "ifsp": ("Portal de Concursos IFSP", "https://concursopublico.ifsp.edu.br/"),
+    "usp": ("USP Digital", "https://uspdigital.usp.br/gr/"),
+    "ufabc": ("UFABC Concursos", "https://prograd.ufabc.edu.br/concursos"),
+    "marinha": ("Comando do 8º Distrito Naval", "https://www.marinha.mil.br/com8dn/node/100"),
+    "fgv": ("FGV Conhecimento", "https://conhecimento.fgv.br/concursos"),
+    "cebraspe": ("Cebraspe", "https://www.cebraspe.org.br/concursos"),
+    "cespe": ("Cebraspe", "https://www.cebraspe.org.br/concursos"),
+    "fcc": ("Fundação Carlos Chagas", "https://www.concursosfcc.com.br/"),
+    "aocp": ("Instituto AOCP", "https://www.institutoaocp.org.br/"),
+    "ibgp": ("IBGP Concursos", "https://www.ibgpconcursos.com.br/"),
+    "instituto mais": ("Instituto Mais", "https://www.institutomais.org.br/"),
+    "institutomais": ("Instituto Mais", "https://www.institutomais.org.br/"),
+    "avanca sp": ("Avança SP", "https://www.avancasp.org.br/"),
+    "avançasp": ("Avança SP", "https://www.avancasp.org.br/"),
+    "consulplan": ("Consulplan", "https://www.consulplan.net/"),
+    "quadrix": ("Instituto Quadrix", "https://www.quadrix.org.br/"),
+    "legalle": ("Legalle Concursos", "https://legalleconcursos.com.br/"),
+    "objetiva": ("Objetiva Concursos", "https://concursos.objetivas.com.br/"),
+    "gl consultoria": ("GL Consultoria", "https://glconsultoria.com.br/"),
+    "reis e reis": ("Reis & Reis Auditores", "https://concursos.reisauditores.com.br/"),
+    "reis auditores": ("Reis & Reis Auditores", "https://concursos.reisauditores.com.br/"),
+    "cmm concursos": ("CMM Concursos", "https://www.cmmconcursos.com.br/"),
+    "ab concursos": ("AB Concursos", "https://www.abconcursospublicos.org/"),
+    "faculdade sebrae": ("Faculdade Sebrae", "https://faculdadesebrae.com.br/")
+}
+
+
 class ConcursosSudesteScraper:
     """Extrai editais de TI no raio configurado, separa blocos por escolaridade e resolve links diretos."""
 
@@ -622,7 +658,9 @@ class ConcursosSudesteScraper:
 
             links_utilitarios = (
                 "acessibilidade", "ouvidoria", "fale-conosco", "contato", "quem-somos",
-                "institucional", "privacidade", "lgpd", "login", " AreaRestrita", "faq", "ajuda", "libras"
+                "institucional", "privacidade", "lgpd", "login", "arearestrita", "faq", "ajuda", "libras",
+                "wa.me", "whatsapp", "api.whatsapp", "facebook", "instagram", "youtube", "twitter", "linkedin",
+                "share", "compartilhar"
             )
 
             # Passagem 1: Texto ou href da âncora contém o nome da cidade ou sigla do órgão
@@ -634,6 +672,8 @@ class ConcursosSudesteScraper:
                     continue
                 full_url = urllib.parse.urljoin(banca_url, href)
                 if full_url.rstrip("/") == banca_url.rstrip("/"):
+                    continue
+                if any(u.lower() in full_url.lower() for u in links_utilitarios):
                     continue
                 text_norm = normalize_text(re.sub(r"<[^>]+>", " ", m.group(2)))
                 href_norm = normalize_text(href)
@@ -654,6 +694,8 @@ class ConcursosSudesteScraper:
                 full_url = urllib.parse.urljoin(banca_url, href)
                 if full_url.rstrip("/") == banca_url.rstrip("/"):
                     continue
+                if any(u.lower() in full_url.lower() for u in links_utilitarios):
+                    continue
                 ctx_before = normalize_text(re.sub(r"<[^>]+>", " ", html[max(0, m.start() - 300):m.start()]))
                 if (norm_cid and len(norm_cid) > 3 and norm_cid in ctx_before) or (
                     usar_sigla and sigla_org in ctx_before
@@ -666,39 +708,79 @@ class ConcursosSudesteScraper:
 
     def _extrair_link_edital_e_banca(self, art_html: str, orgao: str, cidade: str) -> Tuple[str, str]:
         """
-        Extrai o link externo mais direto para inscrição/edital dentro do <article>
-        e identifica o nome/domínio da banca organizadora.
+        Extrai o link externo mais direto para inscrição/edital no site da banca ou instituição oficial.
+        Suporta links com hash em data-link-noticia (Cloudflare Turnstile do PCI Concursos),
+        links href padrão e domínios mencionados no artigo.
         """
-        links_externos: List[Tuple[str, str]] = []
+        candidatos: List[Tuple[str, str]] = []
+
+        # 1. Âncoras com data-link-noticia (padrão recente do PCI Concursos com Turnstile)
+        data_links = re.findall(r'<a\s+[^>]*data-link-noticia=["\']([^"\']+)["\'][^>]*>(.*?)</a>', art_html, re.DOTALL | re.IGNORECASE)
+        for code, raw_txt in reversed(data_links):
+            txt = " ".join(re.sub(r"<[^>]+>", " ", raw_txt).split())
+            if not txt:
+                continue
+            txt_lower = txt.lower()
+
+            # Se o próprio texto é um domínio da banca ou órgão (ex: www.publiconsult.com.br, sigrh.unifei.edu.br)
+            m_dom = re.search(r'([a-zA-Z0-9\-_.]+\.(?:com|org|edu|gov|jus|mil|net)\.br(?:/[^\s]*)?)', txt)
+            if m_dom:
+                dom = m_dom.group(1)
+                url = dom if dom.startswith("http") else f"https://{dom}"
+                nome_amigavel = txt
+                for k, (kb_nome, _) in BANCA_KNOWLEDGE_BASE.items():
+                    if k in dom.lower():
+                        nome_amigavel = kb_nome
+                        break
+                candidatos.append((url, nome_amigavel))
+                continue
+
+            # Se o texto menciona uma das bancas organizadoras cadastradas (ex: IBFC, VUNESP, INDEPAC, RBO)
+            for k, (banca_nome, banca_url) in BANCA_KNOWLEDGE_BASE.items():
+                if k in txt_lower:
+                    candidatos.append((banca_url, banca_nome))
+                    break
+
+        # 2. Âncoras convencionais com href="http..."
         for m in re.finditer(r'<a\s+[^>]*href=["\']([^"\']+)["\'][^>]*>(.*?)</a>', art_html, re.DOTALL | re.IGNORECASE):
             href = m.group(1).strip()
             texto = " ".join(re.sub(r"<[^>]+>", " ", m.group(2)).split())
             if not href.startswith("http"):
                 continue
-            if any(ign in href.lower() for ign in ["pciconcursos.com.br", "t.me/", "linkedin.com", "x.com/", "twitter.com", "facebook.com", "instagram.com", "unpkg.com", "openstreetmap.org"]):
+            if any(ign in href.lower() for ign in ["pciconcursos.com.br", "t.me/", "linkedin.com", "x.com/", "twitter.com", "facebook.com", "instagram.com", "unpkg.com", "openstreetmap.org", "schema.org", "w3.org"]):
                 continue
-            # Corrigir URLs duplicadas acidentais no HTML da fonte (ex: https://setec.sp.gov.br/https:/setec.sp.gov.br/)
             if href.count("http") > 1:
                 partes = [p for p in re.split(r"(?=https?:/+)", href) if p.startswith("http")]
                 if partes:
                     href = partes[0]
-            links_externos.append((href, texto))
+            nome_amigavel = texto if (texto and len(texto) <= 45 and not texto.startswith("http")) else ""
+            for k, (kb_nome, _) in BANCA_KNOWLEDGE_BASE.items():
+                if k in href.lower():
+                    nome_amigavel = kb_nome
+                    break
+            candidatos.append((href, nome_amigavel or urllib.parse.urlparse(href).netloc.replace("www.", "")))
 
-        if not links_externos:
+        # 3. Fallback: procurar menções a bancas organizadoras no texto geral do artigo
+        if not candidatos:
+            for k, (banca_nome, banca_url) in BANCA_KNOWLEDGE_BASE.items():
+                if re.search(r'\b' + re.escape(k) + r'\b', art_html, re.IGNORECASE):
+                    candidatos.append((banca_url, banca_nome))
+                    break
+
+        if not candidatos:
             return "Indisponível", "Indisponível"
 
-        # Preferir o link que aparece no parágrafo de inscrições (geralmente o 2º link externo, que é a banca/sistema de inscrição)
-        link_escolhido, texto_escolhido = links_externos[-1]
-        for href, texto in links_externos:
-            # Se é um formulário ou portal de seleção específico, priorizar
-            if any(k in href.lower() for k in ["selecao", "concurso", "inscric", "sigrh", "uspdigital", "forms.gle", "vunesp", "ibfc", "ibgp", "fcc", "aocp", "glconsultoria", "idepi", "cmmconcursos", "abconcursos"]):
-                link_escolhido, texto_escolhido = href, texto
+        # Priorizar candidato com palavras de concurso/inscrição/banca
+        link_escolhido, texto_escolhido = candidatos[0]
+        for url, nome in candidatos:
+            if any(k in url.lower() for k in ["selecao", "concurso", "inscric", "sigrh", "uspdigital", "vunesp", "ibfc", "idepi", "rbo", "integri", "publiconsult", "indepac", "ibgp", "aocp"]):
+                link_escolhido, texto_escolhido = url, nome
                 break
 
         link_direto = self._resolver_link_direto_banca(link_escolhido, orgao, cidade)
         dominio = urllib.parse.urlparse(link_direto).netloc.replace("www.", "")
-        banca_nome = texto_escolhido if (texto_escolhido and len(texto_escolhido) <= 45 and not texto_escolhido.startswith("http")) else dominio
-        return link_direto, (banca_nome or "Indisponível")
+        banca_final = texto_escolhido if (texto_escolhido and len(texto_escolhido) <= 45 and not texto_escolhido.startswith("http")) else dominio
+        return link_direto, (banca_final or "Indisponível")
 
     def buscar_concursos(self) -> List[Concurso]:
         todos_cards_brutos = {}

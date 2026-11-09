@@ -62,6 +62,6 @@ python concursos_muzambinho.py --raio 250
 
 ## Autor
 
-**Bruno Bianchi Leo**  
+**Bruno Bianchi Léo**  
 Bacharel em Ciência da Computação • Engenharia de Automação, AI Ops, RevOps e Produto  
 [LinkedIn](https://www.linkedin.com/in/bruno-bianchi-leo) • [GitHub](https://github.com/BBLBruno)
