@@ -96,5 +96,12 @@
     "tempo_conducao_min": 222,
     "tempo_conducao_formatado": "3h 42min",
     "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "Santana de Parnaíba-SP": {
+    "distancia_carro_km": 298.4,
+    "distancia_reta_km": 234.0,
+    "tempo_conducao_min": 240,
+    "tempo_conducao_formatado": "4h",
+    "fonte_calculo": "OpenRouteService (driving-car)"
   }
 }
