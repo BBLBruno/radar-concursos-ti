@@ -1,6 +1,6 @@
 {
   "metadados": {
-    "gerado_em": "2026-11-10T04:24:14.947163",
+    "gerado_em": "2026-11-11T02:19:38.900487",
     "cidade_origem": "Muzambinho - MG",
     "coordenadas_origem": [
       -21.3708,
@@ -15,7 +15,7 @@
       "Superior"
     ],
     "area_atuacao": "Tecnologia da Informação / Computação",
-    "total_editais_encontrados": 18,
+    "total_editais_encontrados": 20,
     "total_canais_monitorados": 21,
     "fontes_consultadas": [
       "Sudeste",
@@ -71,7 +71,7 @@
       "cargos_ti_identificados": [
         "Técnico em Informática (1 vaga e cadastro de reserva)"
       ],
-      "data_extracao": "2026-11-10T04:23:25.019172"
+      "data_extracao": "2026-11-11T02:18:54.241437"
     },
     {
       "id": "prefeituradelemespabreconcursopublicocomsalariosdeate13359-sup",
@@ -101,7 +101,7 @@
       "cargos_ti_identificados": [
         "Analista de Tecnologia da Informação (1 vaga)"
       ],
-      "data_extracao": "2026-11-10T04:23:43.201412"
+      "data_extracao": "2026-11-11T02:19:04.565095"
     },
     {
       "id": "ifspretificaprocessoseletivocomvagasparaprofessoressubstitutos-sup",
@@ -139,7 +139,7 @@
         "Professor substituto de Informática (1 vaga) - São Paulo",
         "Professor substituto de Informática (1 vaga) - Sertãozinho"
       ],
-      "data_extracao": "2026-11-10T04:23:27.415362"
+      "data_extracao": "2026-11-11T02:18:57.123487"
     },
     {
       "id": "seteccampinasspabreconcursopublicocomsalariosdeate10428-mt",
@@ -170,7 +170,7 @@
       "cargos_ti_identificados": [
         "Agente de Suporte Técnico (4 vagas + CR)"
       ],
-      "data_extracao": "2026-11-10T04:23:19.853637"
+      "data_extracao": "2026-11-11T02:18:49.840830"
     },
     {
       "id": "seteccampinasspabreconcursopublicocomsalariosdeate10428-sup",
@@ -200,7 +200,7 @@
       "cargos_ti_identificados": [
         "Analista Técnico (Informática) (1 vaga + CR)"
       ],
-      "data_extracao": "2026-11-10T04:23:19.853839"
+      "data_extracao": "2026-11-11T02:18:49.840992"
     },
     {
       "id": "unifeimgabreconcursopublicoparaprofessoresdomagisteriosuperior-sup",
@@ -241,7 +241,7 @@
         "Professor de Programação e Desenvolvimento de Sistemas Aplicados à Ciência de Dados (1 vaga)",
         "Professor de Computação, Algoritmos e Fundamentos de Programação (1 vaga)"
       ],
-      "data_extracao": "2026-11-10T04:24:11.271247"
+      "data_extracao": "2026-11-11T02:19:37.445383"
     },
     {
       "id": "iprejundejundiaispabreconcursopublicocomsalariosdeate15123-sup",
@@ -256,7 +256,7 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "IPREJUN de Jundiaí - SP abre concurso público com salários de até R$ 15.123,99",
       "link_pci": "https://www.pciconcursos.com.br/noticias/iprejun-de-jundiai-sp-abre-concurso-publico-com-salarios-de-ate-15123",
-      "link_edital_oficial": "https://www.vunesp.com.br/",
+      "link_edital_oficial": "https://www.vunesp.com.br/IPJU2601",
       "banca_organizadora": "Fundação VUNESP",
       "vagas_salario": "4 vagas até R$ 15.123,99 Assistente de Administração, Analista de Planejamento, Gestão e Orçamento Médio / Superior",
       "salario_num": 15123.99,
@@ -271,7 +271,7 @@
       "cargos_ti_identificados": [
         "Analista de Planejamento, Gestão e Orçamento - Informática (1 vaga)"
       ],
-      "data_extracao": "2026-11-10T04:23:32.207404"
+      "data_extracao": "2026-11-11T02:18:59.363910"
     },
     {
       "id": "ifspretificaeditaldeconcursopublicoparaocargodeprofessordoensinobasicotecnicoetecnologico-sup",
@@ -309,7 +309,7 @@
         "Professor de Informática - São Miguel Paulista (2 vagas)",
         "Professor de Informática - São Paulo (1 vaga)"
       ],
-      "data_extracao": "2026-11-10T04:23:26.806319"
+      "data_extracao": "2026-11-11T02:18:56.417044"
     },
     {
       "id": "cisituspabreconcursopublicocomsalariosdeate7553-mt",
@@ -340,7 +340,7 @@
       "cargos_ti_identificados": [
         "Técnico em Informática (1 vaga)"
       ],
-      "data_extracao": "2026-11-10T04:23:21.685609"
+      "data_extracao": "2026-11-11T02:18:52.847670"
     },
     {
       "id": "uspspabreconcursopublicoparaocargodeprofessortitularnaareadesistemasdecomputacao-sup",
@@ -370,37 +370,7 @@
       "cargos_ti_identificados": [
         "Professor Titular no Departamento de Sistemas de Computação, na área de Sistemas de Computação (1 vaga)"
       ],
-      "data_extracao": "2026-11-10T04:23:54.166241"
-    },
-    {
-      "id": "faculdadesebraespabrevagaparaprofessoradjuntodeengenhariadesoftware-sup",
-      "orgao": "Faculdade Sebrae",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "distancia_km": 318.7,
-      "distancia_carro_km": 318.7,
-      "distancia_reta_km": 240.7,
-      "tempo_conducao_min": 243,
-      "tempo_conducao_formatado": "4h 03min",
-      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
-      "titulo": "Faculdade Sebrae - SP abre vaga para professor adjunto de Engenharia de Software",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/faculdade-sebrae-sp-abre-vaga-para-professor-adjunto-de-engenharia-de-software",
-      "link_edital_oficial": "https://sebrae.com.br/content/dam/portal-sebrae/sp/midias/documentos/pdfs/trabalhe-conosco/efetivas/2026/049-2026-Facul-Sebrae-Prof-Adj-Desenv-Eng-de-Soft/049_2026%20%20COMUNICADO.pdf",
-      "banca_organizadora": "RBO Concursos",
-      "vagas_salario": "1 vaga até R$ 19.522,83 Professor Adjunto Superior",
-      "salario_num": 19522.83,
-      "salario_formatado": "R$ 19.522,83",
-      "escolaridade_niveis": [
-        "Superior"
-      ],
-      "areas_atuacao": [
-        "Programação e Sistemas"
-      ],
-      "data_limite_inscricao": "10/11/2026",
-      "cargos_ti_identificados": [
-        "Professor Adjunto - Engenharia de Software - Sistema da Informação (1 vaga)"
-      ],
-      "data_extracao": "2026-11-10T04:23:23.652715"
+      "data_extracao": "2026-11-11T02:19:18.852551"
     },
     {
       "id": "trf3spmsretificaconcursopublicoparaanalistasetecnicosjudiciarios-sup",
@@ -432,7 +402,7 @@
         "Analista Judiciário, especialidade: Análise de Sistemas de Informação (1 vaga)",
         "Analista Judiciário, especialidade: Suporte em Tecnologia da Informação (1 vaga)"
       ],
-      "data_extracao": "2026-11-10T04:24:14.866008"
+      "data_extracao": "2026-11-11T02:19:38.819614"
     },
     {
       "id": "ufabcspabreconcursopublicoparaprofessores-sup",
@@ -469,7 +439,38 @@
         "Professor assistente em Física da Matéria Condensada, subárea Ciência de Dados aplicada à Estrutura Eletrônica e Propriedades de Átomos, Moléculas e Sólidos (1 vaga)",
         "Professor assistente em Fundamentos da Ciência de Dados (2 vagas)"
       ],
-      "data_extracao": "2026-11-10T04:23:49.155483"
+      "data_extracao": "2026-11-11T02:19:13.323867"
+    },
+    {
+      "id": "spaguasspabreconcursopublicocomsalariosdeate12070-sup",
+      "orgao": "SP-Águas - Agência de Águas do Estado de São Paulo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "distancia_km": 318.7,
+      "distancia_carro_km": 318.7,
+      "distancia_reta_km": 240.7,
+      "tempo_conducao_min": 243,
+      "tempo_conducao_formatado": "4h 03min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
+      "titulo": "SP-Águas - SP abre concurso público com salários de até R$ 12.070,00",
+      "link_pci": "https://www.pciconcursos.com.br/noticias/sp-aguas-sp-abre-concurso-publico-com-salarios-de-ate-12070",
+      "link_edital_oficial": "https://conhecimento.fgv.br/concursos/spaguas26",
+      "banca_organizadora": "FGV Conhecimento",
+      "vagas_salario": "190 vagas até R$ 12.070,00 Vários Cargos Superior",
+      "salario_num": 12070.0,
+      "salario_formatado": "R$ 12.070,00",
+      "escolaridade_niveis": [
+        "Superior"
+      ],
+      "areas_atuacao": [
+        "Dados e IA"
+      ],
+      "data_limite_inscricao": "17/11 a 17/12/2026",
+      "cargos_ti_identificados": [
+        "Monitoramento Hidrológico e Ciência de Dados (18 vagas)",
+        "Tecnologia da Informação e Ciência de Dados (3 vagas)"
+      ],
+      "data_extracao": "2026-11-11T02:19:10.281387"
     },
     {
       "id": "trf3spmsretificaconcursopublicoparaanalistasetecnicosjudiciarios-mt",
@@ -501,11 +502,11 @@
         "Técnico Judiciário, especialidade: Desenvolvimento de Sistemas de Informação (5 vagas)",
         "Técnico Judiciário, especialidade: Suporte Técnico (4 vagas)"
       ],
-      "data_extracao": "2026-11-10T04:24:14.865816"
+      "data_extracao": "2026-11-11T02:19:38.819479"
     },
     {
-      "id": "marinhadobrasil8distritonavalabrevagasparaoficiaisrm2emsp-sup",
-      "orgao": "Marinha do Brasil - Comando do 8º Distrito Naval",
+      "id": "cetesbspabreconcursospublicosparadiversoscargos-sup",
+      "orgao": "CETESB - Companhia Ambiental do Estado de São Paulo",
       "cidade": "São Paulo",
       "uf": "SP",
       "distancia_km": 318.7,
@@ -514,25 +515,86 @@
       "tempo_conducao_min": 243,
       "tempo_conducao_formatado": "4h 03min",
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
-      "titulo": "Marinha do Brasil - 8º Distrito Naval abre vagas para Oficiais RM2 em SP",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/marinha-do-brasil-8-distrito-naval-abre-vagas-para-oficiais-rm2-em-sp",
-      "link_edital_oficial": "https://www.marinha.mil.br/com8dn/node/100",
-      "banca_organizadora": "Comando do 8º Distrito Naval",
-      "vagas_salario": "36 vagas Vários Cargos Superior",
-      "salario_num": null,
-      "salario_formatado": "Indisponível",
+      "titulo": "CETESB - SP abre concursos públicos para diversos cargos",
+      "link_pci": "https://www.pciconcursos.com.br/noticias/cetesb-sp-abre-concursos-publicos-para-diversos-cargos",
+      "link_edital_oficial": "https://www.concursosfcc.com.br/",
+      "banca_organizadora": "Fundação Carlos Chagas",
+      "vagas_salario": "107 vagas até R$ 8.971,98 Vários Cargos Médio / Técnico / Superior",
+      "salario_num": 8971.98,
+      "salario_formatado": "Até R$ 8.971,98",
       "escolaridade_niveis": [
         "Superior"
       ],
       "areas_atuacao": [
+        "Infraestrutura e Redes",
         "Programação e Sistemas"
       ],
-      "data_limite_inscricao": "10/11/2026",
+      "data_limite_inscricao": "12/11 a 14/12/2026",
       "cargos_ti_identificados": [
-        "Informática, São Paulo - SP (1 vaga)",
-        "Engenharia de Sistemas de Computação, São Paulo - SP (1 vaga)"
+        "Analista de Tecnologia da Informação, Redes e Telecomunicação (1 vaga)",
+        "Analista de Tecnologia da Informação, Sistemas (3 vagas)"
       ],
-      "data_extracao": "2026-11-10T04:23:32.578102"
+      "data_extracao": "2026-11-11T02:18:51.404376"
+    },
+    {
+      "id": "ifspabreconcursopublicoparacargostecnicoadministrativos-mt",
+      "orgao": "IFSP - Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (Nível Técnico)",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "distancia_km": 318.7,
+      "distancia_carro_km": 318.7,
+      "distancia_reta_km": 240.7,
+      "tempo_conducao_min": 243,
+      "tempo_conducao_formatado": "4h 03min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
+      "titulo": "IFSP abre concurso público para cargos técnico-administrativos",
+      "link_pci": "https://www.pciconcursos.com.br/noticias/ifsp-abre-concurso-publico-para-cargos-tecnico-administrativos",
+      "link_edital_oficial": "https://concursopublico.ifsp.edu.br/",
+      "banca_organizadora": "Portal de Concursos IFSP",
+      "vagas_salario": "6 vagas até R$ 5.215,39 Técnico de Laboratório, Analista de Tecnologia da Informação, Engenheiro de Segurança do Trabalho Técnico / Superior",
+      "salario_num": 5215.39,
+      "salario_formatado": "Até R$ 5.215,39",
+      "escolaridade_niveis": [
+        "Técnico"
+      ],
+      "areas_atuacao": [
+        "Programação e Sistemas"
+      ],
+      "data_limite_inscricao": "17/11/2026 a 04/01/2027",
+      "cargos_ti_identificados": [
+        "Técnico de Laboratório, área Informática (3 vagas)"
+      ],
+      "data_extracao": "2026-11-11T02:18:57.832203"
+    },
+    {
+      "id": "ifspabreconcursopublicoparacargostecnicoadministrativos-sup",
+      "orgao": "IFSP - Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (Nível Superior)",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "distancia_km": 318.7,
+      "distancia_carro_km": 318.7,
+      "distancia_reta_km": 240.7,
+      "tempo_conducao_min": 243,
+      "tempo_conducao_formatado": "4h 03min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
+      "titulo": "IFSP abre concurso público para cargos técnico-administrativos",
+      "link_pci": "https://www.pciconcursos.com.br/noticias/ifsp-abre-concurso-publico-para-cargos-tecnico-administrativos",
+      "link_edital_oficial": "https://concursopublico.ifsp.edu.br/",
+      "banca_organizadora": "Portal de Concursos IFSP",
+      "vagas_salario": "6 vagas até R$ 5.215,39 Técnico de Laboratório, Analista de Tecnologia da Informação, Engenheiro de Segurança do Trabalho Técnico / Superior",
+      "salario_num": 5215.39,
+      "salario_formatado": "Até R$ 5.215,39",
+      "escolaridade_niveis": [
+        "Superior"
+      ],
+      "areas_atuacao": [
+        "Dados e IA"
+      ],
+      "data_limite_inscricao": "17/11/2026 a 04/01/2027",
+      "cargos_ti_identificados": [
+        "Analista de Tecnologia da Informação, Ciência de Dados (1 vaga)"
+      ],
+      "data_extracao": "2026-11-11T02:18:57.832393"
     },
     {
       "id": "prefeituradejandiraspabreconcursopublicocomsalariosdeate6812-mt",
@@ -547,7 +609,7 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "Prefeitura de Jandira - SP abre concurso público com salários de até R$ 6.812,14",
       "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-jandira-sp-abre-concurso-publico-com-salarios-de-ate-6812",
-      "link_edital_oficial": "https://www.vunesp.com.br/",
+      "link_edital_oficial": "https://www.vunesp.com.br/PJAN2601",
       "banca_organizadora": "Fundação VUNESP",
       "vagas_salario": "308 vagas até R$ 6.812,14 Vários Cargos Fundamental / Médio / Superior",
       "salario_num": 6812.14,
@@ -562,7 +624,7 @@
       "cargos_ti_identificados": [
         "Técnico em Tecnologia da Informação (2 vagas)"
       ],
-      "data_extracao": "2026-11-10T04:23:42.477518"
+      "data_extracao": "2026-11-11T02:19:03.637272"
     },
     {
       "id": "prefeituradeguaratinguetaspabreconcursopublicocomsalariosdeate18540-sup",
@@ -577,7 +639,7 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "Prefeitura de Guaratinguetá - SP abre concurso público com salários de até R$ 18.540,71",
       "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-guaratingueta-sp-abre-concurso-publico-com-salarios-de-ate-18540",
-      "link_edital_oficial": "https://www.vunesp.com.br/",
+      "link_edital_oficial": "https://www.vunesp.com.br/PGUA2501",
       "banca_organizadora": "Fundação VUNESP",
       "vagas_salario": "107 vagas até R$ 18.540,71 Vários Cargos Fundamental / Médio / Técnico / Superior",
       "salario_num": 18540.71,
@@ -592,7 +654,7 @@
       "cargos_ti_identificados": [
         "Analista de Sistemas (1 vaga)"
       ],
-      "data_extracao": "2026-11-10T04:23:36.850986"
+      "data_extracao": "2026-11-11T02:19:00.703274"
     },
     {
       "id": "prefeituradepiracemamgabreconcursoeprocessoseletivocomdiversasvagas-mt",
@@ -607,7 +669,7 @@
       "fonte_calculo_distancia": "OpenRouteService (driving-car)",
       "titulo": "Prefeitura de Piracema - MG abre concurso e processo seletivo com diversas vagas",
       "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-piracema-mg-abre-concurso-e-processo-seletivo-com-diversas-vagas",
-      "link_edital_oficial": "https://www.idepi.org.br/",
+      "link_edital_oficial": "https://www.idepi.org.br/concurso.jsp?cod=743",
       "banca_organizadora": "IDEPI",
       "vagas_salario": "132 vagas até R$ 18.647,01 Vários Cargos Fundamental / Médio / Técnico / Superior",
       "salario_num": 18647.01,
@@ -623,7 +685,7 @@
       "cargos_ti_identificados": [
         "Técnico em Informática (1 vaga)"
       ],
-      "data_extracao": "2026-11-10T04:24:03.823415"
+      "data_extracao": "2026-11-11T02:19:28.574099"
     }
   ]
 }
