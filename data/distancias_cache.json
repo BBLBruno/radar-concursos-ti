@@ -103,5 +103,12 @@
     "tempo_conducao_min": 240,
     "tempo_conducao_formatado": "4h",
     "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "Estiva Gerbi-SP": {
+    "distancia_carro_km": 150.7,
+    "distancia_reta_km": 109.2,
+    "tempo_conducao_min": 137,
+    "tempo_conducao_formatado": "2h 17min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
   }
 }
