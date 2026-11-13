@@ -117,5 +117,12 @@
     "tempo_conducao_min": 239,
     "tempo_conducao_formatado": "3h 59min",
     "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "Divinópolis-MG": {
+    "distancia_carro_km": 308.3,
+    "distancia_reta_km": 217.9,
+    "tempo_conducao_min": 259,
+    "tempo_conducao_formatado": "4h 19min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
   }
 }
