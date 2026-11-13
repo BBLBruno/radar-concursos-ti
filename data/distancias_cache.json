@@ -110,5 +110,12 @@
     "tempo_conducao_min": 137,
     "tempo_conducao_formatado": "2h 17min",
     "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "Carapicuíba-SP": {
+    "distancia_carro_km": 312.9,
+    "distancia_reta_km": 241.5,
+    "tempo_conducao_min": 239,
+    "tempo_conducao_formatado": "3h 59min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
   }
 }

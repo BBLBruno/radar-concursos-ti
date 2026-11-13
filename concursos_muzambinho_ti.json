@@ -1,6 +1,6 @@
 {
   "metadados": {
-    "gerado_em": "2026-11-12T03:27:51.793172",
+    "gerado_em": "2026-11-13T02:59:00.698283",
     "cidade_origem": "Muzambinho - MG",
     "coordenadas_origem": [
       -21.3708,
@@ -15,7 +15,7 @@
       "Superior"
     ],
     "area_atuacao": "Tecnologia da Informação / Computação",
-    "total_editais_encontrados": 24,
+    "total_editais_encontrados": 25,
     "total_canais_monitorados": 21,
     "fontes_consultadas": [
       "Sudeste",
@@ -70,7 +70,7 @@
       "cargos_ti_identificados": [
         "Professor de Educação Básica II, Informática e Tecnologia (1 vaga + CR)"
       ],
-      "data_extracao": "2026-11-12T03:27:14.960926"
+      "data_extracao": "2026-11-13T02:58:40.200154"
     },
     {
       "id": "fundacaoeducacionalguacuanaspabreconcursopublicoparabibliotecarioetecnicoeminformatica-mt",
@@ -101,7 +101,7 @@
       "cargos_ti_identificados": [
         "Técnico em Informática (1 vaga e cadastro de reserva)"
       ],
-      "data_extracao": "2026-11-12T03:27:05.767107"
+      "data_extracao": "2026-11-13T02:58:35.944856"
     },
     {
       "id": "prefeituradelemespabreconcursopublicocomsalariosdeate13359-sup",
@@ -131,7 +131,7 @@
       "cargos_ti_identificados": [
         "Analista de Tecnologia da Informação (1 vaga)"
       ],
-      "data_extracao": "2026-11-12T03:26:57.207282"
+      "data_extracao": "2026-11-13T02:58:30.136710"
     },
     {
       "id": "ifspretificaprocessoseletivocomvagasparaprofessoressubstitutos-sup",
@@ -169,7 +169,7 @@
         "Professor substituto de Informática (1 vaga) - São Paulo",
         "Professor substituto de Informática (1 vaga) - Sertãozinho"
       ],
-      "data_extracao": "2026-11-12T03:27:08.486262"
+      "data_extracao": "2026-11-13T02:58:37.110806"
     },
     {
       "id": "seteccampinasspabreconcursopublicocomsalariosdeate10428-mt",
@@ -200,7 +200,7 @@
       "cargos_ti_identificados": [
         "Agente de Suporte Técnico (4 vagas + CR)"
       ],
-      "data_extracao": "2026-11-12T03:26:58.999191"
+      "data_extracao": "2026-11-13T02:58:30.866014"
     },
     {
       "id": "seteccampinasspabreconcursopublicocomsalariosdeate10428-sup",
@@ -230,7 +230,7 @@
       "cargos_ti_identificados": [
         "Analista Técnico (Informática) (1 vaga + CR)"
       ],
-      "data_extracao": "2026-11-12T03:26:58.999353"
+      "data_extracao": "2026-11-13T02:58:30.866176"
     },
     {
       "id": "unifeimgabreconcursopublicoparaprofessoresdomagisteriosuperior-sup",
@@ -271,7 +271,7 @@
         "Professor de Programação e Desenvolvimento de Sistemas Aplicados à Ciência de Dados (1 vaga)",
         "Professor de Computação, Algoritmos e Fundamentos de Programação (1 vaga)"
       ],
-      "data_extracao": "2026-11-12T03:27:50.343133"
+      "data_extracao": "2026-11-13T02:58:59.715435"
     },
     {
       "id": "iprejundejundiaispabreconcursopublicocomsalariosdeate15123-sup",
@@ -301,7 +301,7 @@
       "cargos_ti_identificados": [
         "Analista de Planejamento, Gestão e Orçamento - Informática (1 vaga)"
       ],
-      "data_extracao": "2026-11-12T03:27:10.410095"
+      "data_extracao": "2026-11-13T02:58:38.255719"
     },
     {
       "id": "ifspretificaeditaldeconcursopublicoparaocargodeprofessordoensinobasicotecnicoetecnologico-sup",
@@ -339,7 +339,7 @@
         "Professor de Informática - São Miguel Paulista (2 vagas)",
         "Professor de Informática - São Paulo (1 vaga)"
       ],
-      "data_extracao": "2026-11-12T03:27:07.853380"
+      "data_extracao": "2026-11-13T02:58:36.736708"
     },
     {
       "id": "cisituspabreconcursopublicocomsalariosdeate7553-mt",
@@ -370,7 +370,7 @@
       "cargos_ti_identificados": [
         "Técnico em Informática (1 vaga)"
       ],
-      "data_extracao": "2026-11-12T03:27:02.338812"
+      "data_extracao": "2026-11-13T02:58:33.597534"
     },
     {
       "id": "prefeituradesantanadeparnaibaspabreconcursopublicocomsalariosdeate7497-mt",
@@ -401,7 +401,7 @@
       "cargos_ti_identificados": [
         "Técnico em Tecnologia da Informação (1 vaga)"
       ],
-      "data_extracao": "2026-11-12T03:27:22.418986"
+      "data_extracao": "2026-11-13T02:58:43.675994"
     },
     {
       "id": "prefeituradesantanadeparnaibaspabreconcursopublicocomsalariosdeate7497-sup",
@@ -431,7 +431,37 @@
       "cargos_ti_identificados": [
         "Analista de Tecnologia da Informação (cadastro de reserva)"
       ],
-      "data_extracao": "2026-11-12T03:27:22.419167"
+      "data_extracao": "2026-11-13T02:58:43.676169"
+    },
+    {
+      "id": "camaradecarapicuibaspabreconcursopublicoparaoficialdemanutencaoetecnicoemtecnologiadainformacao-mt",
+      "orgao": "Câmara de Carapicuíba",
+      "cidade": "Carapicuíba",
+      "uf": "SP",
+      "distancia_km": 312.9,
+      "distancia_carro_km": 312.9,
+      "distancia_reta_km": 241.5,
+      "tempo_conducao_min": 239,
+      "tempo_conducao_formatado": "3h 59min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
+      "titulo": "Câmara de Carapicuíba - SP abre concurso público para Oficial de Manutenção e Técnico em Tecnologia da Informação",
+      "link_pci": "https://www.pciconcursos.com.br/noticias/camara-de-carapicuiba-sp-abre-concurso-publico-para-oficial-de-manutencao-e-tecnico-em-tecnologia-da-informacao",
+      "link_edital_oficial": "https://concursos.objetivas.com.br/",
+      "banca_organizadora": "Objetiva Concursos",
+      "vagas_salario": "2 vagas até R$ 5.295,09 Oficial de Manutenção, Técnico em Tecnologia da Informação Médio / Superior",
+      "salario_num": 5295.09,
+      "salario_formatado": "Até R$ 5.295,09",
+      "escolaridade_niveis": [
+        "Técnico"
+      ],
+      "areas_atuacao": [
+        "Programação e Sistemas"
+      ],
+      "data_limite_inscricao": "16/11 a 06/12/2026",
+      "cargos_ti_identificados": [
+        "Técnico em Tecnologia da Informação (1 vaga)"
+      ],
+      "data_extracao": "2026-11-13T02:58:31.974754"
     },
     {
       "id": "uspspabreconcursopublicoparaocargodeprofessortitularnaareadesistemasdecomputacao-sup",
@@ -461,7 +491,7 @@
       "cargos_ti_identificados": [
         "Professor Titular no Departamento de Sistemas de Computação, na área de Sistemas de Computação (1 vaga)"
       ],
-      "data_extracao": "2026-11-12T03:27:31.649198"
+      "data_extracao": "2026-11-13T02:58:49.763699"
     },
     {
       "id": "faculdadesebraespprorrogainscricoesdeprocessoseletivoparaprofessoradjuntodeengenhariadesoftware-sup",
@@ -491,7 +521,7 @@
       "cargos_ti_identificados": [
         "Professor Adjunto - Desenvolvimento e Engenharia de Software (Sistemas da Informação) (1 vaga)"
       ],
-      "data_extracao": "2026-11-12T03:27:04.263731"
+      "data_extracao": "2026-11-13T02:58:34.767912"
     },
     {
       "id": "trf3spmsretificaconcursopublicoparaanalistasetecnicosjudiciarios-sup",
@@ -523,7 +553,7 @@
         "Analista Judiciário, especialidade: Análise de Sistemas de Informação (1 vaga)",
         "Analista Judiciário, especialidade: Suporte em Tecnologia da Informação (1 vaga)"
       ],
-      "data_extracao": "2026-11-12T03:27:51.712235"
+      "data_extracao": "2026-11-13T02:59:00.617416"
     },
     {
       "id": "ufabcspabreconcursopublicoparaprofessores-sup",
@@ -560,7 +590,7 @@
         "Professor assistente em Física da Matéria Condensada, subárea Ciência de Dados aplicada à Estrutura Eletrônica e Propriedades de Átomos, Moléculas e Sólidos (1 vaga)",
         "Professor assistente em Fundamentos da Ciência de Dados (2 vagas)"
       ],
-      "data_extracao": "2026-11-12T03:27:26.523945"
+      "data_extracao": "2026-11-13T02:58:47.082026"
     },
     {
       "id": "spaguasspabreconcursopublicocomsalariosdeate12070-sup",
@@ -591,7 +621,7 @@
         "Monitoramento Hidrológico e Ciência de Dados (18 vagas)",
         "Tecnologia da Informação e Ciência de Dados (3 vagas)"
       ],
-      "data_extracao": "2026-11-12T03:27:23.957192"
+      "data_extracao": "2026-11-13T02:58:44.719561"
     },
     {
       "id": "trf3spmsretificaconcursopublicoparaanalistasetecnicosjudiciarios-mt",
@@ -623,7 +653,7 @@
         "Técnico Judiciário, especialidade: Desenvolvimento de Sistemas de Informação (5 vagas)",
         "Técnico Judiciário, especialidade: Suporte Técnico (4 vagas)"
       ],
-      "data_extracao": "2026-11-12T03:27:51.712099"
+      "data_extracao": "2026-11-13T02:59:00.617280"
     },
     {
       "id": "cetesbspabreconcursospublicosparadiversoscargos-sup",
@@ -655,7 +685,7 @@
         "Analista de Tecnologia da Informação, Redes e Telecomunicação (1 vaga)",
         "Analista de Tecnologia da Informação, Sistemas (3 vagas)"
       ],
-      "data_extracao": "2026-11-12T03:27:00.566650"
+      "data_extracao": "2026-11-13T02:58:32.719275"
     },
     {
       "id": "ifspabreconcursopublicoparacargostecnicoadministrativos-mt",
@@ -685,7 +715,7 @@
       "cargos_ti_identificados": [
         "Técnico de Laboratório, área Informática (3 vagas)"
       ],
-      "data_extracao": "2026-11-12T03:27:08.970983"
+      "data_extracao": "2026-11-13T02:58:37.342144"
     },
     {
       "id": "ifspabreconcursopublicoparacargostecnicoadministrativos-sup",
@@ -715,7 +745,7 @@
       "cargos_ti_identificados": [
         "Analista de Tecnologia da Informação, Ciência de Dados (1 vaga)"
       ],
-      "data_extracao": "2026-11-12T03:27:08.971153"
+      "data_extracao": "2026-11-13T02:58:37.342312"
     },
     {
       "id": "prefeituradejandiraspabreconcursopublicocomsalariosdeate6812-mt",
@@ -745,7 +775,7 @@
       "cargos_ti_identificados": [
         "Técnico em Tecnologia da Informação (2 vagas)"
       ],
-      "data_extracao": "2026-11-12T03:27:16.190296"
+      "data_extracao": "2026-11-13T02:58:41.012043"
     },
     {
       "id": "prefeituradeguaratinguetaspabreconcursopublicocomsalariosdeate18540-sup",
@@ -775,7 +805,7 @@
       "cargos_ti_identificados": [
         "Analista de Sistemas (1 vaga)"
       ],
-      "data_extracao": "2026-11-12T03:27:11.567289"
+      "data_extracao": "2026-11-13T02:58:39.053439"
     },
     {
       "id": "prefeituradepiracemamgabreconcursoeprocessoseletivocomdiversasvagas-mt",
@@ -806,7 +836,7 @@
       "cargos_ti_identificados": [
         "Técnico em Informática (1 vaga)"
       ],
-      "data_extracao": "2026-11-12T03:27:41.451201"
+      "data_extracao": "2026-11-13T02:58:54.894135"
     }
   ]
 }
