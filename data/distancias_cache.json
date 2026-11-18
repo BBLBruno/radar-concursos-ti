@@ -124,5 +124,26 @@
     "tempo_conducao_min": 259,
     "tempo_conducao_formatado": "4h 19min",
     "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "Itupeva-SP": {
+    "distancia_carro_km": 261.9,
+    "distancia_reta_km": 205.6,
+    "tempo_conducao_min": 215,
+    "tempo_conducao_formatado": "3h 35min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "Rio Claro-SP": {
+    "distancia_carro_km": 219.6,
+    "distancia_reta_km": 155.9,
+    "tempo_conducao_min": 190,
+    "tempo_conducao_formatado": "3h 10min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "Passos-MG": {
+    "distancia_carro_km": 100.3,
+    "distancia_reta_km": 72.9,
+    "tempo_conducao_min": 106,
+    "tempo_conducao_formatado": "1h 46min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
   }
 }
