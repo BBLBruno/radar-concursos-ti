@@ -145,5 +145,12 @@
     "tempo_conducao_min": 106,
     "tempo_conducao_formatado": "1h 46min",
     "fonte_calculo": "OpenRouteService (driving-car)"
+  },
+  "Cândido Rodrigues-SP": {
+    "distancia_carro_km": 289.0,
+    "distancia_reta_km": 218.2,
+    "tempo_conducao_min": 227,
+    "tempo_conducao_formatado": "3h 47min",
+    "fonte_calculo": "OpenRouteService (driving-car)"
   }
 }
