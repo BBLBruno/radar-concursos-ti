@@ -1,6 +1,6 @@
 """
 Radar de Concursos TI - Região de Muzambinho e Raio de até 250km
-Engenharia de Software, AI Ops & Product Analytics
+BizOps, Processos, Dados & Automação
 Fontes: PCI Concursos Sudeste, Nacional e Canais Especializados de TI (Médio, Técnico e Superior)
 Cálculo: OpenRouteService (Driving-Car) ou Distância Geodésica Oficial IBGE (Haversine) sem dados inventados
 """
