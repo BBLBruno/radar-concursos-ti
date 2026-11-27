@@ -1,6 +1,6 @@
 {
   "metadados": {
-    "gerado_em": "2026-11-25T20:32:45.966703",
+    "gerado_em": "2026-11-27T20:04:36.239695",
     "cidade_origem": "Muzambinho - MG",
     "coordenadas_origem": [
       -21.3708,
@@ -15,7 +15,7 @@
       "Superior"
     ],
     "area_atuacao": "Tecnologia da Informação / Computação",
-    "total_editais_encontrados": 28,
+    "total_editais_encontrados": 26,
     "total_canais_monitorados": 21,
     "fontes_consultadas": [
       "Sudeste",
@@ -76,37 +76,7 @@
         "Professor do Magistério Superior na área de Ciência da Computação (1 vaga) - São Sebastião do Paraíso",
         "Professor do Magistério Superior na área de Sistemas de Computação (1 vaga) - São Sebastião do Paraíso"
       ],
-      "data_extracao": "2026-11-25T20:32:41.387616"
-    },
-    {
-      "id": "uemgmgabreprocessoseletivoparaprofessoresdeeducacaosuperior-sup",
-      "orgao": "UEMG - Universidade do Estado de Minas Gerais",
-      "cidade": "Passos",
-      "uf": "MG",
-      "distancia_km": 100.3,
-      "distancia_carro_km": 100.3,
-      "distancia_reta_km": 72.9,
-      "tempo_conducao_min": 106,
-      "tempo_conducao_formatado": "1h 46min",
-      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
-      "titulo": "UEMG - MG abre processo seletivo para professores de educação superior",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/uemg-mg-abre-processo-seletivo-para-professores-de-educacao-superior",
-      "link_edital_oficial": "Indisponível",
-      "banca_organizadora": "Indisponível",
-      "vagas_salario": "91 vagas até R$ 5.875,83 Professor de Educação Superior Superior",
-      "salario_num": 5875.83,
-      "salario_formatado": "Até R$ 5.875,83",
-      "escolaridade_niveis": [
-        "Superior"
-      ],
-      "areas_atuacao": [
-        "Programação e Sistemas"
-      ],
-      "data_limite_inscricao": "26/11/2026",
-      "cargos_ti_identificados": [
-        "Professor de Educação Superior na área de Computação (7 vagas)"
-      ],
-      "data_extracao": "2026-11-25T20:32:40.191805"
+      "data_extracao": "2026-11-27T20:04:35.465515"
     },
     {
       "id": "prefeituradeestivagerbispabreprocessoseletivoparaareadaeducacao-sup",
@@ -136,7 +106,7 @@
       "cargos_ti_identificados": [
         "Professor de Educação Básica II, Informática e Tecnologia (1 vaga + CR)"
       ],
-      "data_extracao": "2026-11-25T20:32:03.532683"
+      "data_extracao": "2026-11-27T20:04:05.646176"
     },
     {
       "id": "ifmgmgabrevagasparaprofessorvisitanteemcomputacaoefisica-sup",
@@ -166,7 +136,7 @@
       "cargos_ti_identificados": [
         "Professor Visitante na área de Computação (2 vagas)"
       ],
-      "data_extracao": "2026-11-25T20:32:35.215254"
+      "data_extracao": "2026-11-27T20:04:31.061958"
     },
     {
       "id": "prefeituradelemespabreconcursopublicocomsalariosdeate13359-sup",
@@ -196,7 +166,7 @@
       "cargos_ti_identificados": [
         "Analista de Tecnologia da Informação (1 vaga)"
       ],
-      "data_extracao": "2026-11-25T20:31:43.588655"
+      "data_extracao": "2026-11-27T20:03:48.884617"
     },
     {
       "id": "prefeituradecamposdojordaospabreselecaonaeducacaocomsalariosdeate8172-mt",
@@ -223,11 +193,11 @@
       "areas_atuacao": [
         "Programação e Sistemas"
       ],
-      "data_limite_inscricao": "27/11 a 25/12/2026",
+      "data_limite_inscricao": "25/12/2026",
       "cargos_ti_identificados": [
         "Monitor de Oficina de Informática"
       ],
-      "data_extracao": "2026-11-25T20:32:00.584061"
+      "data_extracao": "2026-11-27T20:04:03.601346"
     },
     {
       "id": "ifspspabreprocessoseletivoparaprofessorsubstitutocomsalariosdeate8340-sup",
@@ -265,7 +235,7 @@
         "Professor substituto de Informática (1 vaga) - São Paulo",
         "Professor substituto de Informática (1 vaga) - Sertãozinho"
       ],
-      "data_extracao": "2026-11-25T20:31:50.044170"
+      "data_extracao": "2026-11-27T20:03:56.016572"
     },
     {
       "id": "unespabretresconcursospublicosparaprofessoressubstitutosemrioclaro-sup",
@@ -298,7 +268,7 @@
         "Edital Nº 237/2026: Professor Substituto na área de Ciência da Computação, subárea de conhecimento: Sistemas de Computação, nas disciplinas de Desenvolvimento de Software para Web e Gerenciamento de Projetos (1 vaga)",
         "Edital Nº 236/2026: Professor Substituto na área de Matemática, subárea de conhecimento: Matemática Aplicada, nas disciplinas de Introdução à Ciência da Computação, Cálculo Numérico e Computação Básica (1 vaga)"
       ],
-      "data_extracao": "2026-11-25T20:32:26.546753"
+      "data_extracao": "2026-11-27T20:04:23.581028"
     },
     {
       "id": "unicampspabreconcursoparaprofessordoutornaareadeengenhariaeletricaecomputacao-sup",
@@ -328,7 +298,7 @@
       "cargos_ti_identificados": [
         "Professor Doutor na área de Engenharia Elétrica e de Computação (1 vaga)"
       ],
-      "data_extracao": "2026-11-25T20:32:27.046099"
+      "data_extracao": "2026-11-27T20:04:24.292237"
     },
     {
       "id": "seteccampinasspabreconcursopublicocomsalariosdeate10428-mt",
@@ -359,7 +329,7 @@
       "cargos_ti_identificados": [
         "Agente de Suporte Técnico (4 vagas + CR)"
       ],
-      "data_extracao": "2026-11-25T20:31:44.574011"
+      "data_extracao": "2026-11-27T20:03:49.316393"
     },
     {
       "id": "seteccampinasspabreconcursopublicocomsalariosdeate10428-sup",
@@ -389,48 +359,7 @@
       "cargos_ti_identificados": [
         "Analista Técnico (Informática) (1 vaga + CR)"
       ],
-      "data_extracao": "2026-11-25T20:31:44.574137"
-    },
-    {
-      "id": "unifeimgabreconcursopublicoparaprofessoresdomagisteriosuperior-sup",
-      "orgao": "UNIFEI - Universidade Federal de Itajubá",
-      "cidade": "Itajubá",
-      "uf": "MG",
-      "distancia_km": 229.5,
-      "distancia_carro_km": 229.5,
-      "distancia_reta_km": 160.6,
-      "tempo_conducao_min": 225,
-      "tempo_conducao_formatado": "3h 45min",
-      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
-      "titulo": "UNIFEI - MG abre concurso público para professores do magistério superior",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/unifei-mg-abre-concurso-publico-para-professores-do-magisterio-superior",
-      "link_edital_oficial": "https://progepe.unifei.edu.br/concursos-e-processos-seletivos/edital-no-59-2026/",
-      "banca_organizadora": "UNIFEI - PROGEPE",
-      "vagas_salario": "27 vagas até R$ 13.753,96 Professor do Magistério Superior Superior",
-      "salario_num": 13753.96,
-      "salario_formatado": "R$ 13.753,96",
-      "escolaridade_niveis": [
-        "Superior"
-      ],
-      "areas_atuacao": [
-        "Dados e IA",
-        "Infraestrutura e Redes",
-        "Programação e Sistemas"
-      ],
-      "data_limite_inscricao": "26/11/2026",
-      "cargos_ti_identificados": [
-        "Professor de Desenho e Desenvolvimento Web, Cloud Computing, Banco de Dados e Sistemas Computacionais (1 vaga)",
-        "Professor de Engenharia de Software, IHM, Arquitetura e Confiabilidade (1 vaga)",
-        "Professor de Programação, Algoritmos, Modelagem e Verificação de Software (1 vaga)",
-        "Professor de Redes de Computadores, Criptografia e Protocolos Seguros (1 vaga)",
-        "Professor de Segurança da Informação (1 vaga)",
-        "Professor de Sistemas Embarcados, Arquitetura de Computadores e Sistemas Digitais (1 vaga)",
-        "Professor de Aprendizado Profundo (1 vaga)",
-        "Professor de Arquitetura de Computadores e Compiladores (1 vaga)",
-        "Professor de Programação e Desenvolvimento de Sistemas Aplicados à Ciência de Dados (1 vaga)",
-        "Professor de Computação, Algoritmos e Fundamentos de Programação (1 vaga)"
-      ],
-      "data_extracao": "2026-11-25T20:32:45.885931"
+      "data_extracao": "2026-11-27T20:03:49.316605"
     },
     {
       "id": "iprejundejundiaispabreconcursopublicocomsalariosdeate15123-sup",
@@ -460,37 +389,7 @@
       "cargos_ti_identificados": [
         "Analista de Planejamento, Gestão e Orçamento - Informática (1 vaga)"
       ],
-      "data_extracao": "2026-11-25T20:31:57.639084"
-    },
-    {
-      "id": "prefeituradeitupevaspabreprocessoseletivoparaprofessores-sup",
-      "orgao": "Prefeitura de Itupeva",
-      "cidade": "Itupeva",
-      "uf": "SP",
-      "distancia_km": 261.9,
-      "distancia_carro_km": 261.9,
-      "distancia_reta_km": 205.6,
-      "tempo_conducao_min": 215,
-      "tempo_conducao_formatado": "3h 35min",
-      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
-      "titulo": "Prefeitura de Itupeva - SP abre processo seletivo para professores",
-      "link_pci": "https://www.pciconcursos.com.br/noticias/prefeitura-de-itupeva-sp-abre-processo-seletivo-para-professores",
-      "link_edital_oficial": "https://concursos.objetivas.com.br/",
-      "banca_organizadora": "Objetiva Concursos",
-      "vagas_salario": "33 vagas até R$ 6.348,24 Professor de Desenvolvimento Infantil, Professor de Educação Básica Superior",
-      "salario_num": 6348.24,
-      "salario_formatado": "Até R$ 6.348,24",
-      "escolaridade_niveis": [
-        "Superior"
-      ],
-      "areas_atuacao": [
-        "Programação e Sistemas"
-      ],
-      "data_limite_inscricao": "26/11/2026",
-      "cargos_ti_identificados": [
-        "Professor de Educação Básica - Informática (1 vaga)"
-      ],
-      "data_extracao": "2026-11-25T20:32:04.553826"
+      "data_extracao": "2026-11-27T20:04:00.818325"
     },
     {
       "id": "cisituspabreconcursopublicocomsalariosdeate7553-mt",
@@ -521,7 +420,7 @@
       "cargos_ti_identificados": [
         "Técnico em Informática (1 vaga)"
       ],
-      "data_extracao": "2026-11-25T20:31:47.367803"
+      "data_extracao": "2026-11-27T20:03:53.185127"
     },
     {
       "id": "prefeituradecandidorodriguesspabreconcursopublicocomsalariosdeate8862-mt",
@@ -551,7 +450,7 @@
       "cargos_ti_identificados": [
         "Monitor de Informática (cadastro reserva)"
       ],
-      "data_extracao": "2026-11-25T20:32:01.099450"
+      "data_extracao": "2026-11-27T20:04:04.023874"
     },
     {
       "id": "prefeituradesantanadeparnaibaspabreconcursopublicocomsalariosdeate7497-mt",
@@ -582,7 +481,7 @@
       "cargos_ti_identificados": [
         "Técnico em Tecnologia da Informação (1 vaga)"
       ],
-      "data_extracao": "2026-11-25T20:32:18.414154"
+      "data_extracao": "2026-11-27T20:04:17.214278"
     },
     {
       "id": "prefeituradesantanadeparnaibaspabreconcursopublicocomsalariosdeate7497-sup",
@@ -612,7 +511,7 @@
       "cargos_ti_identificados": [
         "Analista de Tecnologia da Informação (cadastro de reserva)"
       ],
-      "data_extracao": "2026-11-25T20:32:18.414293"
+      "data_extracao": "2026-11-27T20:04:17.214515"
     },
     {
       "id": "camaradecarapicuibaspabreconcursopublicoparaoficialdemanutencaoetecnicoemtecnologiadainformacao-mt",
@@ -642,7 +541,7 @@
       "cargos_ti_identificados": [
         "Técnico em Tecnologia da Informação (1 vaga)"
       ],
-      "data_extracao": "2026-11-25T20:31:46.381185"
+      "data_extracao": "2026-11-27T20:03:52.393284"
     },
     {
       "id": "uspspabreconcursopublicoparaocargodeprofessortitularnaareadesistemasdecomputacao-sup",
@@ -672,7 +571,37 @@
       "cargos_ti_identificados": [
         "Professor Titular no Departamento de Sistemas de Computação, na área de Sistemas de Computação (1 vaga)"
       ],
-      "data_extracao": "2026-11-25T20:32:29.893051"
+      "data_extracao": "2026-11-27T20:04:26.337335"
+    },
+    {
+      "id": "uspspabreconcursopublicoparaprofessordoutoremsistemasdeinformacao-sup",
+      "orgao": "USP - Universidade de São Paulo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "distancia_km": 318.7,
+      "distancia_carro_km": 318.7,
+      "distancia_reta_km": 240.7,
+      "tempo_conducao_min": 243,
+      "tempo_conducao_formatado": "4h 03min",
+      "fonte_calculo_distancia": "OpenRouteService (driving-car)",
+      "titulo": "USP - SP abre concurso público para professor doutor em sistemas de informação",
+      "link_pci": "https://www.pciconcursos.com.br/noticias/usp-sp-abre-concurso-publico-para-professor-doutor-em-sistemas-de-informacao",
+      "link_edital_oficial": "https://uspdigital.usp.br/gr/admissao",
+      "banca_organizadora": "USP Digital",
+      "vagas_salario": "1 vaga até R$ 16.994,01 Professor Doutor Superior",
+      "salario_num": 16994.01,
+      "salario_formatado": "R$ 16.994,01",
+      "escolaridade_niveis": [
+        "Superior"
+      ],
+      "areas_atuacao": [
+        "Programação e Sistemas"
+      ],
+      "data_limite_inscricao": "11/01/2027",
+      "cargos_ti_identificados": [
+        "Professor Doutor na área de Sistemas de Informação (1 vaga)"
+      ],
+      "data_extracao": "2026-11-27T20:04:27.025268"
     },
     {
       "id": "ufabcspabreconcursopublicoparaprofessores-sup",
@@ -709,7 +638,7 @@
         "Professor assistente em Física da Matéria Condensada, subárea Ciência de Dados aplicada à Estrutura Eletrônica e Propriedades de Átomos, Moléculas e Sólidos (1 vaga)",
         "Professor assistente em Fundamentos da Ciência de Dados (2 vagas)"
       ],
-      "data_extracao": "2026-11-25T20:32:21.965043"
+      "data_extracao": "2026-11-27T20:04:20.355511"
     },
     {
       "id": "spaguasspabreconcursopublicocomsalariosdeate12070-sup",
@@ -740,7 +669,7 @@
         "Monitoramento Hidrológico e Ciência de Dados (18 vagas)",
         "Tecnologia da Informação e Ciência de Dados (3 vagas)"
       ],
-      "data_extracao": "2026-11-25T20:31:45.696097"
+      "data_extracao": "2026-11-27T20:03:51.797942"
     },
     {
       "id": "corenspabreconcursocom76vagasesalariosdeate10692-sup",
@@ -767,12 +696,12 @@
         "Dados e IA",
         "Programação e Sistemas"
       ],
-      "data_limite_inscricao": "26/11/2026 a 11/01/2027",
+      "data_limite_inscricao": "11/01/2027",
       "cargos_ti_identificados": [
         "Analista Ciências de Dados e IA (cadastro de reserva)",
         "Analista Desenvolvimento de Sistemas (cadastro de reserva)"
       ],
-      "data_extracao": "2026-11-25T20:31:48.286168"
+      "data_extracao": "2026-11-27T20:03:54.003930"
     },
     {
       "id": "cetesbspabreconcursospublicosparadiversoscargos-sup",
@@ -804,7 +733,7 @@
         "Analista de Tecnologia da Informação, Redes e Telecomunicação (1 vaga)",
         "Analista de Tecnologia da Informação, Sistemas (3 vagas)"
       ],
-      "data_extracao": "2026-11-25T20:31:35.135974"
+      "data_extracao": "2026-11-27T20:03:43.637467"
     },
     {
       "id": "ifspabreconcursopublicoparacargostecnicoadministrativos-mt",
@@ -834,7 +763,7 @@
       "cargos_ti_identificados": [
         "Técnico de Laboratório, área Informática (3 vagas)"
       ],
-      "data_extracao": "2026-11-25T20:31:50.551067"
+      "data_extracao": "2026-11-27T20:03:56.451960"
     },
     {
       "id": "ifspabreconcursopublicoparacargostecnicoadministrativos-sup",
@@ -864,7 +793,7 @@
       "cargos_ti_identificados": [
         "Analista de Tecnologia da Informação, Ciência de Dados (1 vaga)"
       ],
-      "data_extracao": "2026-11-25T20:31:50.551194"
+      "data_extracao": "2026-11-27T20:03:56.452190"
     },
     {
       "id": "prefeituradejandiraspabreconcursopublicocomsalariosdeate6812-mt",
@@ -894,7 +823,7 @@
       "cargos_ti_identificados": [
         "Técnico em Tecnologia da Informação (2 vagas)"
       ],
-      "data_extracao": "2026-11-25T20:32:11.392335"
+      "data_extracao": "2026-11-27T20:04:11.318107"
     },
     {
       "id": "prefeituradeguaratinguetaspabreconcursopublicocomsalariosdeate18540-sup",
@@ -924,7 +853,7 @@
       "cargos_ti_identificados": [
         "Analista de Sistemas (1 vaga)"
       ],
-      "data_extracao": "2026-11-25T20:31:42.876100"
+      "data_extracao": "2026-11-27T20:03:48.314105"
     }
   ]
 }
